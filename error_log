@@ -1,0 +1,64 @@
+[03-Jun-2025 22:57:19 America/Recife] PHP Warning:  include(views/pages/404.php): Failed to open stream: No such file or directory in /home/leonidab/staging.leonidabrasil.com.br/index.php on line 138
+[03-Jun-2025 22:57:19 America/Recife] PHP Warning:  include(): Failed opening 'views/pages/404.php' for inclusion (include_path='.:/opt/alt/php80/usr/share/pear:/opt/alt/php80/usr/share/php:/usr/share/pear:/usr/share/php') in /home/leonidab/staging.leonidabrasil.com.br/index.php on line 138
+[03-Jun-2025 22:57:26 America/Recife] PHP Warning:  include(views/pages/404.php): Failed to open stream: No such file or directory in /home/leonidab/staging.leonidabrasil.com.br/index.php on line 138
+[03-Jun-2025 22:57:26 America/Recife] PHP Warning:  include(): Failed opening 'views/pages/404.php' for inclusion (include_path='.:/opt/alt/php80/usr/share/pear:/opt/alt/php80/usr/share/php:/usr/share/pear:/usr/share/php') in /home/leonidab/staging.leonidabrasil.com.br/index.php on line 138
+[03-Jun-2025 23:04:21 America/Recife] PHP Fatal error:  Uncaught Error: Class "ForumController" not found in /home/leonidab/staging.leonidabrasil.com.br/index.php:109
+Stack trace:
+#0 {main}
+  thrown in /home/leonidab/staging.leonidabrasil.com.br/index.php on line 109
+[03-Jun-2025 23:04:29 America/Recife] PHP Fatal error:  Uncaught Error: Class "ForumController" not found in /home/leonidab/staging.leonidabrasil.com.br/index.php:109
+Stack trace:
+#0 {main}
+  thrown in /home/leonidab/staging.leonidabrasil.com.br/index.php on line 109
+[03-Jun-2025 23:04:35 America/Recife] PHP Fatal error:  Uncaught Error: Class "ForumController" not found in /home/leonidab/staging.leonidabrasil.com.br/index.php:109
+Stack trace:
+#0 {main}
+  thrown in /home/leonidab/staging.leonidabrasil.com.br/index.php on line 109
+[03-Jun-2025 23:04:45 America/Recife] PHP Fatal error:  Uncaught Error: Class "NewsController" not found in /home/leonidab/staging.leonidabrasil.com.br/index.php:94
+Stack trace:
+#0 {main}
+  thrown in /home/leonidab/staging.leonidabrasil.com.br/index.php on line 94
+[03-Jun-2025 23:09:26 America/Recife] PHP Fatal error:  Uncaught Error: Class "UserController" not found in /home/leonidab/staging.leonidabrasil.com.br/index.php:131
+Stack trace:
+#0 {main}
+  thrown in /home/leonidab/staging.leonidabrasil.com.br/index.php on line 131
+[03-Jun-2025 23:12:10 America/Recife] PHP Warning:  include(views/pages/404.php): Failed to open stream: No such file or directory in /home/leonidab/staging.leonidabrasil.com.br/index.php on line 138
+[03-Jun-2025 23:12:10 America/Recife] PHP Warning:  include(): Failed opening 'views/pages/404.php' for inclusion (include_path='.:/opt/alt/php80/usr/share/pear:/opt/alt/php80/usr/share/php:/usr/share/pear:/usr/share/php') in /home/leonidab/staging.leonidabrasil.com.br/index.php on line 138
+[03-Jun-2025 23:14:17 America/Recife] PHP Warning:  include(views/pages/404.php): Failed to open stream: No such file or directory in /home/leonidab/staging.leonidabrasil.com.br/index.php on line 138
+[03-Jun-2025 23:14:17 America/Recife] PHP Warning:  include(): Failed opening 'views/pages/404.php' for inclusion (include_path='.:/opt/alt/php80/usr/share/pear:/opt/alt/php80/usr/share/php:/usr/share/pear:/usr/share/php') in /home/leonidab/staging.leonidabrasil.com.br/index.php on line 138
+[03-Jun-2025 23:14:22 America/Recife] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number in /home/leonidab/staging.leonidabrasil.com.br/test.php:139
+Stack trace:
+#0 /home/leonidab/staging.leonidabrasil.com.br/test.php(139): PDOStatement->execute()
+#1 {main}
+  thrown in /home/leonidab/staging.leonidabrasil.com.br/test.php on line 139
+[03-Jun-2025 23:14:43 America/Recife] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number in /home/leonidab/staging.leonidabrasil.com.br/test.php:139
+Stack trace:
+#0 /home/leonidab/staging.leonidabrasil.com.br/test.php(139): PDOStatement->execute()
+#1 {main}
+  thrown in /home/leonidab/staging.leonidabrasil.com.br/test.php on line 139
+[03-Jun-2025 23:19:10 America/Recife] PHP Fatal error:  Uncaught Error: Class "UserController" not found in /home/leonidab/staging.leonidabrasil.com.br/index.php:120
+Stack trace:
+#0 {main}
+  thrown in /home/leonidab/staging.leonidabrasil.com.br/index.php on line 120
+[03-Jun-2025 23:19:12 America/Recife] PHP Fatal error:  Uncaught Error: Class "ForumController" not found in /home/leonidab/staging.leonidabrasil.com.br/index.php:109
+Stack trace:
+#0 {main}
+  thrown in /home/leonidab/staging.leonidabrasil.com.br/index.php on line 109
+[03-Jun-2025 23:19:14 America/Recife] PHP Warning:  include(views/pages/404.php): Failed to open stream: No such file or directory in /home/leonidab/staging.leonidabrasil.com.br/index.php on line 138
+[03-Jun-2025 23:19:14 America/Recife] PHP Warning:  include(): Failed opening 'views/pages/404.php' for inclusion (include_path='.:/opt/alt/php80/usr/share/pear:/opt/alt/php80/usr/share/php:/usr/share/pear:/usr/share/php') in /home/leonidab/staging.leonidabrasil.com.br/index.php on line 138
+[03-Jun-2025 23:29:04 America/Recife] PHP Warning:  include(views/pages/404.php): Failed to open stream: No such file or directory in /home/leonidab/staging.leonidabrasil.com.br/index.php on line 138
+[03-Jun-2025 23:29:04 America/Recife] PHP Warning:  include(): Failed opening 'views/pages/404.php' for inclusion (include_path='.:/opt/alt/php80/usr/share/pear:/opt/alt/php80/usr/share/php:/usr/share/pear:/usr/share/php') in /home/leonidab/staging.leonidabrasil.com.br/index.php on line 138
+[03-Jun-2025 23:29:09 America/Recife] PHP Warning:  include(views/pages/404.php): Failed to open stream: No such file or directory in /home/leonidab/staging.leonidabrasil.com.br/index.php on line 138
+[03-Jun-2025 23:29:09 America/Recife] PHP Warning:  include(): Failed opening 'views/pages/404.php' for inclusion (include_path='.:/opt/alt/php80/usr/share/pear:/opt/alt/php80/usr/share/php:/usr/share/pear:/usr/share/php') in /home/leonidab/staging.leonidabrasil.com.br/index.php on line 138
+[03-Jun-2025 23:31:36 America/Recife] PHP Warning:  include(views/pages/404.php): Failed to open stream: No such file or directory in /home/leonidab/staging.leonidabrasil.com.br/index.php on line 138
+[03-Jun-2025 23:31:36 America/Recife] PHP Warning:  include(): Failed opening 'views/pages/404.php' for inclusion (include_path='.:/opt/alt/php80/usr/share/pear:/opt/alt/php80/usr/share/php:/usr/share/pear:/usr/share/php') in /home/leonidab/staging.leonidabrasil.com.br/index.php on line 138
+[03-Jun-2025 23:33:15 America/Recife] PHP Warning:  include(views/pages/404.php): Failed to open stream: No such file or directory in /home/leonidab/staging.leonidabrasil.com.br/index.php on line 138
+[03-Jun-2025 23:33:15 America/Recife] PHP Warning:  include(): Failed opening 'views/pages/404.php' for inclusion (include_path='.:/opt/alt/php80/usr/share/pear:/opt/alt/php80/usr/share/php:/usr/share/pear:/usr/share/php') in /home/leonidab/staging.leonidabrasil.com.br/index.php on line 138
+[03-Jun-2025 23:34:15 America/Recife] PHP Fatal error:  Uncaught Error: Class "ForumController" not found in /home/leonidab/staging.leonidabrasil.com.br/index.php:109
+Stack trace:
+#0 {main}
+  thrown in /home/leonidab/staging.leonidabrasil.com.br/index.php on line 109
+[03-Jun-2025 23:34:21 America/Recife] PHP Fatal error:  Uncaught Error: Class "NewsController" not found in /home/leonidab/staging.leonidabrasil.com.br/index.php:94
+Stack trace:
+#0 {main}
+  thrown in /home/leonidab/staging.leonidabrasil.com.br/index.php on line 94

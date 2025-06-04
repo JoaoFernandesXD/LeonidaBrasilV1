@@ -1,0 +1,230 @@
+# .htaccess para Leonida Brasil
+# Configuração de URLs amigáveis e otimizações
+
+# Habilitar reescrita de URL
+RewriteEngine On
+
+# Configurações de segurança
+# Bloquear acesso direto a arquivos PHP sensíveis
+<Files "config/*.php">
+    Require all denied
+</Files>
+
+<Files "models/*.php">
+    Require all denied
+</Files>
+
+<Files "controllers/*.php">
+    Require all denied
+</Files>
+
+<Files "utils/*.php">
+    Require all denied
+</Files>
+
+# Bloquear acesso a arquivos de configuração
+<Files ".env">
+    Require all denied
+</Files>
+
+<Files "*.log">
+    Require all denied
+</Files>
+
+# Headers de segurança
+<IfModule mod_headers.c>
+    # Prevenir clickjacking
+    Header always append X-Frame-Options SAMEORIGIN
+    
+    # Prevenir MIME type sniffing
+    Header set X-Content-Type-Options nosniff
+    
+    # Habilitar XSS protection
+    Header set X-XSS-Protection "1; mode=block"
+    
+    # Strict Transport Security (HTTPS)
+    # Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+</IfModule>
+
+# Compressão GZIP
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/json
+</IfModule>
+
+# Cache para arquivos estáticos
+<IfModule mod_expires.c>
+    ExpiresActive On
+    
+    # Imagens
+    ExpiresByType image/jpg "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/webp "access plus 1 month"
+    ExpiresByType image/svg+xml "access plus 1 month"
+    
+    # CSS e JavaScript
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType application/x-javascript "access plus 1 month"
+    
+    # Fontes
+    ExpiresByType font/woff "access plus 1 month"
+    ExpiresByType font/woff2 "access plus 1 month"
+    ExpiresByType application/font-woff "access plus 1 month"
+    ExpiresByType application/font-woff2 "access plus 1 month"
+    
+    # HTML
+    ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+
+# =================================================
+# ROTEAMENTO DE URLS AMIGÁVEIS
+# =================================================
+
+# Página inicial
+RewriteRule ^$ index.php?page=home [L,QSA]
+RewriteRule ^inicio/?$ index.php?page=home [L,QSA]
+
+# Notícias
+RewriteRule ^noticias/?$ index.php?page=news [L,QSA]
+RewriteRule ^noticias/([a-zA-Z0-9\-]+)/?$ index.php?page=news&slug=$1 [L,QSA]
+RewriteRule ^noticia/([a-zA-Z0-9\-]+)/?$ index.php?page=news&slug=$1 [L,QSA]
+
+# HUB Leonida
+RewriteRule ^hub/?$ index.php?page=hub [L,QSA]
+RewriteRule ^hub-leonida/?$ index.php?page=hub [L,QSA]
+
+# Personagens
+RewriteRule ^personagens/?$ index.php?page=character [L,QSA]
+RewriteRule ^personagem/([a-zA-Z0-9\-]+)/?$ index.php?page=character&slug=$1 [L,QSA]
+
+# Localizações
+RewriteRule ^localizacoes/?$ index.php?page=location [L,QSA]
+RewriteRule ^locais/?$ index.php?page=location [L,QSA]
+RewriteRule ^local/([a-zA-Z0-9\-]+)/?$ index.php?page=location&slug=$1 [L,QSA]
+RewriteRule ^localizacao/([a-zA-Z0-9\-]+)/?$ index.php?page=location&slug=$1 [L,QSA]
+
+# Veículos
+RewriteRule ^veiculos/?$ index.php?page=vehicle [L,QSA]
+RewriteRule ^veiculo/([a-zA-Z0-9\-]+)/?$ index.php?page=vehicle&slug=$1 [L,QSA]
+
+# Missões
+RewriteRule ^missoes/?$ index.php?page=mission [L,QSA]
+RewriteRule ^missao/([a-zA-Z0-9\-]+)/?$ index.php?page=mission&slug=$1 [L,QSA]
+
+# Fórum
+RewriteRule ^forum/?$ index.php?page=forum [L,QSA]
+RewriteRule ^forum/categoria/([a-zA-Z0-9\-]+)/?$ index.php?page=forum&category=$1 [L,QSA]
+RewriteRule ^forum/topico/([0-9]+)/?$ index.php?page=forum&topic=$1 [L,QSA]
+RewriteRule ^forum/criar-topico/?$ index.php?page=forum&action=create [L,QSA]
+
+# Galeria
+RewriteRule ^galeria/?$ index.php?page=gallery [L,QSA]
+RewriteRule ^galeria/([a-zA-Z0-9\-]+)/?$ index.php?page=gallery&category=$1 [L,QSA]
+
+# Rádio
+RewriteRule ^radio/?$ index.php?page=radio [L,QSA]
+RewriteRule ^vice-city-fm/?$ index.php?page=radio [L,QSA]
+
+# Usuários e Perfis
+RewriteRule ^perfil/?$ index.php?page=profile [L,QSA]
+RewriteRule ^perfil/([a-zA-Z0-9\-_]+)/?$ index.php?page=profile&user=$1 [L,QSA]
+RewriteRule ^usuario/([a-zA-Z0-9\-_]+)/?$ index.php?page=profile&user=$1 [L,QSA]
+RewriteRule ^configuracoes/?$ index.php?page=settings [L,QSA]
+
+# Autenticação
+RewriteRule ^login/?$ index.php?page=login [L,QSA]
+RewriteRule ^entrar/?$ index.php?page=login [L,QSA]
+RewriteRule ^registro/?$ index.php?page=register [L,QSA]
+RewriteRule ^registrar/?$ index.php?page=register [L,QSA]
+RewriteRule ^logout/?$ index.php?page=logout [L,QSA]
+RewriteRule ^sair/?$ index.php?page=logout [L,QSA]
+
+# Ranking
+RewriteRule ^ranking/?$ index.php?page=ranking [L,QSA]
+RewriteRule ^ranking/([a-zA-Z0-9\-]+)/?$ index.php?page=ranking&category=$1 [L,QSA]
+
+# Busca
+RewriteRule ^busca/?$ index.php?page=search [L,QSA]
+RewriteRule ^buscar/?$ index.php?page=search [L,QSA]
+RewriteRule ^pesquisa/?$ index.php?page=search [L,QSA]
+
+# Páginas institucionais
+RewriteRule ^sobre/?$ index.php?page=about [L,QSA]
+RewriteRule ^contato/?$ index.php?page=contact [L,QSA]
+RewriteRule ^termos/?$ index.php?page=terms [L,QSA]
+RewriteRule ^privacidade/?$ index.php?page=privacy [L,QSA]
+
+# =================================================
+# API ROUTES
+# =================================================
+
+# API endpoints
+RewriteRule ^api/([a-zA-Z0-9\-]+)/?$ api/$1.php [L,QSA]
+
+# =================================================
+# REDIRECIONAMENTOS E TRATAMENTO DE ERROS
+# =================================================
+
+# Remover trailing slashes (opcional)
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule ^(.*)/$ /$1 [R=301,L]
+
+# Forçar HTTPS (descomente se usar SSL)
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# Redirecionamento para www (opcional)
+# RewriteCond %{HTTP_HOST} !^www\.
+# RewriteRule ^(.*)$ http://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# Páginas de erro customizadas
+ErrorDocument 404 /index.php?page=404
+ErrorDocument 403 /index.php?page=403
+ErrorDocument 500 /index.php?page=500
+
+# =================================================
+# PROTEÇÕES ADICIONAIS
+# =================================================
+
+# Bloquear acesso a arquivos sensíveis
+<FilesMatch "\.(log|sql|md|txt)$">
+    Require all denied
+</FilesMatch>
+
+# Bloquear tentativas de SQL injection
+RewriteCond %{QUERY_STRING} (\<|%3C).*script.*(\>|%3E) [NC,OR]
+RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
+RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2}) [OR]
+RewriteCond %{QUERY_STRING} (\<|%3C).*iframe.*(\>|%3E) [NC,OR]
+RewriteCond %{QUERY_STRING} base64_encode.*\(.*\) [NC,OR]
+RewriteCond %{QUERY_STRING} (\<|%3C).*object.*(\>|%3E) [NC,OR]
+RewriteCond %{QUERY_STRING} (\<|%3C).*embed.*(\>|%3E) [NC,OR]
+RewriteCond %{QUERY_STRING} select.*\(.*\;.*\).*from.*\( [NC,OR]
+RewriteCond %{QUERY_STRING} union.*select.*\( [NC]
+RewriteRule .* - [F,L]
+
+# Limitar tamanho do upload
+LimitRequestBody 10485760
+
+# Desabilitar listagem de diretórios
+Options -Indexes
+
+# Configuração de tipos MIME
+<IfModule mod_mime.c>
+    AddType application/javascript .js
+    AddType text/css .css
+    AddType image/webp .webp
+    AddType font/woff .woff
+    AddType font/woff2 .woff2
+</IfModule>

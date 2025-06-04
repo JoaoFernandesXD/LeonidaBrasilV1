@@ -1,0 +1,902 @@
+/* Forum-specific CSS */
+
+/* ========================================
+   FORUM CONTAINER
+   ======================================== */
+
+.forum-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+.forum-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* ========================================
+   TOPIC HEADER
+   ======================================== */
+
+.topic-header {
+    background: linear-gradient(135deg, #00BFFF, #0099CC);
+    border-radius: 8px;
+    padding: 12px 16px;
+    box-shadow: 0 2px 8px rgba(0, 191, 255, 0.2);
+}
+
+.topic-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.topic-status {
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.topic-status.closed {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.topic-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.topic-time {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* ========================================
+   FORUM CONTENT
+   ======================================== */
+
+.forum-content {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 16px;
+    background: white;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* ========================================
+   USER SIDEBAR
+   ======================================== */
+
+.user-sidebar,
+.reply-user-sidebar {
+    background: #f8f9fa;
+    padding: 16px;
+    border-right: 1px solid #e9ecef;
+}
+
+.user-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+}
+
+.user-header {
+    width: 100%;
+}
+
+.username {
+    font-size: 14px;
+    font-weight: 700;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    margin-bottom: 4px;
+}
+
+.verified {
+    color: #28a745;
+    font-size: 12px;
+}
+
+.user-title {
+    font-size: 11px;
+    color: #6c757d;
+    font-weight: 500;
+}
+
+.user-avatar {
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.user-avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 2px solid #e9ecef;
+}
+
+.user-status {
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.user-status.online {
+    background: #28a745;
+}
+
+.user-status.offline {
+    background: #6c757d;
+}
+
+.user-badges {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+}
+
+.badge {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 600;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+.director-badge {
+    background: linear-gradient(135deg, #feca57, #f39c12);
+    color: #333;
+}
+
+.differente-badge {
+    background: linear-gradient(135deg, #00BFFF, #0099CC);
+    color: white;
+}
+
+.simpatico-badge {
+    background: linear-gradient(135deg, #ff6b6b, #e55656);
+    color: white;
+}
+
+.badge-level {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 1px 4px;
+    border-radius: 2px;
+    font-size: 8px;
+    margin-left: 4px;
+}
+
+.user-stats {
+    text-align: center;
+    padding-top: 8px;
+    border-top: 1px solid #e9ecef;
+    width: 100%;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.stat-number {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.stat-label {
+    font-size: 10px;
+    color: #6c757d;
+    font-weight: 500;
+}
+
+/* ========================================
+   POST CONTENT
+   ======================================== */
+
+.post-content {
+    padding: 16px;
+}
+
+.post-header {
+    margin-bottom: 16px;
+}
+
+.post-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.post-action-btn {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    color: #6c757d;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.post-action-btn:hover {
+    background: #e9ecef;
+    color: #333;
+}
+
+.post-action-btn.active {
+    background: var(--color-accent);
+    border-color: #f39c12;
+    color: #333;
+}
+
+.fixed-btn.active {
+    background: var(--color-accent);
+    color: #333;
+}
+
+.post-body {
+    line-height: 1.6;
+}
+
+.post-text {
+    color: #333;
+    font-size: 13px;
+}
+
+.post-text p {
+    margin-bottom: 12px;
+}
+
+.post-text strong {
+    font-weight: 600;
+    color: #333;
+}
+
+.leonida-logo {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.leonida-logo img {
+    max-width: 200px;
+    height: auto;
+}
+
+/* ========================================
+   DISCORD & SUPPORT EMBEDS
+   ======================================== */
+
+.discord-embed,
+.support-embed {
+    background: #2f3136;
+    border-left: 4px solid #5865f2;
+    border-radius: 4px;
+    margin: 16px 0;
+    overflow: hidden;
+}
+
+.discord-header,
+.support-header {
+    background: rgba(88, 101, 242, 0.1);
+    padding: 8px 12px;
+    border-bottom: 1px solid #404040;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.discord-header .fab {
+    color: #5865f2;
+    font-size: 14px;
+}
+
+.support-header .fa {
+    color: #feca57;
+    font-size: 12px;
+}
+
+.verified-badge {
+    background: #5865f2;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-size: 9px;
+    margin-left: auto;
+}
+
+.discord-content,
+.support-content {
+    padding: 12px;
+    color: #dcddde;
+}
+
+.discord-command {
+    background: #40444b;
+    padding: 8px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    color: #b9bbbe;
+}
+
+.support-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.support-description {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-size: 12px;
+    color: #b9bbbe;
+}
+
+.support-footer {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 10px;
+    color: #72767d;
+    margin-bottom: 12px;
+}
+
+.open-ticket-btn {
+    background: #5865f2;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.open-ticket-btn:hover {
+    background: #4752c4;
+}
+
+/* ========================================
+   TOPIC NOTICE
+   ======================================== */
+
+.topic-notice {
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: 8px;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.topic-notice.closed {
+    background: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.notice-icon {
+    color: #856404;
+    font-size: 16px;
+}
+
+.topic-notice.closed .notice-icon {
+    color: #721c24;
+}
+
+.notice-content {
+    color: #856404;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.topic-notice.closed .notice-content {
+    color: #721c24;
+}
+
+.notice-content strong {
+    font-weight: 700;
+}
+
+/* ========================================
+   REPLY SECTION
+   ======================================== */
+
+.reply-section {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 16px;
+    background: white;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.reply-content {
+    padding: 16px;
+}
+
+.reply-header {
+    margin-bottom: 16px;
+}
+
+.reply-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.reply-title {
+    background: linear-gradient(135deg, #00BFFF, #0099CC);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.reply-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.reply-time {
+    color: #6c757d;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.reply-body {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    padding: 12px;
+}
+
+.reply-text {
+    color: #333;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* ========================================
+   FORUM PAGINATION
+   ======================================== */
+
+.forum-pagination {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+/* ========================================
+   REPLY FORM
+   ======================================== */
+
+.reply-form-section {
+    background: white;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.reply-form-header {
+    background: linear-gradient(135deg, #00BFFF, #0099CC);
+    color: white;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form-title {
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.form-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.form-actions .btn {
+    padding: 4px 8px;
+    font-size: 10px;
+}
+
+.reply-form-content {
+    padding: 16px;
+    display: flex;
+    gap: 16px;
+}
+
+.form-user-avatar {
+    flex-shrink: 0;
+}
+
+.form-user-avatar img {
+    width: 60px;
+    height: 60px;
+    border-radius: 6px;
+    border: 2px solid #e9ecef;
+}
+
+.form-editor {
+    flex: 1;
+}
+
+.editor-toolbar {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-bottom: none;
+    border-radius: 6px 6px 0 0;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+.editor-btn {
+    background: white;
+    border: 1px solid #e9ecef;
+    color: #6c757d;
+    padding: 4px 6px;
+    border-radius: 3px;
+    font-size: 11px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.editor-btn:hover {
+    background: #e9ecef;
+    color: #333;
+}
+
+.toolbar-separator {
+    width: 1px;
+    height: 20px;
+    background: #e9ecef;
+    margin: 0 4px;
+}
+
+.preview-btn {
+    background: var(--color-accent) !important;
+    color: #333 !important;
+    font-weight: 600;
+    padding: 4px 8px !important;
+    border-color: #f39c12 !important;
+}
+
+.editor-textarea {
+    width: 100%;
+    min-height: 120px;
+    border: 1px solid #e9ecef;
+    border-top: none;
+    border-bottom: none;
+    padding: 12px;
+    font-size: 13px;
+    font-family: inherit;
+    resize: vertical;
+    outline: none;
+}
+
+.editor-textarea:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 1px var(--color-primary);
+}
+
+.editor-footer {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-top: none;
+    border-radius: 0 0 6px 6px;
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ========================================
+   NAVIGATION ACTIVE STATE
+   ======================================== */
+
+.nav-item.active > a {
+    color: var(--color-primary);
+    background: #f8f9fa;
+}
+
+.nav-item.active::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--color-primary);
+}
+
+.btn-player.active {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark)) !important;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 768px) {
+    .breadcrumb-content {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+    }
+    
+    .page-actions {
+        align-self: stretch;
+        justify-content: space-between;
+    }
+    
+    .forum-content,
+    .reply-section {
+        grid-template-columns: 1fr;
+    }
+    
+    .user-sidebar,
+    .reply-user-sidebar {
+        border-right: none;
+        border-bottom: 1px solid #e9ecef;
+    }
+    
+    .user-card {
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+        gap: 16px;
+    }
+    
+    .user-avatar {
+        width: 60px;
+        height: 60px;
+        flex-shrink: 0;
+    }
+    
+    .user-badges {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .topic-info {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+    }
+    
+    .reply-info {
+        flex-direction: column;
+        gap: 8px;
+        align-items: flex-start;
+    }
+    
+    .reply-form-content {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .form-user-avatar {
+        align-self: center;
+    }
+    
+    .editor-toolbar {
+        flex-wrap: wrap;
+        gap: 2px;
+    }
+    
+    .editor-btn {
+        min-width: 24px;
+        height: 24px;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .forum-container {
+        padding: 16px;
+    }
+    
+    .breadcrumb {
+        font-size: 11px;
+        flex-wrap: wrap;
+    }
+    
+    .action-btn {
+        padding: 4px 8px;
+        font-size: 10px;
+    }
+    
+    .topic-actions {
+        flex-direction: column;
+        gap: 8px;
+        align-items: flex-start;
+    }
+    
+    .reply-actions {
+        flex-direction: column;
+        gap: 6px;
+        align-items: flex-start;
+    }
+    
+    .user-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .user-badges {
+        flex-direction: column;
+    }
+    
+    .editor-footer {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
+.forum-content,
+.reply-section,
+.reply-form-section {
+    animation: fadeInUp 0.6s ease;
+}
+
+.topic-notice {
+    animation: slideInDown 0.4s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   HOVER EFFECTS
+   ======================================== */
+
+.forum-content:hover,
+.reply-section:hover {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: box-shadow 0.3s ease;
+}
+
+.user-avatar:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+.badge:hover {
+    transform: translateY(-1px);
+    transition: transform 0.2s ease;
+}
+
+/* ========================================
+   DARK MODE SUPPORT
+   ======================================== */
+
+@media (prefers-color-scheme: dark) {
+    .forum-content,
+    .reply-section,
+    .reply-form-section {
+        background: #2d2d2d;
+        border-color: #404040;
+    }
+    
+    .user-sidebar,
+    .reply-user-sidebar {
+        background: #333333;
+    }
+    
+    .post-text,
+    .reply-text {
+        color: #ffffff;
+    }
+    
+    .breadcrumb-container {
+        background: #333333;
+        border-color: #404040;
+    }
+    
+    .topic-notice {
+        background: #404040;
+        border-color: #555555;
+        color: #ffffff;
+    }
+    
+    .editor-toolbar,
+    .editor-footer {
+        background: #404040;
+        border-color: #555555;
+    }
+    
+    .editor-textarea {
+        background: #333333;
+        color: #ffffff;
+        border-color: #555555;
+    }
+}

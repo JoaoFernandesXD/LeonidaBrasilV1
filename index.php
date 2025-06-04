@@ -1,0 +1,150 @@
+<?php
+// index.php
+// Router principal do Leonida Brasil
+
+// Configurações iniciais
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+session_start();
+
+// Autoload das classes
+spl_autoload_register(function ($class_name) {
+    $directories = [
+        'models/',
+        'controllers/',
+        'utils/',
+        'config/'
+    ];
+    
+    foreach ($directories as $directory) {
+        $file = $directory . $class_name . '.php';
+        if (file_exists($file)) {
+            require_once $file;
+            return;
+        }
+    }
+});
+
+// Incluir arquivos de configuração
+require_once 'config/database.php';
+require_once 'config/constants.php';
+require_once 'utils/helpers.php';
+
+// Capturar a página solicitada
+$page = $_GET['page'] ?? 'home';
+$slug = $_GET['slug'] ?? null;
+$action = $_GET['action'] ?? 'index';
+
+// Roteamento principal
+try {
+    switch ($page) {
+        case 'home':
+        case '':
+            $controller = new HomeController();
+            $controller->index();
+            break;
+            
+        case 'hub':
+            $controller = new HubController();
+            $controller->index();
+            break;
+            
+        case 'character':
+        case 'personagem':
+            $controller = new HubController();
+            if ($slug) {
+                $controller->character($slug);
+            } else {
+                $controller->characters();
+            }
+            break;
+            
+        case 'location':
+        case 'local':
+            $controller = new HubController();
+            if ($slug) {
+                $controller->location($slug);
+            } else {
+                $controller->locations();
+            }
+            break;
+            
+        case 'vehicle':
+        case 'veiculo':
+            $controller = new HubController();
+            if ($slug) {
+                $controller->vehicle($slug);
+            } else {
+                $controller->vehicles();
+            }
+            break;
+            
+        case 'mission':
+        case 'missao':
+            $controller = new HubController();
+            if ($slug) {
+                $controller->mission($slug);
+            } else {
+                $controller->missions();
+            }
+            break;
+            
+        case 'news':
+        case 'noticias':
+            $controller = new NewsController();
+            if ($slug) {
+                $controller->single($slug);
+            } else {
+                $controller->index();
+            }
+            break;
+            
+        case 'gallery':
+        case 'galeria':
+            $controller = new GalleryController();
+            $controller->index();
+            break;
+            
+        case 'forum':
+            $controller = new ForumController();
+            $controller->index();
+            break;
+            
+        case 'radio':
+            $controller = new RadioController();
+            $controller->index();
+            break;
+            
+        case 'profile':
+        case 'perfil':
+            $controller = new UserController();
+            $controller->profile();
+            break;
+            
+        case 'login':
+            $controller = new UserController();
+            $controller->login();
+            break;
+            
+        case 'register':
+        case 'registro':
+            $controller = new UserController();
+            $controller->register();
+            break;
+            
+        default:
+            // Página 404
+            http_response_code(404);
+            include 'views/pages/404.php';
+            break;
+    }
+    
+} catch (Exception $e) {
+    // Log do erro
+    error_log("Erro no roteamento: " . $e->getMessage());
+    
+    // Página de erro 500
+    http_response_code(500);
+    include 'views/pages/error.php';
+}
+?>
