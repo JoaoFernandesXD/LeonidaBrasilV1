@@ -122,11 +122,22 @@ RewriteRule ^veiculo/([a-zA-Z0-9\-]+)/?$ index.php?page=vehicle&slug=$1 [L,QSA]
 RewriteRule ^missoes/?$ index.php?page=mission [L,QSA]
 RewriteRule ^missao/([a-zA-Z0-9\-]+)/?$ index.php?page=mission&slug=$1 [L,QSA]
 
-# Fórum
+
+# Fórum - rotas principais
 RewriteRule ^forum/?$ index.php?page=forum [L,QSA]
-RewriteRule ^forum/categoria/([a-zA-Z0-9\-]+)/?$ index.php?page=forum&category=$1 [L,QSA]
-RewriteRule ^forum/topico/([0-9]+)/?$ index.php?page=forum&topic=$1 [L,QSA]
+
+# Fórum - tópico por slug (SEO friendly)
+RewriteRule ^forum/topico/([a-zA-Z0-9\-]+)/?$ index.php?page=forum&action=topic&slug=$1 [L,QSA]
+
+# Fórum - categoria por slug
+RewriteRule ^forum/categoria/([a-zA-Z0-9\-]+)/?$ index.php?page=forum&action=category&slug=$1 [L,QSA]
+
+# Fórum - criar tópico
 RewriteRule ^forum/criar-topico/?$ index.php?page=forum&action=create [L,QSA]
+
+# Fórum - páginas de administração (futuro)
+RewriteRule ^forum/admin/?$ index.php?page=forum&action=admin [L,QSA]
+RewriteRule ^forum/moderacao/?$ index.php?page=forum&action=moderation [L,QSA]
 
 # Galeria
 RewriteRule ^galeria/?$ index.php?page=gallery [L,QSA]

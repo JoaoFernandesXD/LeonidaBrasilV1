@@ -133,7 +133,7 @@ function handleGetTopics($db, $page, $per_page, $category_id, $search, $sort) {
     }
     
     // Query principal
-    $sql = "SELECT ft.id, ft.title, ft.content, ft.views, ft.replies_count, ft.status,
+    $sql = "SELECT ft.id, ft.title, ft.slug, ft.content, ft.views, ft.replies_count, ft.status,
                    ft.created_at, ft.last_reply_at,
                    fc.name as category_name, fc.icon as category_icon,
                    u.username, u.display_name, u.avatar,
@@ -183,7 +183,7 @@ function handleGetTopics($db, $page, $per_page, $category_id, $search, $sort) {
         }
         
         // URL do tópico
-        $topic['url'] = "/forum/topico/{$topic['id']}";
+        $topic['url'] = "/forum/topico/{$topic['slug']}";
         
         // Informações da última resposta
         if ($topic['last_reply_at'] && $topic['last_reply_username']) {

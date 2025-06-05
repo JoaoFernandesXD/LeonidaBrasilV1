@@ -89,15 +89,15 @@ try {
             }
             break;
             
-        case 'news':
-        case 'noticias':
-            $controller = new NewsController();
-            if ($slug) {
-                $controller->single($slug);
-            } else {
-                $controller->index();
-            }
-            break;
+            case 'news':
+                case 'noticias':
+                    $controller = new NewsController();
+                    if ($slug) {
+                        $controller->single($slug);  // ← Página individual
+                    } else {
+                        $controller->index();        // ← Lista de notícias
+                    }
+                    break;
             
         case 'gallery':
         case 'galeria':
@@ -107,7 +107,35 @@ try {
             
         case 'forum':
             $controller = new ForumController();
-            $controller->index();
+            $action = $_GET['action'] ?? 'index';
+            $slug = $_GET['slug'] ?? null;
+            
+            switch ($action) {
+                case 'topic':
+                    if ($slug) {
+                        $controller->topic($slug);
+                    } else {
+                        $controller->index();
+                    }
+                    break;
+                    
+                case 'category':
+                    if ($slug) {
+                        $controller->category($slug);
+                    } else {
+                        $controller->index();
+                    }
+                    break;
+                    
+                case 'create':
+                    $controller->createTopic();
+                    break;
+                    
+                case 'index':
+                default:
+                    $controller->index();
+                    break;
+            }
             break;
             
         case 'radio':

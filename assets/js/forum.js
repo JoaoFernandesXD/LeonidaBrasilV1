@@ -1,6 +1,7 @@
 /**
  * Leonida Brasil - Forum.js
  * JavaScript específico para funcionalidades do fórum
+ * Integrado com API backend - Versão Corrigida
  */
 
 $(document).ready(function() {
@@ -12,7 +13,58 @@ $(document).ready(function() {
     
     class ForumSystem {
         constructor() {
+            this.apiBase = '/api/forum.php';
+            this.currentTopicId = this.getCurrentTopicId();
+            this.currentPage = 1;
+            this.isSubmitting = false; // Prevenir envios duplos
             this.init();
+        }
+        
+        getCurrentTopicId() {
+            // PRIORIDADE 1: Buscar no campo hidden primeiro
+            const hiddenInput = $('input[name="topic_id"]').first();
+            if (hiddenInput.length && hiddenInput.val()) {
+                console.log('Topic ID encontrado no campo hidden:', hiddenInput.val());
+                return parseInt(hiddenInput.val());
+            }
+            
+            // PRIORIDADE 2: Buscar em outros campos hidden
+            const hiddenDataInput = $('input[data-topic-id]').first();
+            if (hiddenDataInput.length && hiddenDataInput.data('topic-id')) {
+                console.log('Topic ID encontrado no data-topic-id:', hiddenDataInput.data('topic-id'));
+                return parseInt(hiddenDataInput.data('topic-id'));
+            }
+            
+            // PRIORIDADE 3: Extrair da URL 
+            const urlMatch = window.location.pathname.match(/\/forum\/topico\/(\d+)/);
+            if (urlMatch) {
+                console.log('Topic ID encontrado na URL:', urlMatch[1]);
+                return parseInt(urlMatch[1]);
+            }
+            
+            // PRIORIDADE 4: Buscar em elementos com data-topic-id
+            const topicElement = $('[data-topic-id]').first();
+            if (topicElement.length && topicElement.data('topic-id')) {
+                console.log('Topic ID encontrado em elemento data-topic-id:', topicElement.data('topic-id'));
+                return parseInt(topicElement.data('topic-id'));
+            }
+            
+            // PRIORIDADE 5: Buscar em elementos de fórum específicos
+            const forumSection = $('.forum-content, .topic-header, .reply-section').first();
+            if (forumSection.length && forumSection.data('topic-id')) {
+                console.log('Topic ID encontrado em seção do fórum:', forumSection.data('topic-id'));
+                return parseInt(forumSection.data('topic-id'));
+            }
+            
+            console.warn('Topic ID NÃO encontrado em nenhum local da página');
+            console.log('Elementos verificados:', {
+                'input[name="topic_id"]': $('input[name="topic_id"]').length,
+                'input[data-topic-id]': $('input[data-topic-id]').length,
+                'url_pattern': window.location.pathname,
+                'data-topic-id_elements': $('[data-topic-id]').length
+            });
+            
+            return null;
         }
         
         init() {
@@ -21,6 +73,207 @@ $(document).ready(function() {
             this.initEditor();
             this.initPageActions();
             this.initUserInteractions();
+            this.loadTopicData();
+            
+            // Debug: mostrar info do tópico atual
+            console.log('Forum System initialized:', {
+                currentTopicId: this.currentTopicId,
+                currentPage: this.currentPage,
+                url: window.location.pathname
+            });
+            
+            // Se não conseguiu pegar o topic_id, mas está numa página de tópico, 
+            // adicionar um campo manual para debug
+            if (!this.currentTopicId && window.location.pathname.includes('/forum')) {
+                console.warn('Topic ID não detectado automaticamente. Adicione data-topic-id ao HTML ou use URL padrão.');
+            }
+        }
+        
+        // ========================================
+        // MANUAL TOPIC ID SETTING (para debug)
+        // ========================================
+        
+        setTopicId(topicId) {
+            this.currentTopicId = parseInt(topicId);
+            console.log('Topic ID definido manualmente:', this.currentTopicId);
+            return this.currentTopicId;
+        }
+        
+        // ========================================
+        // API INTEGRATION - CORRIGIDA
+        // ========================================
+        
+        async apiRequest(endpoint, method = 'GET', data = null) {
+            try {
+                const options = {
+                    method: method,
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-Requested-With': 'XMLHttpRequest'
+                    }
+                };
+                
+                if (data && method !== 'GET') {
+                    options.body = JSON.stringify(data);
+                }
+                
+                let url = this.apiBase;
+                if (endpoint) {
+                    url += (url.includes('?') ? '&' : '?') + endpoint;
+                }
+                
+                console.log('API Request:', method, url, data); // Debug
+                
+                const response = await fetch(url, options);
+                
+                // Verificar se a resposta é JSON
+                const contentType = response.headers.get('content-type');
+                if (!contentType || !contentType.includes('application/json')) {
+                    const text = await response.text();
+                    console.error('Response is not JSON:', text);
+                    throw new Error('Resposta da API não é JSON válido');
+                }
+                
+                const result = await response.json();
+                
+                if (!result.success) {
+                    throw new Error(result.error || 'Erro na requisição');
+                }
+                
+                return result;
+            } catch (error) {
+                console.error('API Error:', error);
+                this.showNotification(`Erro: ${error.message}`, 'error');
+                throw error;
+            }
+        }
+        
+        async loadTopicData() {
+            if (!this.currentTopicId) return;
+            
+            try {
+                const result = await this.apiRequest(`topic=${this.currentTopicId}&page=${this.currentPage}`);
+                this.updateTopicDisplay(result.data);
+                this.updatePagination(result.meta);
+            } catch (error) {
+                console.error('Error loading topic:', error);
+                // Não mostrar erro se for página sem tópico específico
+            }
+        }
+        
+        updateTopicDisplay(data) {
+            const { topic, replies } = data;
+            
+            // Atualizar informações do tópico
+            $('.topic-title').text(topic.title);
+            $('.topic-views').text(topic.formatted_views);
+            $('.topic-author').text(topic.author_name);
+            $('.topic-time').text(topic.time_ago);
+            
+            // Atualizar contador de respostas
+            $('.replies-count').text(replies.length);
+            
+            // Renderizar respostas se existirem
+            if (replies.length > 0) {
+                this.renderReplies(replies);
+            }
+        }
+        
+        renderReplies(replies) {
+            const $repliesContainer = $('.replies-container');
+            
+            replies.forEach(reply => {
+                const replyHtml = this.buildReplyHTML(reply);
+                $repliesContainer.append(replyHtml);
+            });
+            
+            // Re-inicializar eventos para novos elementos
+            this.initReplyActions();
+        }
+        
+        buildReplyHTML(reply) {
+            return `
+                <div class="reply-section" data-reply-id="${reply.id}">
+                    <aside class="reply-user-sidebar">
+                        <div class="user-card">
+                            <div class="user-header">
+                                <div class="username">
+                                    ${reply.author_name}
+                                    <i class="fa fa-check-circle verified" title="Usuário Verificado"></i>
+                                </div>
+                                <div class="user-title">Membro</div>
+                            </div>
+                            
+                            <div class="user-avatar">
+                                <img src="${reply.avatar || 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiBmaWxsPSIjRkYwMDdGIi8+CjxjaXJjbGUgY3g9IjUwIiBjeT0iNDAiIHI9IjE1IiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMjUgODBDMjUgNjcuNSAzNi41IDU3IDUwIDU3Uzc1IDY3LjUgNzUgODBIMjVaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K'}" alt="${reply.author_name}">
+                                <div class="user-status online" title="Online"></div>
+                            </div>
+                            
+                            <div class="user-badges">
+                                <div class="badge simpatico-badge" title="Membro">
+                                    <i class="fa fa-user"></i>
+                                    Membro
+                                </div>
+                            </div>
+                            
+                            <div class="user-stats">
+                                <div class="stat-item">
+                                    <span class="stat-number">${reply.likes || 0}</span>
+                                    <span class="stat-label">curtidas</span>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+
+                    <div class="reply-content">
+                        <div class="reply-header">
+                            <div class="reply-info">
+                                <span class="reply-title">Re: ${$('.topic-title').text()}</span>
+                                <div class="reply-actions">
+                                    <button class="btn btn-success btn-small like-btn" data-reply-id="${reply.id}">
+                                        <i class="fa fa-thumbs-up"></i>
+                                        Curtir
+                                    </button>
+                                    <button class="btn btn-danger btn-small report-btn" data-reply-id="${reply.id}">
+                                        <i class="fa fa-flag"></i>
+                                        Denunciar
+                                    </button>
+                                    <button class="btn btn-warning btn-small quote-btn">
+                                        <i class="fa fa-quote-right"></i>
+                                        Citar
+                                    </button>
+                                    <div class="reply-time">
+                                        <i class="fa fa-clock"></i>
+                                        ${reply.time_ago}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="reply-body">
+                            <div class="reply-text">
+                                ${this.parseBBCodeToHTML(reply.content)}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // ========================================
+        // SISTEMA DE NOTIFICAÇÃO - USANDO O EXISTENTE (SEM ALERT)
+        // ========================================
+        
+        showNotification(message, type = 'info') {
+            // Usar apenas o sistema de notificação existente do site
+            if (typeof window.showNotification === 'function') {
+                window.showNotification(message, type);
+            } else if (typeof window.NotificationSystem === 'object' && window.NotificationSystem.show) {
+                window.NotificationSystem.show(message, type);
+            } else {
+                // Fallback apenas no console - SEM ALERT
+                console.log(`${type.toUpperCase()}: ${message}`);
+            }
         }
         
         // ========================================
@@ -28,26 +281,39 @@ $(document).ready(function() {
         // ========================================
         
         initPostActions() {
-            // Like button
-            $('.like-btn').on('click', function() {
-                const $btn = $(this);
+            // Like button com integração API
+            $(document).off('click', '.like-btn').on('click', '.like-btn', async (e) => {
+                const $btn = $(e.currentTarget);
+                const replyId = $btn.data('reply-id');
                 const isLiked = $btn.hasClass('liked');
                 
-                $btn.toggleClass('liked');
+                if (!replyId) {
+                    this.showNotification('Erro: ID da resposta não encontrado', 'error');
+                    return;
+                }
                 
-                if (isLiked) {
-                    $btn.removeClass('liked').html('<i class="fa fa-thumbs-up"></i>');
-                    NotificationSystem.show('Curtida removida', 'info');
-                } else {
-                    $btn.addClass('liked').html('<i class="fa fa-thumbs-up"></i> Curtido');
-                    NotificationSystem.show('Post curtido!', 'success');
+                try {
+                    const result = await this.apiRequest(`action=like_reply&id=${replyId}`);
+                    
+                    $btn.toggleClass('liked');
+                    
+                    if (isLiked) {
+                        $btn.removeClass('liked').html('<i class="fa fa-thumbs-up"></i> Curtir');
+                        this.showNotification('Curtida removida', 'info');
+                    } else {
+                        $btn.addClass('liked').html('<i class="fa fa-thumbs-up"></i> Curtido');
+                        this.showNotification('Post curtido!', 'success');
+                    }
+                } catch (error) {
+                    this.showNotification('Erro ao curtir post', 'error');
                 }
             });
             
             // Quote button
-            $('.quote-btn').on('click', function() {
-                const postText = $(this).closest('.post-content, .reply-content').find('.post-text, .reply-text').text().trim();
-                const username = $(this).closest('.forum-content, .reply-section').find('.username').first().text().trim();
+            $(document).off('click', '.quote-btn').on('click', '.quote-btn', (e) => {
+                const $btn = $(e.currentTarget);
+                const postText = $btn.closest('.post-content, .reply-content').find('.post-text, .reply-text').text().trim();
+                const username = $btn.closest('.forum-content, .reply-section').find('.username').first().text().trim();
                 
                 const quote = `[quote="${username}"]${postText.substring(0, 200)}${postText.length > 200 ? '...' : ''}[/quote]\n\n`;
                 
@@ -55,7 +321,7 @@ $(document).ready(function() {
                 const currentText = $textarea.val();
                 $textarea.val(quote + currentText).focus();
                 
-                NotificationSystem.show('Citação adicionada ao editor', 'success');
+                this.showNotification('Citação adicionada ao editor', 'success');
                 
                 // Scroll to editor
                 $('html, body').animate({
@@ -64,16 +330,16 @@ $(document).ready(function() {
             });
             
             // Check button (mark as resolved)
-            $('.check-btn').on('click', function() {
-                const $btn = $(this);
+            $('.check-btn').on('click', (e) => {
+                const $btn = $(e.currentTarget);
                 const isResolved = $btn.hasClass('resolved');
                 
                 if (isResolved) {
                     $btn.removeClass('resolved').html('<i class="fa fa-check"></i>');
-                    NotificationSystem.show('Marcação de resolvido removida', 'info');
+                    this.showNotification('Marcação de resolvido removida', 'info');
                 } else {
                     $btn.addClass('resolved').html('<i class="fa fa-check"></i> Resolvido');
-                    NotificationSystem.show('Tópico marcado como resolvido!', 'success');
+                    this.showNotification('Tópico marcado como resolvido!', 'success');
                 }
             });
         }
@@ -83,47 +349,57 @@ $(document).ready(function() {
         // ========================================
         
         initReplyActions() {
-            // Report buttons
-            $('.btn-danger').on('click', function(e) {
+            // Report buttons com integração API
+            $(document).off('click', '.report-btn').on('click', '.report-btn', async (e) => {
                 e.preventDefault();
-                const postType = $(this).closest('.topic-header').length ? 'tópico' : 'resposta';
+                const replyId = $(e.currentTarget).data('reply-id');
+                const postType = replyId ? 'resposta' : 'tópico';
                 
-                if (confirm(`Tem certeza que deseja denunciar este ${postType}?`)) {
-                    NotificationSystem.show(`${postType.charAt(0).toUpperCase() + postType.slice(1)} denunciado! Nossa equipe irá analisar.`, 'warning');
+                if (confirm(`Tem certeza que deseja denunciar esta ${postType}?`)) {
+                    try {
+                        // Aqui você pode implementar o endpoint de denúncia
+                        this.showNotification(`${postType.charAt(0).toUpperCase() + postType.slice(1)} denunciada! Nossa equipe irá analisar.`, 'warning');
+                    } catch (error) {
+                        this.showNotification('Erro ao enviar denúncia', 'error');
+                    }
                 }
-            });
-            
-            // Citation buttons
-            $('.btn-warning').on('click', function(e) {
-                e.preventDefault();
-                ForumSystem.prototype.initPostActions.call(this);
             });
         }
         
         // ========================================
-        // EDITOR FUNCTIONALITY
+        // EDITOR FUNCTIONALITY - SEM RASCUNHO
         // ========================================
         
         initEditor() {
             const $textarea = $('.editor-textarea');
-            const $toolbar = $('.editor-toolbar');
+            
+            // Remover eventos anteriores para evitar duplicação
+            $('.editor-btn[data-tag]').off('click.forum');
+            $('.editor-btn[data-tag="emoji"]').off('click.forum');
+            $('.preview-btn').off('click.forum');
+            $('.reply-form-section form, .editor-footer .btn-primary').off('click.forum');
+            $textarea.off('input.forum click.forum focus.forum');
             
             // BBCode buttons
-            $('.editor-btn[data-tag]').on('click', function() {
-                const tag = $(this).data('tag');
-                const selection = ForumSystem.getSelectedText($textarea[0]);
-                
-                ForumSystem.insertBBCode($textarea[0], tag, selection);
+            $('.editor-btn[data-tag]').on('click.forum', (e) => {
+                e.preventDefault();
+                const tag = $(e.currentTarget).data('tag');
+                if (tag !== 'emoji') {
+                    const selection = ForumSystem.getSelectedText($textarea[0]);
+                    ForumSystem.insertBBCode($textarea[0], tag, selection);
+                }
             });
             
             // Emoji button
-            $('.editor-btn[data-tag="emoji"]').on('click', function() {
+            $('.editor-btn[data-tag="emoji"]').on('click.forum', (e) => {
+                e.preventDefault();
                 ForumSystem.showEmojiPicker($textarea);
             });
             
             // Live preview
-            $('.preview-btn').on('click', function() {
-                const $btn = $(this);
+            $('.preview-btn').on('click.forum', (e) => {
+                e.preventDefault();
+                const $btn = $(e.currentTarget);
                 const $preview = $('.editor-preview');
                 
                 if ($btn.hasClass('active')) {
@@ -136,32 +412,28 @@ $(document).ready(function() {
                 }
             });
             
-            // Auto-save draft
-            let saveTimer;
-            $textarea.on('input', function() {
-                clearTimeout(saveTimer);
-                saveTimer = setTimeout(() => {
-                    ForumSystem.saveDraft($textarea.val());
-                }, 2000);
-            });
-            
-            // Load saved draft
-            ForumSystem.loadDraft($textarea);
-            
-            // Submit form
-            $('.reply-form-section form, .editor-footer .btn-primary').on('click', function(e) {
+            // Submit form com integração API - SEM EVENTO DUPLICADO
+            $('.reply-form-section form, .editor-footer .btn-primary').on('click.forum', async (e) => {
                 e.preventDefault();
-                ForumSystem.submitReply($textarea);
+                e.stopPropagation();
+                
+                // Verificar se não é apenas um clique na textarea
+                if ($(e.target).is('textarea') || $(e.target).closest('.editor-textarea').length) {
+                    return;
+                }
+                
+                await this.submitReply($textarea);
             });
             
-            // Character counter
-            $textarea.on('input', function() {
-                const length = $(this).val().length;
+            // Character counter - SEM trigger no click
+            $textarea.on('input.forum', () => {
+                const length = $textarea.val().length;
                 const maxLength = 5000;
-                const $counter = $('.char-counter');
+                let $counter = $('.char-counter');
                 
                 if (!$counter.length) {
                     $('.editor-footer').prepend(`<div class="char-counter">${length}/${maxLength} caracteres</div>`);
+                    $counter = $('.char-counter');
                 } else {
                     $counter.text(`${length}/${maxLength} caracteres`);
                     
@@ -171,6 +443,11 @@ $(document).ready(function() {
                         $counter.removeClass('warning');
                     }
                 }
+            });
+            
+            // Evitar submit ao clicar na textarea
+            $textarea.on('click.forum focus.forum', (e) => {
+                e.stopPropagation();
             });
         }
         
@@ -272,11 +549,15 @@ $(document).ready(function() {
                 textarea.focus();
                 
                 $picker.remove();
-                NotificationSystem.show('Emoji adicionado!', 'success');
+                
+                // Usar o sistema de notificação existente
+                if (typeof window.showNotification === 'function') {
+                    window.showNotification('Emoji adicionado!', 'success');
+                }
             });
             
             // Close picker when clicking outside
-            $(document).on('click', function(e) {
+            $(document).one('click', function(e) {
                 if (!$(e.target).closest('.emoji-picker, .editor-btn[data-tag="emoji"]').length) {
                     $picker.remove();
                 }
@@ -308,106 +589,128 @@ $(document).ready(function() {
                 .replace(/\[url=(.*?)\](.*?)\[\/url\]/g, '<a href="$1" target="_blank">$2</a>')
                 .replace(/\[img\](.*?)\[\/img\]/g, '<img src="$1" style="max-width: 100%; height: auto;">')
                 .replace(/\[quote="(.*?)"\](.*?)\[\/quote\]/g, '<blockquote><strong>$1 disse:</strong><br>$2</blockquote>')
-                .replace(/\[quote\](.*?)\[\/quote\]/g, '<blockquote>$2</blockquote>')
+                .replace(/\[quote\](.*?)\[\/quote\]/g, '<blockquote>$1</blockquote>')
                 .replace(/\n/g, '<br>');
             
             return `<div class="preview-content">${html}</div>`;
         }
         
-        static saveDraft(content) {
-            try {
-                localStorage.setItem('leonida_forum_draft', content);
-                $('.char-counter').after('<span class="draft-saved">Rascunho salvo</span>');
-                setTimeout(() => {
-                    $('.draft-saved').fadeOut(300, function() {
-                        $(this).remove();
-                    });
-                }, 2000);
-            } catch (e) {
-                // localStorage not available
-            }
+        parseBBCodeToHTML(text) {
+            // Método para converter BBCode em HTML para exibição
+            return ForumSystem.parseBBCode(text);
         }
         
-        static loadDraft(textarea) {
-            try {
-                const draft = localStorage.getItem('leonida_forum_draft');
-                if (draft && draft.trim()) {
-                    textarea.val(draft);
-                    NotificationSystem.show('Rascunho carregado', 'info');
-                }
-            } catch (e) {
-                // localStorage not available
-            }
-        }
-        
-        static submitReply(textarea) {
+        async submitReply(textarea) {
             const content = textarea.val().trim();
             
             if (!content) {
-                NotificationSystem.show('Digite uma mensagem antes de enviar!', 'warning');
+                this.showNotification('Digite uma mensagem antes de enviar!', 'warning');
                 textarea.focus();
                 return;
             }
             
             if (content.length < 10) {
-                NotificationSystem.show('A mensagem deve ter pelo menos 10 caracteres!', 'warning');
+                this.showNotification('A mensagem deve ter pelo menos 10 caracteres!', 'warning');
                 textarea.focus();
                 return;
             }
+            
+            // Verificar se já está processando para evitar envios duplos
+            if (this.isSubmitting) {
+                console.log('Já está enviando, ignorando...');
+                return;
+            }
+            
+            this.isSubmitting = true;
+            
+            // SEMPRE verificar o campo hidden antes de enviar
+            const currentTopicId = this.getCurrentTopicId();
+            
+            if (!currentTopicId) {
+                this.showNotification('Erro: ID do tópico não encontrado. Verifique se existe o campo <input name="topic_id">.', 'error');
+                console.error('Elementos na página:', {
+                    'input[name="topic_id"]': $('input[name="topic_id"]'),
+                    'valor_do_campo': $('input[name="topic_id"]').val(),
+                    'url_atual': window.location.pathname
+                });
+                this.isSubmitting = false;
+                return;
+            }
+            
+            // Atualizar o currentTopicId se mudou
+            this.currentTopicId = currentTopicId;
+            
+            console.log('Enviando resposta:', {
+                content: content,
+                topic_id: this.currentTopicId,
+                content_length: content.length,
+                campo_hidden_valor: $('input[name="topic_id"]').val()
+            });
             
             // Disable form
             $('.editor-textarea, .editor-btn, .btn-primary').prop('disabled', true);
             $('.btn-primary').html('<i class="fa fa-spinner fa-spin"></i> Enviando...');
             
-            // Simulate submission
-            setTimeout(() => {
-                NotificationSystem.show('Resposta enviada com sucesso!', 'success');
+            try {
+                const data = {
+                    type: 'reply',
+                    content: content,
+                    topic_id: this.currentTopicId
+                };
                 
-                // Clear draft
-                try {
-                    localStorage.removeItem('leonida_forum_draft');
-                } catch (e) {}
+                console.log('Dados sendo enviados para API:', data);
+                
+                const result = await this.apiRequest('', 'POST', data);
+                
+                this.showNotification('Resposta enviada com sucesso!', 'success');
                 
                 // Reset form
                 textarea.val('');
                 $('.editor-textarea, .editor-btn, .btn-primary').prop('disabled', false);
                 $('.btn-primary').html('<i class="fa fa-paper-plane"></i> Enviar');
                 
-                // Add new reply to page (simulation)
-                ForumSystem.addNewReply(content);
+                // Simular adição do novo comentário sem recarregar
+                this.addNewReplyToPage(content);
                 
-            }, 2000);
+            } catch (error) {
+                $('.editor-textarea, .editor-btn, .btn-primary').prop('disabled', false);
+                $('.btn-primary').html('<i class="fa fa-paper-plane"></i> Enviar');
+                this.showNotification('Erro ao enviar resposta: ' + error.message, 'error');
+            } finally {
+                this.isSubmitting = false;
+            }
         }
         
-        static addNewReply(content) {
-            const newReply = `
+        addNewReplyToPage(content) {
+            // Adicionar o novo comentário na página sem recarregar
+            const newReplyHtml = `
                 <div class="reply-section new-reply" style="opacity: 0;">
                     <aside class="reply-user-sidebar">
                         <div class="user-card">
                             <div class="user-header">
                                 <div class="username">
-                                    Usuário
+                                    Você
                                     <i class="fa fa-check-circle verified" title="Usuário Verificado"></i>
                                 </div>
                                 <div class="user-title">Membro</div>
                             </div>
                             
                             <div class="user-avatar">
-                                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiBmaWxsPSIjRkYwMDdGIi8+CjxjaXJjbGUgY3g9IjUwIiBjeT0iNDAiIHI9IjE1IiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMjUgODBDMjUgNjcuNSAzNi41IDU3IDUwIDU3Uzc1IDY3LjUgNzUgODBIMjVaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K" alt="Usuário">
+                                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiBmaWxsPSIjRkYwMDdGIi8+CjxjaXJjbGUgY3g9IjUwIiBjeT0iNDAiIHI9IjE1IiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMjUgODBDMjUgNjcuNSAzNi41IDU3IDUwIDU3Uzc1IDY3LjUgNzUgODBIMjVaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K" alt="Você">
                                 <div class="user-status online" title="Online"></div>
                             </div>
                             
                             <div class="user-badges">
-                                <div class="badge simpatico-badge" title="Novo Membro">
+                                <div class="badge simpatico-badge" title="Membro">
                                     <i class="fa fa-user"></i>
-                                    Novo Membro
+                                    Membro
                                 </div>
                             </div>
                             
                             <div class="user-stats">
                                 <div class="stat-item">
-                                    <span class="stat-number">1</span>
-                                    <span class="stat-label">mensagens</span>
+                                    <span class="stat-number">0</span>
+                                    <span class="stat-label">curtidas</span>
                                 </div>
                             </div>
                         </div>
@@ -416,19 +719,11 @@ $(document).ready(function() {
                     <div class="reply-content">
                         <div class="reply-header">
                             <div class="reply-info">
-                                <span class="reply-title">Re: Teorias sobre o final de GTA VI</span>
+                                <span class="reply-title">Re: ${$('.topic-title').text() || 'Tópico'}</span>
                                 <div class="reply-actions">
-                                    <button class="btn btn-danger btn-small">
-                                        <i class="fa fa-flag"></i>
-                                        Denunciar
-                                    </button>
-                                    <button class="btn btn-warning btn-small">
-                                        <i class="fa fa-quote-right"></i>
-                                        Citar
-                                    </button>
                                     <div class="reply-time">
                                         <i class="fa fa-clock"></i>
-                                        agora
+                                        agora mesmo
                                     </div>
                                 </div>
                             </div>
@@ -436,14 +731,14 @@ $(document).ready(function() {
 
                         <div class="reply-body">
                             <div class="reply-text">
-                                <p>${content.replace(/\n/g, '</p><p>')}</p>
+                                ${this.parseBBCodeToHTML(content)}
                             </div>
                         </div>
                     </div>
                 </div>
             `;
             
-            const $newReply = $(newReply);
+            const $newReply = $(newReplyHtml);
             $('.reply-form-section').before($newReply);
             
             // Animate in
@@ -453,11 +748,6 @@ $(document).ready(function() {
             $('html, body').animate({
                 scrollTop: $newReply.offset().top - 100
             }, 800);
-            
-            // Re-initialize events for new reply
-            setTimeout(() => {
-                ForumSystem.prototype.initReplyActions();
-            }, 100);
         }
         
         // ========================================
@@ -474,7 +764,10 @@ $(document).ready(function() {
                 e.preventDefault();
                 const text = $(this).text().trim();
                 if (text !== 'Teorias sobre o final de GTA VI') {
-                    NotificationSystem.show(`Navegando para: ${text}`, 'info');
+                    // Usar sistema de notificação existente
+                    if (typeof window.showNotification === 'function') {
+                        window.showNotification(`Navegando para: ${text}`, 'info');
+                    }
                 }
             });
             
@@ -503,8 +796,56 @@ $(document).ready(function() {
             });
         }
         
+        updatePagination(meta) {
+            if (!meta || !meta.total_pages || meta.total_pages <= 1) {
+                $('.pagination').hide();
+                return;
+            }
+            
+            const { current_page, total_pages, has_prev, has_next } = meta;
+            
+            let paginationHtml = '<div class="pagination">';
+            
+            // Previous button
+            if (has_prev) {
+                paginationHtml += `<a href="#" class="pagination-btn" data-page="${current_page - 1}"><i class="fa fa-angle-left"></i></a>`;
+            } else {
+                paginationHtml += `<span class="pagination-btn disabled"><i class="fa fa-angle-left"></i></span>`;
+            }
+            
+            // Page numbers
+            for (let i = 1; i <= total_pages; i++) {
+                if (i === current_page) {
+                    paginationHtml += `<span class="pagination-btn active">${i}</span>`;
+                } else {
+                    paginationHtml += `<a href="#" class="pagination-btn" data-page="${i}">${i}</a>`;
+                }
+            }
+            
+            // Next button
+            if (has_next) {
+                paginationHtml += `<a href="#" class="pagination-btn" data-page="${current_page + 1}"><i class="fa fa-angle-right"></i></a>`;
+            } else {
+                paginationHtml += `<span class="pagination-btn disabled"><i class="fa fa-angle-right"></i></span>`;
+            }
+            
+            paginationHtml += '</div>';
+            
+            $('.pagination').html(paginationHtml);
+            
+            // Handle pagination clicks
+            $('.pagination-btn[data-page]').on('click', async (e) => {
+                e.preventDefault();
+                const page = parseInt($(e.currentTarget).data('page'));
+                if (page && page !== current_page) {
+                    this.currentPage = page;
+                    await this.loadTopicData();
+                }
+            });
+        }
+        
         // ========================================
-        // MODAL SYSTEMS
+        // MODAL SYSTEMS (mantendo os originais)
         // ========================================
         
         static showInfoModal() {
@@ -626,7 +967,10 @@ $(document).ready(function() {
             // Handle form submission
             $modal.find('.report-form').on('submit', function(e) {
                 e.preventDefault();
-                NotificationSystem.show('Relatório enviado! Nossa equipe irá analisar.', 'success');
+                // Usar sistema de notificação existente
+                if (typeof window.showNotification === 'function') {
+                    window.showNotification('Relatório enviado! Nossa equipe irá analisar.', 'success');
+                }
                 ForumSystem.closeModal();
             });
         }
@@ -793,19 +1137,146 @@ $(document).ready(function() {
             // User card click
             $('.user-card').on('click', '.username', function() {
                 const username = $(this).text().trim();
-                NotificationSystem.show(`Visualizando perfil de ${username}`, 'info');
+                if (typeof window.showNotification === 'function') {
+                    window.showNotification(`Visualizando perfil de ${username}`, 'info');
+                }
             });
             
             // Status indicator tooltip
             $('.user-status').each(function() {
                 const title = $(this).attr('title');
-                if (title) {
+                if (title && typeof $(this).tooltip === 'function') {
                     $(this).tooltip({
                         placement: 'top',
                         container: 'body'
                     });
                 }
             });
+        }
+        
+        // ========================================
+        // TOPIC MANAGEMENT
+        // ========================================
+        
+        async loadTopics(categoryId = null, page = 1) {
+            try {
+                let endpoint = `page=${page}`;
+                if (categoryId) {
+                    endpoint += `&category=${categoryId}`;
+                }
+                
+                const result = await this.apiRequest(endpoint);
+                this.renderTopicsList(result.data);
+                this.updatePagination(result.meta);
+                
+                return result;
+            } catch (error) {
+                console.error('Error loading topics:', error);
+                this.showNotification('Erro ao carregar tópicos', 'error');
+            }
+        }
+        
+        renderTopicsList(topics) {
+            const $container = $('.topics-list, .forum-topics');
+            if (!$container.length) return;
+            
+            $container.empty();
+            
+            topics.forEach(topic => {
+                const topicHtml = this.buildTopicHTML(topic);
+                $container.append(topicHtml);
+            });
+        }
+        
+        buildTopicHTML(topic) {
+            return `
+                <div class="topic-item ${topic.is_pinned ? 'pinned' : ''}" data-topic-id="${topic.id}">
+                    <div class="topic-icon">
+                        ${topic.is_pinned ? '<i class="fa fa-thumbtack"></i>' : '<i class="fa fa-comment"></i>'}
+                    </div>
+                    <div class="topic-content">
+                        <h3 class="topic-title">
+                            <a href="/forum/topico/${topic.id}">${topic.title}</a>
+                            ${topic.is_locked ? '<i class="fa fa-lock"></i>' : ''}
+                        </h3>
+                        <div class="topic-meta">
+                            <span class="topic-author">por ${topic.author_name}</span>
+                            <span class="topic-category">${topic.category_name}</span>
+                            <span class="topic-time">${topic.time_ago}</span>
+                        </div>
+                        <div class="topic-excerpt">${topic.excerpt || ''}</div>
+                    </div>
+                    <div class="topic-stats">
+                        <div class="stat">
+                            <span class="stat-number">${topic.replies_count}</span>
+                            <span class="stat-label">respostas</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">${topic.formatted_views}</span>
+                            <span class="stat-label">visualizações</span>
+                        </div>
+                    </div>
+                    <div class="topic-last-post">
+                        ${topic.last_reply_author ? `
+                            <div class="last-reply-author">${topic.last_reply_author}</div>
+                            <div class="last-reply-time">${topic.last_reply_time_ago}</div>
+                        ` : `
+                            <div class="last-reply-author">${topic.author_name}</div>
+                            <div class="last-reply-time">${topic.time_ago}</div>
+                        `}
+                    </div>
+                </div>
+            `;
+        }
+        
+        // ========================================
+        // SEARCH FUNCTIONALITY
+        // ========================================
+        
+        async searchForum(query) {
+            try {
+                const result = await this.apiRequest(`action=search&q=${encodeURIComponent(query)}`);
+                this.renderSearchResults(result.data);
+                return result;
+            } catch (error) {
+                console.error('Error searching forum:', error);
+                this.showNotification('Erro na busca', 'error');
+            }
+        }
+        
+        renderSearchResults(results) {
+            const $container = $('.search-results');
+            if (!$container.length) return;
+            
+            $container.empty();
+            
+            if (results.length === 0) {
+                $container.html('<div class="no-results">Nenhum resultado encontrado.</div>');
+                return;
+            }
+            
+            results.forEach(result => {
+                const resultHtml = `
+                    <div class="search-result">
+                        <h4><a href="${result.url}">${result.highlight}</a></h4>
+                        <div class="result-meta">
+                            <span class="result-type">${this.getResultTypeLabel(result.type)}</span>
+                            <span class="result-author">por ${result.author_name}</span>
+                            <span class="result-time">${result.time_ago}</span>
+                        </div>
+                        <div class="result-excerpt">${result.excerpt_highlight}</div>
+                    </div>
+                `;
+                $container.append(resultHtml);
+            });
+        }
+        
+        getResultTypeLabel(type) {
+            const labels = {
+                'topic': 'Tópico',
+                'reply': 'Resposta'
+            };
+            return labels[type] || type;
         }
     }
     
@@ -816,7 +1287,7 @@ $(document).ready(function() {
     // Initialize forum system
     const forumSystem = new ForumSystem();
     
-    // Add forum-specific styles
+    // Add forum-specific styles (apenas os modals)
     const forumStyles = `
         <style>
         .modal-overlay {
@@ -858,7 +1329,7 @@ $(document).ready(function() {
         }
         
         .modal-header {
-            background: var(--color-primary);
+            background: var(--color-primary, #007cba);
             color: white;
             padding: 16px;
             display: flex;
@@ -925,7 +1396,7 @@ $(document).ready(function() {
         .help-section,
         .rule-section {
             padding: 12px;
-            border-left: 4px solid var(--color-primary);
+            border-left: 4px solid var(--color-primary, #007cba);
             background: #f8f9fa;
             border-radius: 0 4px 4px 0;
         }
@@ -938,7 +1409,7 @@ $(document).ready(function() {
         .help-section h4,
         .rule-section h4 {
             margin: 0 0 8px 0;
-            color: var(--color-primary);
+            color: var(--color-primary, #007cba);
             font-size: 14px;
         }
         
@@ -950,7 +1421,7 @@ $(document).ready(function() {
         
         .bbcode-section h4 {
             margin: 0 0 8px 0;
-            color: var(--color-primary);
+            color: var(--color-primary, #007cba);
         }
         
         .bbcode-example {
@@ -1038,7 +1509,7 @@ $(document).ready(function() {
         
         .preview-content blockquote {
             background: #f8f9fa;
-            border-left: 4px solid var(--color-primary);
+            border-left: 4px solid var(--color-primary, #007cba);
             padding: 8px 12px;
             margin: 8px 0;
             border-radius: 0 4px 4px 0;
@@ -1059,30 +1530,98 @@ $(document).ready(function() {
         }
         
         .new-reply {
-            border-left: 4px solid var(--color-success);
+            border-left: 4px solid var(--color-success, #28a745);
         }
         
-        .draft-saved {
-            color: var(--color-success);
+        /* Topic and search result styles */
+        .topic-item {
+            display: grid;
+            grid-template-columns: auto 1fr auto auto;
+            gap: 16px;
+            padding: 16px;
+            border-bottom: 1px solid #e9ecef;
+            align-items: center;
+        }
+        
+        .topic-item.pinned {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+        }
+        
+        .topic-icon {
+            font-size: 18px;
+            color: #6c757d;
+        }
+        
+        .topic-content h3 {
+            margin: 0 0 8px 0;
+            font-size: 16px;
+        }
+        
+        .topic-meta {
+            font-size: 12px;
+            color: #6c757d;
+            display: flex;
+            gap: 12px;
+        }
+        
+        .topic-stats {
+            text-align: center;
+        }
+        
+        .stat {
+            margin-bottom: 4px;
+        }
+        
+        .stat-number {
+            display: block;
+            font-weight: 600;
+            font-size: 16px;
+        }
+        
+        .stat-label {
             font-size: 11px;
-            margin-left: 8px;
-            opacity: 0;
-            animation: fadeInOut 2s ease;
+            color: #6c757d;
         }
         
-        @keyframes fadeInOut {
-            0%, 100% { opacity: 0; }
-            50% { opacity: 1; }
+        .search-result {
+            padding: 16px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .search-result h4 {
+            margin: 0 0 8px 0;
+            font-size: 16px;
+        }
+        
+        .result-meta {
+            font-size: 12px;
+            color: #6c757d;
+            margin-bottom: 8px;
+        }
+        
+        .result-excerpt {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        .no-results {
+            text-align: center;
+            padding: 40px;
+            color: #6c757d;
+            font-style: italic;
         }
         </style>
     `;
     
     $('head').append(forumStyles);
     
-    // Welcome message for forum
+    // Welcome message for forum usando sistema existente
     setTimeout(() => {
-        NotificationSystem.show('Bem-vindo ao Fórum Leonida Brasil! 💬', 'info');
+        if (typeof window.showNotification === 'function') {
+            window.showNotification('Bem-vindo ao Fórum Leonida Brasil! 💬', 'info');
+        }
     }, 1500);
     
-    console.log('🎮 Forum system loaded successfully!');
+    console.log('🎮 Forum system loaded successfully with API integration!');
 });

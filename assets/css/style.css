@@ -2163,3 +2163,152 @@ body {
     flex-direction: column;
     gap: 5px;
 }
+/* =================================================
+   COMMENT LOGIN REQUIRED BOX - Leonida Brasil Style
+   ================================================= */
+
+   .comment-login-required {
+    background: #1a1a2e;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin: 20px 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.comment-login-required::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+    background-size: 300% 100%;
+    animation: gradientShift 3s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.login-message {
+    padding: 30px 25px;
+    text-align: center;
+}
+
+.login-message i {
+    color: #4ecdc4;
+    font-size: 40px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.login-message h4 {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 10px 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.login-message p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    margin: 0 0 20px 0;
+    line-height: 1.5;
+}
+
+.login-message .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #4ecdc4, #45b7d1);
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.login-message .btn:hover {
+    background: linear-gradient(135deg, #45b7d1, #4ecdc4);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(78, 205, 196, 0.3);
+}
+
+.login-message .btn i {
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .login-message {
+        padding: 25px 20px;
+    }
+    
+    .login-message i {
+        font-size: 36px;
+        margin-bottom: 12px;
+    }
+    
+    .login-message h4 {
+        font-size: 16px;
+    }
+    
+    .login-message p {
+        font-size: 13px;
+        margin-bottom: 18px;
+    }
+    
+    .login-message .btn {
+        padding: 9px 18px;
+        font-size: 13px;
+    }
+}
+
+/* Variação mais compacta se necessário */
+.comment-login-required.compact {
+    margin: 15px 0;
+}
+
+.comment-login-required.compact .login-message {
+    padding: 20px;
+}
+
+.comment-login-required.compact .login-message i {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.comment-login-required.compact .login-message h4 {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.comment-login-required.compact .login-message p {
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.comment-login-required.compact .login-message .btn {
+    padding: 8px 16px;
+    font-size: 13px;
+}
+a {
+    text-decoration: none; /* Remove o sublinhado */
+    color: inherit; /* Remove a cor azul, usando a cor do elemento pai */
+}
+
+a:hover, a:active, a:focus {
+    text-decoration: none; /* Garante que o sublinhado não aparece no hover, active ou focus */
+    color: inherit; /* Mantém a cor consistente */
+}

@@ -934,6 +934,4 @@ $(document).ready(function() {
         NotificationSystem.show('🗞️ Use / para buscar, 1-6 para filtros, G/L para visualização', 'info', 4000);
     }, 1500);
     
-    // Log successful initialization
-    console.log('📰 News page system loaded successfully!');
 });

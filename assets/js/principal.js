@@ -227,7 +227,7 @@ $(document).ready(function() {
                 const isFirstFeatured = index === 0;
                 
                 html += `
-                    <article class="news-item ${isFirstFeatured ? 'featured' : ''}" data-id="${news.id}">
+                    <a href="/noticia/${news.slug}"><article class="news-item ${isFirstFeatured ? 'featured' : ''}" data-id="${news.id}">
                         <div class="news-thumb" style="background-image: url(${news.featured_image || 'https://www.gtavice.net/content/images/brian-hi-res-headshot-artwork.jpg'}); object-fit: cover; background-size: cover; background-position: center;">
                             <div class="news-badge ${isFirstFeatured ? 'featured' : categoryClass}">
                                 ${isFirstFeatured ? 'Destaque' : this.formatCategory(news.category)}
@@ -251,7 +251,7 @@ $(document).ready(function() {
                                 <span><i class="fa fa-comments"></i>${news.comments_count || 0}</span>
                             </div>
                         </div>
-                    </article>
+                    </article></a>
                 `;
             });
             
@@ -268,7 +268,7 @@ $(document).ready(function() {
                 const avatarUrl = topic.avatar || 'https://www.gtavice.net/content/images/gta-vi-mud-girl-artwork-by-lisamixart.jpeg';
                 
                 html += `
-                    <div class="forum-item ${isPinned ? 'pinned' : ''}" data-id="${topic.id}">
+                    <a href="${topic.url}"><div class="forum-item ${isPinned ? 'pinned' : ''}" data-id="${topic.id}">
                         <div class="forum-avatar" style="background-image: url(${avatarUrl}); object-fit: cover; background-size: cover; background-position: center;">
                             ${isPinned ? '<i class="fa fa-thumbtack"></i>' : ''}
                         </div>
@@ -286,7 +286,7 @@ $(document).ready(function() {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div></a>
                 `;
             });
             
@@ -373,12 +373,6 @@ $(document).ready(function() {
         reinitNewsInteractions() {
             // Reinicializar eventos após atualização do conteúdo
             $('.news-item').off('click').on('click', function() {
-                const newsId = $(this).data('id');
-                const title = $(this).find('h3').text();
-                
-                // Simular navegação para notícia individual
-                NotificationSystem.show(`Abrindo: ${title}`, 'info');
-                window.location.href = `${CONFIG.api.baseUrl}/noticia/${newsId}`;
             });
             
             $('.news-item').hover(
@@ -389,16 +383,7 @@ $(document).ready(function() {
         
         reinitForumInteractions() {
             $('.forum-item').off('click').on('click', function() {
-                const topicId = $(this).data('id');
-                const title = $(this).find('h4').text();
-                
-                NotificationSystem.show(`Abrindo tópico: ${title}`, 'info');
-                window.location.href = `${CONFIG.api.baseUrl}/forum/topico/${topicId}`;
-                
-                // Incrementar visualizações (simulado)
-                const $views = $(this).find('.forum-stats span:last-child');
-                const currentViews = parseInt($views.text().replace(/\D/g, '')) || 0;
-                $views.html(`<i class="fa fa-eye"></i>${currentViews + 1}`);
+               
             });
         }
     }
@@ -643,7 +628,7 @@ $(document).ready(function() {
             this.addToHistory(query);
             
             // Redirecionar para página de busca
-            window.location.href = `${CONFIG.api.baseUrl}/busca?q=${encodeURIComponent(query)}`;
+            window.location.href = `${CONFIG.api.baseUrl}/busca/${encodeURIComponent(query)}`;
         }
         
         clearSearch() {
@@ -808,43 +793,10 @@ $(document).ready(function() {
         }
         
         init() {
-            this.initNewsInteractions();
-            this.initForumInteractions();
             this.initWidgetInteractions();
             this.initPlayerWidget();
         }
         
-        initNewsInteractions() {
-            $('.news-item').on('click', function() {
-                const newsId = $(this).data('id');
-                const title = $(this).find('h3').text();
-                
-                if (newsId) {
-                    window.location.href = `${CONFIG.api.baseUrl}/noticia/${newsId}`;
-                } else {
-                    NotificationSystem.show(`Abrindo: ${title}`, 'info');
-                }
-            });
-            
-            // Hover effects
-            $('.news-item').hover(
-                function() { $(this).find('.news-stats').fadeIn(200); },
-                function() { $(this).find('.news-stats').fadeOut(150); }
-            );
-        }
-        
-        initForumInteractions() {
-            $('.forum-item').on('click', function() {
-                const topicId = $(this).data('id');
-                const title = $(this).find('h4').text();
-                
-                if (topicId) {
-                    window.location.href = `${CONFIG.api.baseUrl}/forum/topico/${topicId}`;
-                } else {
-                    NotificationSystem.show(`Abrindo tópico: ${title}`, 'info');
-                }
-            });
-        }
         
         initWidgetInteractions() {
             // Ranking interactions
@@ -937,18 +889,7 @@ $(document).ready(function() {
                 }
             });
             
-            // Clique nos links de navegação - URLs reais
-            this.$navItems.find('a').on('click', function(e) {
-                const href = $(this).attr('href');
-                if (href === '#' || href.startsWith('#')) {
-                    e.preventDefault();
-                    Navigation.showComingSoon($(this).text().trim());
-                } else {
-                    // Permitir navegação normal para URLs válidas
-                    return true;
-                }
-            });
-            
+           
             // Fechar dropdowns ao clicar fora
             $(document).on('click', (e) => {
                 if (!$(e.target).closest('.nav-item').length) {
@@ -1159,7 +1100,7 @@ $(document).ready(function() {
             $('.topic-tag').on('click', function(e) {
                 e.preventDefault();
                 const tag = $(this).text().replace('#', '');
-                window.location.href = `${CONFIG.api.baseUrl}/busca?q=${encodeURIComponent(tag)}`;
+                window.location.href = `${CONFIG.api.baseUrl}/busca/${encodeURIComponent(tag)}`;
             });
         }
         
@@ -1256,16 +1197,10 @@ $(document).ready(function() {
         const userName = SITE_DATA.currentUser?.display_name || SITE_DATA.currentUser?.username;
         if (userName) {
             NotificationSystem.show(`Bem-vindo de volta, ${userName}! 🌴`, 'success');
-        } else {
-            NotificationSystem.show('Bem-vindo ao Leonida Brasil! 🌴', 'success');
-        }
+        } 
     }, 1000);
     
-    // ========================================
-    // UTILITÁRIOS E HELPERS GLOBAIS
-    // ========================================
-    
-    // Função global para debug e acesso aos sistemas
+
     window.LeonidaBrasil = {
         config: CONFIG,
         data: SITE_DATA,
@@ -1282,14 +1217,5 @@ $(document).ready(function() {
         notify: NotificationSystem.show.bind(NotificationSystem)
     };
     
-    // Função de utilidade para debug
-    window.debugLeonida = function() {
-        console.log('🎮 Leonida Brasil Debug Info:');
-        console.log('Site Data:', SITE_DATA);
-        console.log('Config:', CONFIG);
-        console.log('Systems:', window.LeonidaBrasil.systems);
-    };
-    
-  
     
 });

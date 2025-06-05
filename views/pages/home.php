@@ -1,4 +1,3 @@
-<!-- views/pages/home.php -->
 <!-- Página inicial dinâmica do Leonida Brasil -->
     <!-- Main Content -->
 <main class="main-container">
@@ -209,7 +208,7 @@
         <div class="news-grid">
             <?php if (!empty($latest_news)): ?>
                 <?php foreach ($latest_news as $index => $news): ?>
-                    <article class="news-item <?= $news['is_featured'] ? 'featured' : '' ?>">
+                    <a href="<?php echo site_url('noticia/' . $news['slug']); ?>"><article class="news-item <?= $news['is_featured'] ? 'featured' : '' ?>">
                         <div class="news-thumb" style="background-image: url(<?= htmlspecialchars($news['featured_image']) ?>); object-fit: cover; background-size: cover; background-position: center;">
                             <?php if ($news['is_featured']): ?>
                                 <div class="news-badge featured">Destaque</div>
@@ -235,7 +234,7 @@
                                 <span><i class="fa fa-comments"></i><?= $news['comments_count'] ?></span>
                             </div>
                         </div>
-                    </article>
+                    </article></a>
                 <?php endforeach; ?>
             <?php else: ?>
                 <!-- Fallback news quando não há dados -->
