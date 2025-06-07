@@ -1,782 +1,135 @@
-[04-Jun-2025 12:49:25 America/Recife] PHP Fatal error:  Cannot redeclare formatCategoryName() (previously declared in /home/leonidab/staging.leonidabrasil.com.br/api/news.php:465) in /home/leonidab/staging.leonidabrasil.com.br/utils/helpers.php on line 390
-[04-Jun-2025 12:50:17 America/Recife] PHP Fatal error:  Cannot redeclare formatCategoryName() (previously declared in /home/leonidab/staging.leonidabrasil.com.br/api/news.php:465) in /home/leonidab/staging.leonidabrasil.com.br/utils/helpers.php on line 390
-[04-Jun-2025 12:51:44 America/Recife] PHP Fatal error:  Cannot redeclare formatCategoryName() (previously declared in /home/leonidab/staging.leonidabrasil.com.br/api/news.php:465) in /home/leonidab/staging.leonidabrasil.com.br/utils/helpers.php on line 390
-[04-Jun-2025 12:52:54 America/Recife] [2025-06-04 12:52:54] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=1&page=1&per_page=10&sort=recent"}
-[04-Jun-2025 12:52:54 America/Recife] [2025-06-04 12:52:54] COMMENTS: Database loaded from config file
-[04-Jun-2025 12:52:54 America/Recife] [2025-06-04 12:52:54] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 12:52:54 America/Recife] [2025-06-04 12:52:54] COMMENTS: Getting comments
-[04-Jun-2025 12:52:54 America/Recife] [2025-06-04 12:52:54] COMMENTS: Get params | {"content_type":"news","content_id":1,"page":1,"per_page":10,"sort":"recent"}
-[04-Jun-2025 12:52:54 America/Recife] [2025-06-04 12:52:54] COMMENTS: Comments retrieved | {"count":10,"total":15}
-[04-Jun-2025 12:52:54 America/Recife] [2025-06-04 12:52:54] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
-[04-Jun-2025 12:53:13 America/Recife] PHP Fatal error:  Cannot redeclare formatCategoryName() (previously declared in /home/leonidab/staging.leonidabrasil.com.br/api/news.php:465) in /home/leonidab/staging.leonidabrasil.com.br/utils/helpers.php on line 390
-[04-Jun-2025 12:53:23 America/Recife] PHP Fatal error:  Cannot redeclare formatCategoryName() (previously declared in /home/leonidab/staging.leonidabrasil.com.br/api/news.php:465) in /home/leonidab/staging.leonidabrasil.com.br/utils/helpers.php on line 390
-[04-Jun-2025 12:54:02 America/Recife] PHP Fatal error:  Cannot redeclare formatCategoryName() (previously declared in /home/leonidab/staging.leonidabrasil.com.br/api/news.php:465) in /home/leonidab/staging.leonidabrasil.com.br/utils/helpers.php on line 390
-[04-Jun-2025 12:55:38 America/Recife] PHP Fatal error:  Cannot redeclare formatCategoryName() (previously declared in /home/leonidab/staging.leonidabrasil.com.br/api/news.php:470) in /home/leonidab/staging.leonidabrasil.com.br/utils/helpers.php on line 390
-[04-Jun-2025 12:55:41 America/Recife] PHP Fatal error:  Cannot redeclare formatCategoryName() (previously declared in /home/leonidab/staging.leonidabrasil.com.br/api/news.php:470) in /home/leonidab/staging.leonidabrasil.com.br/utils/helpers.php on line 390
-[04-Jun-2025 12:55:42 America/Recife] PHP Fatal error:  Cannot redeclare formatCategoryName() (previously declared in /home/leonidab/staging.leonidabrasil.com.br/api/news.php:470) in /home/leonidab/staging.leonidabrasil.com.br/utils/helpers.php on line 390
-[04-Jun-2025 12:55:42 America/Recife] PHP Fatal error:  Cannot redeclare formatCategoryName() (previously declared in /home/leonidab/staging.leonidabrasil.com.br/api/news.php:470) in /home/leonidab/staging.leonidabrasil.com.br/utils/helpers.php on line 390
-[04-Jun-2025 12:55:44 America/Recife] PHP Fatal error:  Cannot redeclare formatCategoryName() (previously declared in /home/leonidab/staging.leonidabrasil.com.br/api/news.php:470) in /home/leonidab/staging.leonidabrasil.com.br/utils/helpers.php on line 390
-[04-Jun-2025 12:55:45 America/Recife] PHP Fatal error:  Cannot redeclare formatCategoryName() (previously declared in /home/leonidab/staging.leonidabrasil.com.br/api/news.php:470) in /home/leonidab/staging.leonidabrasil.com.br/utils/helpers.php on line 390
-[04-Jun-2025 12:55:46 America/Recife] PHP Fatal error:  Cannot redeclare formatCategoryName() (previously declared in /home/leonidab/staging.leonidabrasil.com.br/api/news.php:470) in /home/leonidab/staging.leonidabrasil.com.br/utils/helpers.php on line 390
-[04-Jun-2025 12:57:12 America/Recife] PHP Fatal error:  Uncaught Error: Call to undefined function timeAgo() in /home/leonidab/staging.leonidabrasil.com.br/api/news.php:142
+[06-Jun-2025 10:54:19 America/Recife] PHP Fatal error:  Uncaught Error: Call to undefined function is_logged_in() in /home/leonidab/staging.leonidabrasil.com.br/api/wall-message.php:13
 Stack trace:
-#0 /home/leonidab/staging.leonidabrasil.com.br/api/news.php(57): handleGetNews()
-#1 {main}
-  thrown in /home/leonidab/staging.leonidabrasil.com.br/api/news.php on line 142
-[04-Jun-2025 12:57:12 America/Recife] PHP Fatal error:  Uncaught Error: Call to undefined function timeAgo() in /home/leonidab/staging.leonidabrasil.com.br/api/news.php:142
-Stack trace:
-#0 /home/leonidab/staging.leonidabrasil.com.br/api/news.php(57): handleGetNews()
-#1 {main}
-  thrown in /home/leonidab/staging.leonidabrasil.com.br/api/news.php on line 142
-[04-Jun-2025 12:58:10 America/Recife] PHP Fatal error:  Cannot redeclare formatCategoryName() (previously declared in /home/leonidab/staging.leonidabrasil.com.br/api/news.php:146) in /home/leonidab/staging.leonidabrasil.com.br/utils/helpers.php on line 390
-[04-Jun-2025 12:59:17 America/Recife] PHP Fatal error:  Cannot redeclare formatCategoryName() (previously declared in /home/leonidab/staging.leonidabrasil.com.br/api/news.php:42) in /home/leonidab/staging.leonidabrasil.com.br/utils/helpers.php on line 390
-[04-Jun-2025 12:59:18 America/Recife] PHP Fatal error:  Cannot redeclare formatCategoryName() (previously declared in /home/leonidab/staging.leonidabrasil.com.br/api/news.php:42) in /home/leonidab/staging.leonidabrasil.com.br/utils/helpers.php on line 390
-[04-Jun-2025 12:59:18 America/Recife] PHP Fatal error:  Cannot redeclare formatCategoryName() (previously declared in /home/leonidab/staging.leonidabrasil.com.br/api/news.php:42) in /home/leonidab/staging.leonidabrasil.com.br/utils/helpers.php on line 390
-[04-Jun-2025 12:59:21 America/Recife] PHP Fatal error:  Cannot redeclare formatCategoryName() (previously declared in /home/leonidab/staging.leonidabrasil.com.br/api/news.php:42) in /home/leonidab/staging.leonidabrasil.com.br/utils/helpers.php on line 390
-[04-Jun-2025 12:59:22 America/Recife] PHP Fatal error:  Cannot redeclare formatCategoryName() (previously declared in /home/leonidab/staging.leonidabrasil.com.br/api/news.php:42) in /home/leonidab/staging.leonidabrasil.com.br/utils/helpers.php on line 390
-[04-Jun-2025 12:59:26 America/Recife] PHP Fatal error:  Cannot redeclare formatCategoryName() (previously declared in /home/leonidab/staging.leonidabrasil.com.br/api/news.php:42) in /home/leonidab/staging.leonidabrasil.com.br/utils/helpers.php on line 390
-[04-Jun-2025 12:59:26 America/Recife] PHP Fatal error:  Cannot redeclare formatCategoryName() (previously declared in /home/leonidab/staging.leonidabrasil.com.br/api/news.php:42) in /home/leonidab/staging.leonidabrasil.com.br/utils/helpers.php on line 390
-[04-Jun-2025 12:59:45 America/Recife] PHP Fatal error:  Cannot redeclare formatCategoryName() (previously declared in /home/leonidab/staging.leonidabrasil.com.br/api/news.php:42) in /home/leonidab/staging.leonidabrasil.com.br/utils/helpers.php on line 390
-[04-Jun-2025 13:01:15 America/Recife] PHP Fatal error:  Cannot redeclare formatCategoryName() (previously declared in /home/leonidab/staging.leonidabrasil.com.br/api/news.php:465) in /home/leonidab/staging.leonidabrasil.com.br/utils/helpers.php on line 390
-[04-Jun-2025 13:01:26 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 13:01:26","message":"M\u00e9todo recebido","data":"GET"}
-[04-Jun-2025 13:01:26 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 13:01:26","message":"Status: logado","data":{"id":"1","username":"admin","display_name":"Administrador","level":"5"}}
-[04-Jun-2025 13:01:27 America/Recife] PHP Fatal error:  Cannot redeclare formatCategoryName() (previously declared in /home/leonidab/staging.leonidabrasil.com.br/api/news.php:465) in /home/leonidab/staging.leonidabrasil.com.br/utils/helpers.php on line 390
-[04-Jun-2025 13:01:27 America/Recife] PHP Fatal error:  Cannot redeclare formatCategoryName() (previously declared in /home/leonidab/staging.leonidabrasil.com.br/api/news.php:465) in /home/leonidab/staging.leonidabrasil.com.br/utils/helpers.php on line 390
-[04-Jun-2025 13:01:53 America/Recife] PHP Fatal error:  Cannot redeclare formatCategoryName() (previously declared in /home/leonidab/staging.leonidabrasil.com.br/api/news.php:620) in /home/leonidab/staging.leonidabrasil.com.br/utils/helpers.php on line 390
-[04-Jun-2025 13:01:53 America/Recife] PHP Fatal error:  Cannot redeclare formatCategoryName() (previously declared in /home/leonidab/staging.leonidabrasil.com.br/api/news.php:620) in /home/leonidab/staging.leonidabrasil.com.br/utils/helpers.php on line 390
-[04-Jun-2025 13:01:54 America/Recife] PHP Fatal error:  Cannot redeclare formatCategoryName() (previously declared in /home/leonidab/staging.leonidabrasil.com.br/api/news.php:620) in /home/leonidab/staging.leonidabrasil.com.br/utils/helpers.php on line 390
-[04-Jun-2025 13:01:54 America/Recife] PHP Fatal error:  Cannot redeclare formatCategoryName() (previously declared in /home/leonidab/staging.leonidabrasil.com.br/api/news.php:620) in /home/leonidab/staging.leonidabrasil.com.br/utils/helpers.php on line 390
-[04-Jun-2025 13:01:54 America/Recife] PHP Fatal error:  Cannot redeclare formatCategoryName() (previously declared in /home/leonidab/staging.leonidabrasil.com.br/api/news.php:620) in /home/leonidab/staging.leonidabrasil.com.br/utils/helpers.php on line 390
-[04-Jun-2025 13:01:55 America/Recife] PHP Fatal error:  Cannot redeclare formatCategoryName() (previously declared in /home/leonidab/staging.leonidabrasil.com.br/api/news.php:620) in /home/leonidab/staging.leonidabrasil.com.br/utils/helpers.php on line 390
-[04-Jun-2025 13:01:55 America/Recife] PHP Fatal error:  Cannot redeclare formatCategoryName() (previously declared in /home/leonidab/staging.leonidabrasil.com.br/api/news.php:620) in /home/leonidab/staging.leonidabrasil.com.br/utils/helpers.php on line 390
-[04-Jun-2025 13:01:55 America/Recife] PHP Fatal error:  Cannot redeclare formatCategoryName() (previously declared in /home/leonidab/staging.leonidabrasil.com.br/api/news.php:620) in /home/leonidab/staging.leonidabrasil.com.br/utils/helpers.php on line 390
-[04-Jun-2025 13:01:56 America/Recife] PHP Fatal error:  Cannot redeclare formatCategoryName() (previously declared in /home/leonidab/staging.leonidabrasil.com.br/api/news.php:620) in /home/leonidab/staging.leonidabrasil.com.br/utils/helpers.php on line 390
-[04-Jun-2025 13:02:30 America/Recife] PHP Fatal error:  Cannot redeclare formatCategoryName() (previously declared in /home/leonidab/staging.leonidabrasil.com.br/api/news.php:620) in /home/leonidab/staging.leonidabrasil.com.br/utils/helpers.php on line 390
-[04-Jun-2025 13:02:33 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 13:02:33","message":"M\u00e9todo recebido","data":"GET"}
-[04-Jun-2025 13:02:33 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 13:02:33","message":"Status: logado","data":{"id":"1","username":"admin","display_name":"Administrador","level":"5"}}
-[04-Jun-2025 13:02:33 America/Recife] PHP Fatal error:  Cannot redeclare formatCategoryName() (previously declared in /home/leonidab/staging.leonidabrasil.com.br/api/news.php:620) in /home/leonidab/staging.leonidabrasil.com.br/utils/helpers.php on line 390
-[04-Jun-2025 13:03:19 America/Recife] PHP Fatal error:  Cannot redeclare formatCategoryName() (previously declared in /home/leonidab/staging.leonidabrasil.com.br/api/news.php:620) in /home/leonidab/staging.leonidabrasil.com.br/utils/helpers.php on line 390
-[04-Jun-2025 13:03:20 America/Recife] PHP Fatal error:  Cannot redeclare formatCategoryName() (previously declared in /home/leonidab/staging.leonidabrasil.com.br/api/news.php:620) in /home/leonidab/staging.leonidabrasil.com.br/utils/helpers.php on line 390
-[04-Jun-2025 13:05:19 America/Recife] PHP Fatal error:  Cannot redeclare formatCategoryName() (previously declared in /home/leonidab/staging.leonidabrasil.com.br/api/news.php:625) in /home/leonidab/staging.leonidabrasil.com.br/utils/helpers.php on line 390
-[04-Jun-2025 13:05:19 America/Recife] PHP Fatal error:  Cannot redeclare formatCategoryName() (previously declared in /home/leonidab/staging.leonidabrasil.com.br/api/news.php:625) in /home/leonidab/staging.leonidabrasil.com.br/utils/helpers.php on line 390
-[04-Jun-2025 13:05:20 America/Recife] PHP Fatal error:  Cannot redeclare formatCategoryName() (previously declared in /home/leonidab/staging.leonidabrasil.com.br/api/news.php:625) in /home/leonidab/staging.leonidabrasil.com.br/utils/helpers.php on line 390
-[04-Jun-2025 13:12:42 America/Recife] [2025-06-04 13:12:42] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=1&page=1&per_page=10&sort=recent"}
-[04-Jun-2025 13:12:42 America/Recife] [2025-06-04 13:12:42] COMMENTS: Database loaded from config file
-[04-Jun-2025 13:12:42 America/Recife] [2025-06-04 13:12:42] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 13:12:42 America/Recife] [2025-06-04 13:12:42] COMMENTS: Getting comments
-[04-Jun-2025 13:12:42 America/Recife] [2025-06-04 13:12:42] COMMENTS: Get params | {"content_type":"news","content_id":1,"page":1,"per_page":10,"sort":"recent"}
-[04-Jun-2025 13:12:42 America/Recife] [2025-06-04 13:12:42] COMMENTS: Comments retrieved | {"count":10,"total":15}
-[04-Jun-2025 13:12:42 America/Recife] [2025-06-04 13:12:42] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
-[04-Jun-2025 13:12:47 America/Recife] [2025-06-04 13:12:47] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=1&page=1&per_page=10&sort=recent"}
-[04-Jun-2025 13:12:47 America/Recife] [2025-06-04 13:12:47] COMMENTS: Database loaded from config file
-[04-Jun-2025 13:12:47 America/Recife] [2025-06-04 13:12:47] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 13:12:47 America/Recife] [2025-06-04 13:12:47] COMMENTS: Getting comments
-[04-Jun-2025 13:12:47 America/Recife] [2025-06-04 13:12:47] COMMENTS: Get params | {"content_type":"news","content_id":1,"page":1,"per_page":10,"sort":"recent"}
-[04-Jun-2025 13:12:47 America/Recife] [2025-06-04 13:12:47] COMMENTS: Comments retrieved | {"count":10,"total":15}
-[04-Jun-2025 13:12:47 America/Recife] [2025-06-04 13:12:47] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
-[04-Jun-2025 13:33:06 America/Recife] [2025-06-04 13:33:06] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=1&page=1&per_page=10&sort=recent"}
-[04-Jun-2025 13:33:06 America/Recife] [2025-06-04 13:33:06] COMMENTS: Database loaded from config file
-[04-Jun-2025 13:33:06 America/Recife] [2025-06-04 13:33:06] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 13:33:06 America/Recife] [2025-06-04 13:33:06] COMMENTS: Getting comments
-[04-Jun-2025 13:33:06 America/Recife] [2025-06-04 13:33:06] COMMENTS: Get params | {"content_type":"news","content_id":1,"page":1,"per_page":10,"sort":"recent"}
-[04-Jun-2025 13:33:06 America/Recife] [2025-06-04 13:33:06] COMMENTS: Comments retrieved | {"count":10,"total":15}
-[04-Jun-2025 13:33:06 America/Recife] [2025-06-04 13:33:06] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
-[04-Jun-2025 13:33:12 America/Recife] [2025-06-04 13:33:12] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=4&page=1&per_page=10&sort=recent"}
-[04-Jun-2025 13:33:12 America/Recife] [2025-06-04 13:33:12] COMMENTS: Database loaded from config file
-[04-Jun-2025 13:33:12 America/Recife] [2025-06-04 13:33:12] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 13:33:12 America/Recife] [2025-06-04 13:33:12] COMMENTS: Getting comments
-[04-Jun-2025 13:33:12 America/Recife] [2025-06-04 13:33:12] COMMENTS: Get params | {"content_type":"news","content_id":4,"page":1,"per_page":10,"sort":"recent"}
-[04-Jun-2025 13:33:12 America/Recife] [2025-06-04 13:33:12] COMMENTS: Comments retrieved | {"count":1,"total":1}
-[04-Jun-2025 13:33:12 America/Recife] [2025-06-04 13:33:12] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
-[04-Jun-2025 13:33:17 America/Recife] [2025-06-04 13:33:17] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=3&page=1&per_page=10&sort=recent"}
-[04-Jun-2025 13:33:17 America/Recife] [2025-06-04 13:33:17] COMMENTS: Database loaded from config file
-[04-Jun-2025 13:33:17 America/Recife] [2025-06-04 13:33:17] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 13:33:17 America/Recife] [2025-06-04 13:33:17] COMMENTS: Getting comments
-[04-Jun-2025 13:33:17 America/Recife] [2025-06-04 13:33:17] COMMENTS: Get params | {"content_type":"news","content_id":3,"page":1,"per_page":10,"sort":"recent"}
-[04-Jun-2025 13:33:17 America/Recife] [2025-06-04 13:33:17] COMMENTS: Comments retrieved | {"count":3,"total":3}
-[04-Jun-2025 13:33:17 America/Recife] [2025-06-04 13:33:17] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
-[04-Jun-2025 13:33:23 America/Recife] [2025-06-04 13:33:23] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=6&page=1&per_page=10&sort=recent"}
-[04-Jun-2025 13:33:23 America/Recife] [2025-06-04 13:33:23] COMMENTS: Database loaded from config file
-[04-Jun-2025 13:33:23 America/Recife] [2025-06-04 13:33:23] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 13:33:23 America/Recife] [2025-06-04 13:33:23] COMMENTS: Getting comments
-[04-Jun-2025 13:33:23 America/Recife] [2025-06-04 13:33:23] COMMENTS: Get params | {"content_type":"news","content_id":6,"page":1,"per_page":10,"sort":"recent"}
-[04-Jun-2025 13:33:23 America/Recife] [2025-06-04 13:33:23] COMMENTS: Comments retrieved | {"count":8,"total":8}
-[04-Jun-2025 13:33:23 America/Recife] [2025-06-04 13:33:23] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
-[04-Jun-2025 13:34:06 America/Recife] [2025-06-04 13:34:06] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=6&page=1&per_page=10&sort=recent"}
-[04-Jun-2025 13:34:06 America/Recife] [2025-06-04 13:34:06] COMMENTS: Database loaded from config file
-[04-Jun-2025 13:34:06 America/Recife] [2025-06-04 13:34:06] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 13:34:06 America/Recife] [2025-06-04 13:34:06] COMMENTS: Getting comments
-[04-Jun-2025 13:34:06 America/Recife] [2025-06-04 13:34:06] COMMENTS: Get params | {"content_type":"news","content_id":6,"page":1,"per_page":10,"sort":"recent"}
-[04-Jun-2025 13:34:06 America/Recife] [2025-06-04 13:34:06] COMMENTS: Comments retrieved | {"count":8,"total":8}
-[04-Jun-2025 13:34:06 America/Recife] [2025-06-04 13:34:06] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
-[04-Jun-2025 13:34:13 America/Recife] [2025-06-04 13:34:13] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=3&page=1&per_page=10&sort=recent"}
-[04-Jun-2025 13:34:13 America/Recife] [2025-06-04 13:34:13] COMMENTS: Database loaded from config file
-[04-Jun-2025 13:34:13 America/Recife] [2025-06-04 13:34:13] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 13:34:13 America/Recife] [2025-06-04 13:34:13] COMMENTS: Getting comments
-[04-Jun-2025 13:34:13 America/Recife] [2025-06-04 13:34:13] COMMENTS: Get params | {"content_type":"news","content_id":3,"page":1,"per_page":10,"sort":"recent"}
-[04-Jun-2025 13:34:13 America/Recife] [2025-06-04 13:34:13] COMMENTS: Comments retrieved | {"count":3,"total":3}
-[04-Jun-2025 13:34:13 America/Recife] [2025-06-04 13:34:13] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
-[04-Jun-2025 13:34:18 America/Recife] [2025-06-04 13:34:18] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=6&page=1&per_page=10&sort=recent"}
-[04-Jun-2025 13:34:18 America/Recife] [2025-06-04 13:34:18] COMMENTS: Database loaded from config file
-[04-Jun-2025 13:34:18 America/Recife] [2025-06-04 13:34:18] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 13:34:18 America/Recife] [2025-06-04 13:34:18] COMMENTS: Getting comments
-[04-Jun-2025 13:34:18 America/Recife] [2025-06-04 13:34:18] COMMENTS: Get params | {"content_type":"news","content_id":6,"page":1,"per_page":10,"sort":"recent"}
-[04-Jun-2025 13:34:18 America/Recife] [2025-06-04 13:34:18] COMMENTS: Comments retrieved | {"count":8,"total":8}
-[04-Jun-2025 13:34:18 America/Recife] [2025-06-04 13:34:18] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
-[04-Jun-2025 13:38:11 America/Recife] [2025-06-04 13:38:11] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=6&page=1&per_page=10&sort=recent"}
-[04-Jun-2025 13:38:11 America/Recife] [2025-06-04 13:38:11] COMMENTS: Database loaded from config file
-[04-Jun-2025 13:38:11 America/Recife] [2025-06-04 13:38:11] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 13:38:11 America/Recife] [2025-06-04 13:38:11] COMMENTS: Getting comments
-[04-Jun-2025 13:38:11 America/Recife] [2025-06-04 13:38:11] COMMENTS: Get params | {"content_type":"news","content_id":6,"page":1,"per_page":10,"sort":"recent"}
-[04-Jun-2025 13:38:11 America/Recife] [2025-06-04 13:38:11] COMMENTS: Comments retrieved | {"count":8,"total":8}
-[04-Jun-2025 13:38:11 America/Recife] [2025-06-04 13:38:11] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
-[04-Jun-2025 13:39:45 America/Recife] [2025-06-04 13:39:45] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=6&page=1&per_page=10&sort=recent"}
-[04-Jun-2025 13:39:45 America/Recife] [2025-06-04 13:39:45] COMMENTS: Database loaded from config file
-[04-Jun-2025 13:39:45 America/Recife] [2025-06-04 13:39:45] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 13:39:45 America/Recife] [2025-06-04 13:39:45] COMMENTS: Getting comments
-[04-Jun-2025 13:39:45 America/Recife] [2025-06-04 13:39:45] COMMENTS: Get params | {"content_type":"news","content_id":6,"page":1,"per_page":10,"sort":"recent"}
-[04-Jun-2025 13:39:45 America/Recife] [2025-06-04 13:39:45] COMMENTS: Comments retrieved | {"count":8,"total":8}
-[04-Jun-2025 13:39:45 America/Recife] [2025-06-04 13:39:45] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
-[04-Jun-2025 13:42:18 America/Recife] [2025-06-04 13:42:18] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=6&page=1&per_page=10&sort=recent"}
-[04-Jun-2025 13:42:18 America/Recife] [2025-06-04 13:42:18] COMMENTS: Database loaded from config file
-[04-Jun-2025 13:42:18 America/Recife] [2025-06-04 13:42:18] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 13:42:18 America/Recife] [2025-06-04 13:42:18] COMMENTS: Getting comments
-[04-Jun-2025 13:42:18 America/Recife] [2025-06-04 13:42:18] COMMENTS: Get params | {"content_type":"news","content_id":6,"page":1,"per_page":10,"sort":"recent"}
-[04-Jun-2025 13:42:18 America/Recife] [2025-06-04 13:42:18] COMMENTS: Comments retrieved | {"count":8,"total":8}
-[04-Jun-2025 13:42:18 America/Recife] [2025-06-04 13:42:18] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
-[04-Jun-2025 13:42:51 America/Recife] [2025-06-04 13:42:51] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=1&page=1&per_page=10&sort=recent"}
-[04-Jun-2025 13:42:51 America/Recife] [2025-06-04 13:42:51] COMMENTS: Database loaded from config file
-[04-Jun-2025 13:42:51 America/Recife] [2025-06-04 13:42:51] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 13:42:51 America/Recife] [2025-06-04 13:42:51] COMMENTS: Getting comments
-[04-Jun-2025 13:42:51 America/Recife] [2025-06-04 13:42:51] COMMENTS: Get params | {"content_type":"news","content_id":1,"page":1,"per_page":10,"sort":"recent"}
-[04-Jun-2025 13:42:51 America/Recife] [2025-06-04 13:42:51] COMMENTS: Comments retrieved | {"count":10,"total":15}
-[04-Jun-2025 13:42:51 America/Recife] [2025-06-04 13:42:51] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
-[04-Jun-2025 14:28:35 America/Recife] [2025-06-04 14:28:35] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=1&page=1&per_page=10&sort=recent"}
-[04-Jun-2025 14:28:35 America/Recife] [2025-06-04 14:28:35] COMMENTS: Database loaded from config file
-[04-Jun-2025 14:28:35 America/Recife] [2025-06-04 14:28:35] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 14:28:35 America/Recife] [2025-06-04 14:28:35] COMMENTS: Getting comments
-[04-Jun-2025 14:28:35 America/Recife] [2025-06-04 14:28:35] COMMENTS: Get params | {"content_type":"news","content_id":1,"page":1,"per_page":10,"sort":"recent"}
-[04-Jun-2025 14:28:35 America/Recife] [2025-06-04 14:28:35] COMMENTS: Comments retrieved | {"count":10,"total":15}
-[04-Jun-2025 14:28:35 America/Recife] [2025-06-04 14:28:35] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
-[04-Jun-2025 14:28:45 America/Recife] [2025-06-04 14:28:45] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=4&page=1&per_page=10&sort=recent"}
-[04-Jun-2025 14:28:45 America/Recife] [2025-06-04 14:28:45] COMMENTS: Database loaded from config file
-[04-Jun-2025 14:28:45 America/Recife] [2025-06-04 14:28:45] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 14:28:45 America/Recife] [2025-06-04 14:28:45] COMMENTS: Getting comments
-[04-Jun-2025 14:28:45 America/Recife] [2025-06-04 14:28:45] COMMENTS: Get params | {"content_type":"news","content_id":4,"page":1,"per_page":10,"sort":"recent"}
-[04-Jun-2025 14:28:45 America/Recife] [2025-06-04 14:28:45] COMMENTS: Comments retrieved | {"count":1,"total":1}
-[04-Jun-2025 14:28:45 America/Recife] [2025-06-04 14:28:45] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
-[04-Jun-2025 14:29:14 America/Recife] [2025-06-04 14:29:14] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=4&page=1&per_page=10&sort=recent"}
-[04-Jun-2025 14:29:14 America/Recife] [2025-06-04 14:29:14] COMMENTS: Database loaded from config file
-[04-Jun-2025 14:29:14 America/Recife] [2025-06-04 14:29:14] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 14:29:14 America/Recife] [2025-06-04 14:29:14] COMMENTS: Getting comments
-[04-Jun-2025 14:29:14 America/Recife] [2025-06-04 14:29:14] COMMENTS: Get params | {"content_type":"news","content_id":4,"page":1,"per_page":10,"sort":"recent"}
-[04-Jun-2025 14:29:14 America/Recife] [2025-06-04 14:29:14] COMMENTS: Comments retrieved | {"count":1,"total":1}
-[04-Jun-2025 14:29:14 America/Recife] [2025-06-04 14:29:14] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
-[04-Jun-2025 14:29:21 America/Recife] [2025-06-04 14:29:21] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=6&page=1&per_page=10&sort=recent"}
-[04-Jun-2025 14:29:21 America/Recife] [2025-06-04 14:29:21] COMMENTS: Database loaded from config file
-[04-Jun-2025 14:29:21 America/Recife] [2025-06-04 14:29:21] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 14:29:21 America/Recife] [2025-06-04 14:29:21] COMMENTS: Getting comments
-[04-Jun-2025 14:29:21 America/Recife] [2025-06-04 14:29:21] COMMENTS: Get params | {"content_type":"news","content_id":6,"page":1,"per_page":10,"sort":"recent"}
-[04-Jun-2025 14:29:21 America/Recife] [2025-06-04 14:29:21] COMMENTS: Comments retrieved | {"count":8,"total":8}
-[04-Jun-2025 14:29:21 America/Recife] [2025-06-04 14:29:21] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
-[04-Jun-2025 14:30:09 America/Recife] [2025-06-04 14:30:09] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=1&page=1&per_page=10&sort=recent"}
-[04-Jun-2025 14:30:09 America/Recife] [2025-06-04 14:30:09] COMMENTS: Database loaded from config file
-[04-Jun-2025 14:30:09 America/Recife] [2025-06-04 14:30:09] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 14:30:09 America/Recife] [2025-06-04 14:30:09] COMMENTS: Getting comments
-[04-Jun-2025 14:30:09 America/Recife] [2025-06-04 14:30:09] COMMENTS: Get params | {"content_type":"news","content_id":1,"page":1,"per_page":10,"sort":"recent"}
-[04-Jun-2025 14:30:09 America/Recife] [2025-06-04 14:30:09] COMMENTS: Comments retrieved | {"count":10,"total":15}
-[04-Jun-2025 14:30:09 America/Recife] [2025-06-04 14:30:09] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
-[04-Jun-2025 14:30:20 America/Recife] [2025-06-04 14:30:20] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=1&page=1&per_page=10&sort=popular"}
-[04-Jun-2025 14:30:20 America/Recife] [2025-06-04 14:30:20] COMMENTS: Database loaded from config file
-[04-Jun-2025 14:30:20 America/Recife] [2025-06-04 14:30:20] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 14:30:20 America/Recife] [2025-06-04 14:30:20] COMMENTS: Getting comments
-[04-Jun-2025 14:30:20 America/Recife] [2025-06-04 14:30:20] COMMENTS: Get params | {"content_type":"news","content_id":1,"page":1,"per_page":10,"sort":"popular"}
-[04-Jun-2025 14:30:20 America/Recife] [2025-06-04 14:30:20] COMMENTS: Comments retrieved | {"count":10,"total":15}
-[04-Jun-2025 14:30:20 America/Recife] [2025-06-04 14:30:20] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
-[04-Jun-2025 14:30:22 America/Recife] [2025-06-04 14:30:22] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=1&page=1&per_page=10&sort=oldest"}
-[04-Jun-2025 14:30:22 America/Recife] [2025-06-04 14:30:22] COMMENTS: Database loaded from config file
-[04-Jun-2025 14:30:22 America/Recife] [2025-06-04 14:30:22] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 14:30:22 America/Recife] [2025-06-04 14:30:22] COMMENTS: Getting comments
-[04-Jun-2025 14:30:22 America/Recife] [2025-06-04 14:30:22] COMMENTS: Get params | {"content_type":"news","content_id":1,"page":1,"per_page":10,"sort":"oldest"}
-[04-Jun-2025 14:30:22 America/Recife] [2025-06-04 14:30:22] COMMENTS: Comments retrieved | {"count":10,"total":15}
-[04-Jun-2025 14:30:22 America/Recife] [2025-06-04 14:30:22] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
-[04-Jun-2025 14:30:24 America/Recife] [2025-06-04 14:30:24] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=1&page=1&per_page=10&sort=recent"}
-[04-Jun-2025 14:30:24 America/Recife] [2025-06-04 14:30:24] COMMENTS: Database loaded from config file
-[04-Jun-2025 14:30:24 America/Recife] [2025-06-04 14:30:24] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 14:30:24 America/Recife] [2025-06-04 14:30:24] COMMENTS: Getting comments
-[04-Jun-2025 14:30:24 America/Recife] [2025-06-04 14:30:24] COMMENTS: Get params | {"content_type":"news","content_id":1,"page":1,"per_page":10,"sort":"recent"}
-[04-Jun-2025 14:30:24 America/Recife] [2025-06-04 14:30:24] COMMENTS: Comments retrieved | {"count":10,"total":15}
-[04-Jun-2025 14:30:24 America/Recife] [2025-06-04 14:30:24] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
-[04-Jun-2025 14:34:41 America/Recife] [2025-06-04 14:34:41] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=5&page=1&per_page=10&sort=recent"}
-[04-Jun-2025 14:34:41 America/Recife] [2025-06-04 14:34:41] COMMENTS: Database loaded from config file
-[04-Jun-2025 14:34:41 America/Recife] [2025-06-04 14:34:41] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 14:34:41 America/Recife] [2025-06-04 14:34:41] COMMENTS: Getting comments
-[04-Jun-2025 14:34:41 America/Recife] [2025-06-04 14:34:41] COMMENTS: Get params | {"content_type":"news","content_id":5,"page":1,"per_page":10,"sort":"recent"}
-[04-Jun-2025 14:34:41 America/Recife] [2025-06-04 14:34:41] COMMENTS: Comments retrieved | {"count":0,"total":0}
-[04-Jun-2025 14:34:41 America/Recife] [2025-06-04 14:34:41] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
-[04-Jun-2025 14:43:11 America/Recife] [2025-06-04 14:43:11] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=4&page=1&per_page=10&sort=recent"}
-[04-Jun-2025 14:43:11 America/Recife] [2025-06-04 14:43:11] COMMENTS: Database loaded from config file
-[04-Jun-2025 14:43:11 America/Recife] [2025-06-04 14:43:11] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 14:43:11 America/Recife] [2025-06-04 14:43:11] COMMENTS: Getting comments
-[04-Jun-2025 14:43:11 America/Recife] [2025-06-04 14:43:11] COMMENTS: Get params | {"content_type":"news","content_id":4,"page":1,"per_page":10,"sort":"recent"}
-[04-Jun-2025 14:43:11 America/Recife] [2025-06-04 14:43:11] COMMENTS: Comments retrieved | {"count":1,"total":1}
-[04-Jun-2025 14:43:11 America/Recife] [2025-06-04 14:43:11] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
-[04-Jun-2025 14:57:49 America/Recife] [2025-06-04 14:57:49] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=1&page=1&per_page=10&sort=recent"}
-[04-Jun-2025 14:57:49 America/Recife] [2025-06-04 14:57:49] COMMENTS: Database loaded from config file
-[04-Jun-2025 14:57:49 America/Recife] [2025-06-04 14:57:49] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 14:57:49 America/Recife] [2025-06-04 14:57:49] COMMENTS: Getting comments
-[04-Jun-2025 14:57:49 America/Recife] [2025-06-04 14:57:49] COMMENTS: Get params | {"content_type":"news","content_id":1,"page":1,"per_page":10,"sort":"recent"}
-[04-Jun-2025 14:57:49 America/Recife] [2025-06-04 14:57:49] COMMENTS: Comments retrieved | {"count":10,"total":15}
-[04-Jun-2025 14:57:49 America/Recife] [2025-06-04 14:57:49] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
-[04-Jun-2025 15:02:10 America/Recife] [2025-06-04 15:02:10] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=1&page=1&per_page=10&sort=recent"}
-[04-Jun-2025 15:02:10 America/Recife] [2025-06-04 15:02:10] COMMENTS: Database loaded from config file
-[04-Jun-2025 15:02:10 America/Recife] [2025-06-04 15:02:10] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 15:02:10 America/Recife] [2025-06-04 15:02:10] COMMENTS: Getting comments
-[04-Jun-2025 15:02:10 America/Recife] [2025-06-04 15:02:10] COMMENTS: Get params | {"content_type":"news","content_id":1,"page":1,"per_page":10,"sort":"recent"}
-[04-Jun-2025 15:02:10 America/Recife] [2025-06-04 15:02:10] COMMENTS: Comments retrieved | {"count":10,"total":15}
-[04-Jun-2025 15:02:10 America/Recife] [2025-06-04 15:02:10] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
-[04-Jun-2025 15:02:15 America/Recife] [2025-06-04 15:02:15] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=6&page=1&per_page=10&sort=recent"}
-[04-Jun-2025 15:02:15 America/Recife] [2025-06-04 15:02:15] COMMENTS: Database loaded from config file
-[04-Jun-2025 15:02:15 America/Recife] [2025-06-04 15:02:15] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 15:02:15 America/Recife] [2025-06-04 15:02:15] COMMENTS: Getting comments
-[04-Jun-2025 15:02:15 America/Recife] [2025-06-04 15:02:15] COMMENTS: Get params | {"content_type":"news","content_id":6,"page":1,"per_page":10,"sort":"recent"}
-[04-Jun-2025 15:02:15 America/Recife] [2025-06-04 15:02:15] COMMENTS: Comments retrieved | {"count":8,"total":8}
-[04-Jun-2025 15:02:15 America/Recife] [2025-06-04 15:02:15] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
-[04-Jun-2025 15:02:20 America/Recife] [2025-06-04 15:02:20] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?action=like&id=21"}
-[04-Jun-2025 15:02:20 America/Recife] [2025-06-04 15:02:20] COMMENTS: Database loaded from config file
-[04-Jun-2025 15:02:20 America/Recife] [2025-06-04 15:02:20] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 15:02:20 America/Recife] [2025-06-04 15:02:20] COMMENTS: Liking comment
-[04-Jun-2025 15:02:20 America/Recife] [2025-06-04 15:02:20] COMMENTS: Comment like toggled | {"comment_id":21,"user_id":1,"liked":true,"new_count":1}
-[04-Jun-2025 15:02:20 America/Recife] [2025-06-04 15:02:20] COMMENTS: SUCCESS | {"message":"Comentário curtido!","data_type":"array"}
-[04-Jun-2025 15:02:23 America/Recife] [2025-06-04 15:02:23] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?action=like&id=21"}
-[04-Jun-2025 15:02:23 America/Recife] [2025-06-04 15:02:23] COMMENTS: Database loaded from config file
-[04-Jun-2025 15:02:23 America/Recife] [2025-06-04 15:02:23] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 15:02:23 America/Recife] [2025-06-04 15:02:23] COMMENTS: Liking comment
-[04-Jun-2025 15:02:23 America/Recife] [2025-06-04 15:02:23] COMMENTS: Comment like toggled | {"comment_id":21,"user_id":1,"liked":true,"new_count":2}
-[04-Jun-2025 15:02:23 America/Recife] [2025-06-04 15:02:23] COMMENTS: SUCCESS | {"message":"Comentário curtido!","data_type":"array"}
-[04-Jun-2025 15:02:25 America/Recife] [2025-06-04 15:02:25] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?action=like&id=21"}
-[04-Jun-2025 15:02:25 America/Recife] [2025-06-04 15:02:25] COMMENTS: Database loaded from config file
-[04-Jun-2025 15:02:25 America/Recife] [2025-06-04 15:02:25] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 15:02:25 America/Recife] [2025-06-04 15:02:25] COMMENTS: Liking comment
-[04-Jun-2025 15:02:25 America/Recife] [2025-06-04 15:02:25] COMMENTS: Comment like toggled | {"comment_id":21,"user_id":1,"liked":true,"new_count":3}
-[04-Jun-2025 15:02:25 America/Recife] [2025-06-04 15:02:25] COMMENTS: SUCCESS | {"message":"Comentário curtido!","data_type":"array"}
-[04-Jun-2025 15:02:26 America/Recife] [2025-06-04 15:02:26] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?action=like&id=21"}
-[04-Jun-2025 15:02:26 America/Recife] [2025-06-04 15:02:26] COMMENTS: Database loaded from config file
-[04-Jun-2025 15:02:26 America/Recife] [2025-06-04 15:02:26] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 15:02:26 America/Recife] [2025-06-04 15:02:26] COMMENTS: Liking comment
-[04-Jun-2025 15:02:26 America/Recife] [2025-06-04 15:02:26] COMMENTS: Comment like toggled | {"comment_id":21,"user_id":1,"liked":true,"new_count":4}
-[04-Jun-2025 15:02:26 America/Recife] [2025-06-04 15:02:26] COMMENTS: SUCCESS | {"message":"Comentário curtido!","data_type":"array"}
-[04-Jun-2025 15:02:26 America/Recife] [2025-06-04 15:02:26] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?action=like&id=21"}
-[04-Jun-2025 15:02:26 America/Recife] [2025-06-04 15:02:26] COMMENTS: Database loaded from config file
-[04-Jun-2025 15:02:26 America/Recife] [2025-06-04 15:02:26] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 15:02:26 America/Recife] [2025-06-04 15:02:26] COMMENTS: Liking comment
-[04-Jun-2025 15:02:26 America/Recife] [2025-06-04 15:02:26] COMMENTS: Comment like toggled | {"comment_id":21,"user_id":1,"liked":true,"new_count":5}
-[04-Jun-2025 15:02:26 America/Recife] [2025-06-04 15:02:26] COMMENTS: SUCCESS | {"message":"Comentário curtido!","data_type":"array"}
-[04-Jun-2025 15:02:27 America/Recife] [2025-06-04 15:02:27] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?action=like&id=21"}
-[04-Jun-2025 15:02:27 America/Recife] [2025-06-04 15:02:27] COMMENTS: Database loaded from config file
-[04-Jun-2025 15:02:27 America/Recife] [2025-06-04 15:02:27] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 15:02:27 America/Recife] [2025-06-04 15:02:27] COMMENTS: Liking comment
-[04-Jun-2025 15:02:27 America/Recife] [2025-06-04 15:02:27] COMMENTS: Comment like toggled | {"comment_id":21,"user_id":1,"liked":true,"new_count":6}
-[04-Jun-2025 15:02:27 America/Recife] [2025-06-04 15:02:27] COMMENTS: SUCCESS | {"message":"Comentário curtido!","data_type":"array"}
-[04-Jun-2025 15:02:27 America/Recife] [2025-06-04 15:02:27] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?action=like&id=21"}
-[04-Jun-2025 15:02:27 America/Recife] [2025-06-04 15:02:27] COMMENTS: Database loaded from config file
-[04-Jun-2025 15:02:27 America/Recife] [2025-06-04 15:02:27] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 15:02:27 America/Recife] [2025-06-04 15:02:27] COMMENTS: Liking comment
-[04-Jun-2025 15:02:27 America/Recife] [2025-06-04 15:02:27] COMMENTS: Comment like toggled | {"comment_id":21,"user_id":1,"liked":true,"new_count":7}
-[04-Jun-2025 15:02:27 America/Recife] [2025-06-04 15:02:27] COMMENTS: SUCCESS | {"message":"Comentário curtido!","data_type":"array"}
-[04-Jun-2025 15:02:27 America/Recife] [2025-06-04 15:02:27] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?action=like&id=21"}
-[04-Jun-2025 15:02:27 America/Recife] [2025-06-04 15:02:27] COMMENTS: Database loaded from config file
-[04-Jun-2025 15:02:27 America/Recife] [2025-06-04 15:02:27] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 15:02:27 America/Recife] [2025-06-04 15:02:27] COMMENTS: Liking comment
-[04-Jun-2025 15:02:27 America/Recife] [2025-06-04 15:02:27] COMMENTS: Comment like toggled | {"comment_id":21,"user_id":1,"liked":true,"new_count":8}
-[04-Jun-2025 15:02:27 America/Recife] [2025-06-04 15:02:27] COMMENTS: SUCCESS | {"message":"Comentário curtido!","data_type":"array"}
-[04-Jun-2025 15:02:27 America/Recife] [2025-06-04 15:02:27] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?action=like&id=21"}
-[04-Jun-2025 15:02:27 America/Recife] [2025-06-04 15:02:27] COMMENTS: Database loaded from config file
-[04-Jun-2025 15:02:27 America/Recife] [2025-06-04 15:02:27] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 15:02:27 America/Recife] [2025-06-04 15:02:27] COMMENTS: Liking comment
-[04-Jun-2025 15:02:27 America/Recife] [2025-06-04 15:02:27] COMMENTS: Comment like toggled | {"comment_id":21,"user_id":1,"liked":true,"new_count":9}
-[04-Jun-2025 15:02:27 America/Recife] [2025-06-04 15:02:27] COMMENTS: SUCCESS | {"message":"Comentário curtido!","data_type":"array"}
-[04-Jun-2025 15:02:27 America/Recife] [2025-06-04 15:02:27] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?action=like&id=21"}
-[04-Jun-2025 15:02:27 America/Recife] [2025-06-04 15:02:27] COMMENTS: Database loaded from config file
-[04-Jun-2025 15:02:27 America/Recife] [2025-06-04 15:02:27] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 15:02:27 America/Recife] [2025-06-04 15:02:27] COMMENTS: Liking comment
-[04-Jun-2025 15:02:27 America/Recife] [2025-06-04 15:02:27] COMMENTS: Comment like toggled | {"comment_id":21,"user_id":1,"liked":true,"new_count":10}
-[04-Jun-2025 15:02:27 America/Recife] [2025-06-04 15:02:27] COMMENTS: SUCCESS | {"message":"Comentário curtido!","data_type":"array"}
-[04-Jun-2025 15:02:28 America/Recife] [2025-06-04 15:02:28] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?action=like&id=21"}
-[04-Jun-2025 15:02:28 America/Recife] [2025-06-04 15:02:28] COMMENTS: Database loaded from config file
-[04-Jun-2025 15:02:28 America/Recife] [2025-06-04 15:02:28] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 15:02:28 America/Recife] [2025-06-04 15:02:28] COMMENTS: Liking comment
-[04-Jun-2025 15:02:28 America/Recife] [2025-06-04 15:02:28] COMMENTS: Comment like toggled | {"comment_id":21,"user_id":1,"liked":true,"new_count":11}
-[04-Jun-2025 15:02:28 America/Recife] [2025-06-04 15:02:28] COMMENTS: SUCCESS | {"message":"Comentário curtido!","data_type":"array"}
-[04-Jun-2025 15:02:28 America/Recife] [2025-06-04 15:02:28] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?action=like&id=21"}
-[04-Jun-2025 15:02:28 America/Recife] [2025-06-04 15:02:28] COMMENTS: Database loaded from config file
-[04-Jun-2025 15:02:28 America/Recife] [2025-06-04 15:02:28] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 15:02:28 America/Recife] [2025-06-04 15:02:28] COMMENTS: Liking comment
-[04-Jun-2025 15:02:28 America/Recife] [2025-06-04 15:02:28] COMMENTS: Comment like toggled | {"comment_id":21,"user_id":1,"liked":true,"new_count":12}
-[04-Jun-2025 15:02:28 America/Recife] [2025-06-04 15:02:28] COMMENTS: SUCCESS | {"message":"Comentário curtido!","data_type":"array"}
-[04-Jun-2025 15:02:28 America/Recife] [2025-06-04 15:02:28] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?action=like&id=21"}
-[04-Jun-2025 15:02:28 America/Recife] [2025-06-04 15:02:28] COMMENTS: Database loaded from config file
-[04-Jun-2025 15:02:28 America/Recife] [2025-06-04 15:02:28] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 15:02:28 America/Recife] [2025-06-04 15:02:28] COMMENTS: Liking comment
-[04-Jun-2025 15:02:28 America/Recife] [2025-06-04 15:02:28] COMMENTS: Comment like toggled | {"comment_id":21,"user_id":1,"liked":true,"new_count":13}
-[04-Jun-2025 15:02:28 America/Recife] [2025-06-04 15:02:28] COMMENTS: SUCCESS | {"message":"Comentário curtido!","data_type":"array"}
-[04-Jun-2025 15:02:28 America/Recife] [2025-06-04 15:02:28] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?action=like&id=21"}
-[04-Jun-2025 15:02:28 America/Recife] [2025-06-04 15:02:28] COMMENTS: Database loaded from config file
-[04-Jun-2025 15:02:28 America/Recife] [2025-06-04 15:02:28] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 15:02:28 America/Recife] [2025-06-04 15:02:28] COMMENTS: Liking comment
-[04-Jun-2025 15:02:28 America/Recife] [2025-06-04 15:02:28] COMMENTS: Comment like toggled | {"comment_id":21,"user_id":1,"liked":true,"new_count":14}
-[04-Jun-2025 15:02:28 America/Recife] [2025-06-04 15:02:28] COMMENTS: SUCCESS | {"message":"Comentário curtido!","data_type":"array"}
-[04-Jun-2025 15:02:29 America/Recife] [2025-06-04 15:02:29] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?action=like&id=21"}
-[04-Jun-2025 15:02:29 America/Recife] [2025-06-04 15:02:29] COMMENTS: Database loaded from config file
-[04-Jun-2025 15:02:29 America/Recife] [2025-06-04 15:02:29] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 15:02:29 America/Recife] [2025-06-04 15:02:29] COMMENTS: Liking comment
-[04-Jun-2025 15:02:29 America/Recife] [2025-06-04 15:02:29] COMMENTS: Comment like toggled | {"comment_id":21,"user_id":1,"liked":true,"new_count":15}
-[04-Jun-2025 15:02:29 America/Recife] [2025-06-04 15:02:29] COMMENTS: SUCCESS | {"message":"Comentário curtido!","data_type":"array"}
-[04-Jun-2025 15:02:29 America/Recife] [2025-06-04 15:02:29] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?action=like&id=21"}
-[04-Jun-2025 15:02:29 America/Recife] [2025-06-04 15:02:29] COMMENTS: Database loaded from config file
-[04-Jun-2025 15:02:29 America/Recife] [2025-06-04 15:02:29] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 15:02:29 America/Recife] [2025-06-04 15:02:29] COMMENTS: Liking comment
-[04-Jun-2025 15:02:29 America/Recife] [2025-06-04 15:02:29] COMMENTS: Comment like toggled | {"comment_id":21,"user_id":1,"liked":true,"new_count":16}
-[04-Jun-2025 15:02:29 America/Recife] [2025-06-04 15:02:29] COMMENTS: SUCCESS | {"message":"Comentário curtido!","data_type":"array"}
-[04-Jun-2025 15:02:29 America/Recife] [2025-06-04 15:02:29] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?action=like&id=21"}
-[04-Jun-2025 15:02:29 America/Recife] [2025-06-04 15:02:29] COMMENTS: Database loaded from config file
-[04-Jun-2025 15:02:29 America/Recife] [2025-06-04 15:02:29] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 15:02:29 America/Recife] [2025-06-04 15:02:29] COMMENTS: Liking comment
-[04-Jun-2025 15:02:29 America/Recife] [2025-06-04 15:02:29] COMMENTS: Comment like toggled | {"comment_id":21,"user_id":1,"liked":true,"new_count":17}
-[04-Jun-2025 15:02:29 America/Recife] [2025-06-04 15:02:29] COMMENTS: SUCCESS | {"message":"Comentário curtido!","data_type":"array"}
-[04-Jun-2025 15:02:29 America/Recife] [2025-06-04 15:02:29] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?action=like&id=21"}
-[04-Jun-2025 15:02:29 America/Recife] [2025-06-04 15:02:29] COMMENTS: Database loaded from config file
-[04-Jun-2025 15:02:29 America/Recife] [2025-06-04 15:02:29] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 15:02:29 America/Recife] [2025-06-04 15:02:29] COMMENTS: Liking comment
-[04-Jun-2025 15:02:29 America/Recife] [2025-06-04 15:02:29] COMMENTS: Comment like toggled | {"comment_id":21,"user_id":1,"liked":true,"new_count":18}
-[04-Jun-2025 15:02:29 America/Recife] [2025-06-04 15:02:29] COMMENTS: SUCCESS | {"message":"Comentário curtido!","data_type":"array"}
-[04-Jun-2025 15:02:30 America/Recife] [2025-06-04 15:02:30] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?action=like&id=21"}
-[04-Jun-2025 15:02:30 America/Recife] [2025-06-04 15:02:30] COMMENTS: Database loaded from config file
-[04-Jun-2025 15:02:30 America/Recife] [2025-06-04 15:02:30] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 15:02:30 America/Recife] [2025-06-04 15:02:30] COMMENTS: Liking comment
-[04-Jun-2025 15:02:30 America/Recife] [2025-06-04 15:02:30] COMMENTS: Comment like toggled | {"comment_id":21,"user_id":1,"liked":true,"new_count":19}
-[04-Jun-2025 15:02:30 America/Recife] [2025-06-04 15:02:30] COMMENTS: SUCCESS | {"message":"Comentário curtido!","data_type":"array"}
-[04-Jun-2025 15:02:30 America/Recife] [2025-06-04 15:02:30] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?action=like&id=21"}
-[04-Jun-2025 15:02:30 America/Recife] [2025-06-04 15:02:30] COMMENTS: Database loaded from config file
-[04-Jun-2025 15:02:30 America/Recife] [2025-06-04 15:02:30] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 15:02:30 America/Recife] [2025-06-04 15:02:30] COMMENTS: Liking comment
-[04-Jun-2025 15:02:30 America/Recife] [2025-06-04 15:02:30] COMMENTS: Comment like toggled | {"comment_id":21,"user_id":1,"liked":true,"new_count":20}
-[04-Jun-2025 15:02:30 America/Recife] [2025-06-04 15:02:30] COMMENTS: SUCCESS | {"message":"Comentário curtido!","data_type":"array"}
-[04-Jun-2025 15:02:30 America/Recife] [2025-06-04 15:02:30] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?action=like&id=21"}
-[04-Jun-2025 15:02:30 America/Recife] [2025-06-04 15:02:30] COMMENTS: Database loaded from config file
-[04-Jun-2025 15:02:30 America/Recife] [2025-06-04 15:02:30] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 15:02:30 America/Recife] [2025-06-04 15:02:30] COMMENTS: Liking comment
-[04-Jun-2025 15:02:30 America/Recife] [2025-06-04 15:02:30] COMMENTS: Comment like toggled | {"comment_id":21,"user_id":1,"liked":true,"new_count":21}
-[04-Jun-2025 15:02:30 America/Recife] [2025-06-04 15:02:30] COMMENTS: SUCCESS | {"message":"Comentário curtido!","data_type":"array"}
-[04-Jun-2025 15:02:31 America/Recife] [2025-06-04 15:02:31] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?action=like&id=21"}
-[04-Jun-2025 15:02:31 America/Recife] [2025-06-04 15:02:31] COMMENTS: Database loaded from config file
-[04-Jun-2025 15:02:31 America/Recife] [2025-06-04 15:02:31] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 15:02:31 America/Recife] [2025-06-04 15:02:31] COMMENTS: Liking comment
-[04-Jun-2025 15:02:31 America/Recife] [2025-06-04 15:02:31] COMMENTS: Comment like toggled | {"comment_id":21,"user_id":1,"liked":true,"new_count":22}
-[04-Jun-2025 15:02:31 America/Recife] [2025-06-04 15:02:31] COMMENTS: SUCCESS | {"message":"Comentário curtido!","data_type":"array"}
-[04-Jun-2025 15:02:37 America/Recife] [2025-06-04 15:02:37] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=6&page=1&per_page=10&sort=recent"}
-[04-Jun-2025 15:02:37 America/Recife] [2025-06-04 15:02:37] COMMENTS: Database loaded from config file
-[04-Jun-2025 15:02:37 America/Recife] [2025-06-04 15:02:37] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 15:02:37 America/Recife] [2025-06-04 15:02:37] COMMENTS: Getting comments
-[04-Jun-2025 15:02:37 America/Recife] [2025-06-04 15:02:37] COMMENTS: Get params | {"content_type":"news","content_id":6,"page":1,"per_page":10,"sort":"recent"}
-[04-Jun-2025 15:02:37 America/Recife] [2025-06-04 15:02:37] COMMENTS: Comments retrieved | {"count":8,"total":8}
-[04-Jun-2025 15:02:37 America/Recife] [2025-06-04 15:02:37] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
-[04-Jun-2025 15:02:42 America/Recife] [2025-06-04 15:02:42] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=6&page=1&per_page=10&sort=popular"}
-[04-Jun-2025 15:02:42 America/Recife] [2025-06-04 15:02:42] COMMENTS: Database loaded from config file
-[04-Jun-2025 15:02:42 America/Recife] [2025-06-04 15:02:42] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 15:02:42 America/Recife] [2025-06-04 15:02:42] COMMENTS: Getting comments
-[04-Jun-2025 15:02:42 America/Recife] [2025-06-04 15:02:42] COMMENTS: Get params | {"content_type":"news","content_id":6,"page":1,"per_page":10,"sort":"popular"}
-[04-Jun-2025 15:02:42 America/Recife] [2025-06-04 15:02:42] COMMENTS: Comments retrieved | {"count":8,"total":8}
-[04-Jun-2025 15:02:42 America/Recife] [2025-06-04 15:02:42] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
-[04-Jun-2025 15:02:44 America/Recife] [2025-06-04 15:02:44] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=6&page=1&per_page=10&sort=recent"}
-[04-Jun-2025 15:02:44 America/Recife] [2025-06-04 15:02:44] COMMENTS: Database loaded from config file
-[04-Jun-2025 15:02:44 America/Recife] [2025-06-04 15:02:44] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 15:02:44 America/Recife] [2025-06-04 15:02:44] COMMENTS: Getting comments
-[04-Jun-2025 15:02:44 America/Recife] [2025-06-04 15:02:44] COMMENTS: Get params | {"content_type":"news","content_id":6,"page":1,"per_page":10,"sort":"recent"}
-[04-Jun-2025 15:02:44 America/Recife] [2025-06-04 15:02:44] COMMENTS: Comments retrieved | {"count":8,"total":8}
-[04-Jun-2025 15:02:44 America/Recife] [2025-06-04 15:02:44] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
-[04-Jun-2025 15:18:40 America/Recife] [2025-06-04 15:18:40] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=1&page=1&per_page=10&sort=recent"}
-[04-Jun-2025 15:18:40 America/Recife] [2025-06-04 15:18:40] COMMENTS: Database loaded from config file
-[04-Jun-2025 15:18:40 America/Recife] [2025-06-04 15:18:40] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 15:18:40 America/Recife] [2025-06-04 15:18:40] COMMENTS: Getting comments
-[04-Jun-2025 15:18:40 America/Recife] [2025-06-04 15:18:40] COMMENTS: Get params | {"content_type":"news","content_id":1,"page":1,"per_page":10,"sort":"recent"}
-[04-Jun-2025 15:18:40 America/Recife] [2025-06-04 15:18:40] COMMENTS: Comments retrieved | {"count":10,"total":15}
-[04-Jun-2025 15:18:40 America/Recife] [2025-06-04 15:18:40] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
-[04-Jun-2025 15:18:48 America/Recife] [2025-06-04 15:18:48] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?action=delete&id=22"}
-[04-Jun-2025 15:18:48 America/Recife] [2025-06-04 15:18:48] COMMENTS: Database loaded from config file
-[04-Jun-2025 15:18:48 America/Recife] [2025-06-04 15:18:48] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 15:18:48 America/Recife] [2025-06-04 15:18:48] COMMENTS: Comment deleted | {"comment_id":22,"deleted_by":1}
-[04-Jun-2025 15:18:48 America/Recife] [2025-06-04 15:18:48] COMMENTS: SUCCESS | {"message":"Comentário removido com sucesso","data_type":"array"}
-[04-Jun-2025 15:18:49 America/Recife] [2025-06-04 15:18:49] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?action=delete&id=22"}
-[04-Jun-2025 15:18:49 America/Recife] [2025-06-04 15:18:49] COMMENTS: Database loaded from config file
-[04-Jun-2025 15:18:49 America/Recife] [2025-06-04 15:18:49] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 15:18:49 America/Recife] [2025-06-04 15:18:49] COMMENTS: ERROR 404 | {"message":"Comentário não encontrado","details":null}
-[04-Jun-2025 15:18:50 America/Recife] [2025-06-04 15:18:50] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?action=delete&id=23"}
-[04-Jun-2025 15:18:50 America/Recife] [2025-06-04 15:18:50] COMMENTS: Database loaded from config file
-[04-Jun-2025 15:18:50 America/Recife] [2025-06-04 15:18:50] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 15:18:50 America/Recife] [2025-06-04 15:18:50] COMMENTS: Comment deleted | {"comment_id":23,"deleted_by":1}
-[04-Jun-2025 15:18:50 America/Recife] [2025-06-04 15:18:50] COMMENTS: SUCCESS | {"message":"Comentário removido com sucesso","data_type":"array"}
-[04-Jun-2025 15:18:51 America/Recife] [2025-06-04 15:18:51] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?action=delete&id=23"}
-[04-Jun-2025 15:18:51 America/Recife] [2025-06-04 15:18:51] COMMENTS: Database loaded from config file
-[04-Jun-2025 15:18:51 America/Recife] [2025-06-04 15:18:51] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 15:18:51 America/Recife] [2025-06-04 15:18:51] COMMENTS: ERROR 404 | {"message":"Comentário não encontrado","details":null}
-[04-Jun-2025 15:18:52 America/Recife] [2025-06-04 15:18:52] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?action=delete&id=13"}
-[04-Jun-2025 15:18:52 America/Recife] [2025-06-04 15:18:52] COMMENTS: Database loaded from config file
-[04-Jun-2025 15:18:52 America/Recife] [2025-06-04 15:18:52] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 15:18:52 America/Recife] [2025-06-04 15:18:52] COMMENTS: Comment deleted | {"comment_id":13,"deleted_by":1}
-[04-Jun-2025 15:18:52 America/Recife] [2025-06-04 15:18:52] COMMENTS: SUCCESS | {"message":"Comentário removido com sucesso","data_type":"array"}
-[04-Jun-2025 15:18:53 America/Recife] [2025-06-04 15:18:53] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?action=delete&id=13"}
-[04-Jun-2025 15:18:53 America/Recife] [2025-06-04 15:18:53] COMMENTS: Database loaded from config file
-[04-Jun-2025 15:18:53 America/Recife] [2025-06-04 15:18:53] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 15:18:53 America/Recife] [2025-06-04 15:18:53] COMMENTS: ERROR 404 | {"message":"Comentário não encontrado","details":null}
-[04-Jun-2025 15:18:54 America/Recife] [2025-06-04 15:18:54] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?action=delete&id=12"}
-[04-Jun-2025 15:18:54 America/Recife] [2025-06-04 15:18:54] COMMENTS: Database loaded from config file
-[04-Jun-2025 15:18:54 America/Recife] [2025-06-04 15:18:54] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 15:18:54 America/Recife] [2025-06-04 15:18:54] COMMENTS: Comment deleted | {"comment_id":12,"deleted_by":1}
-[04-Jun-2025 15:18:54 America/Recife] [2025-06-04 15:18:54] COMMENTS: SUCCESS | {"message":"Comentário removido com sucesso","data_type":"array"}
-[04-Jun-2025 15:18:55 America/Recife] [2025-06-04 15:18:55] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?action=delete&id=11"}
-[04-Jun-2025 15:18:55 America/Recife] [2025-06-04 15:18:55] COMMENTS: Database loaded from config file
-[04-Jun-2025 15:18:55 America/Recife] [2025-06-04 15:18:55] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 15:18:55 America/Recife] [2025-06-04 15:18:55] COMMENTS: Comment deleted | {"comment_id":11,"deleted_by":1}
-[04-Jun-2025 15:18:55 America/Recife] [2025-06-04 15:18:55] COMMENTS: SUCCESS | {"message":"Comentário removido com sucesso","data_type":"array"}
-[04-Jun-2025 15:18:56 America/Recife] [2025-06-04 15:18:56] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?action=delete&id=24"}
-[04-Jun-2025 15:18:56 America/Recife] [2025-06-04 15:18:56] COMMENTS: Database loaded from config file
-[04-Jun-2025 15:18:56 America/Recife] [2025-06-04 15:18:56] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 15:18:56 America/Recife] [2025-06-04 15:18:56] COMMENTS: Comment deleted | {"comment_id":24,"deleted_by":1}
-[04-Jun-2025 15:18:56 America/Recife] [2025-06-04 15:18:56] COMMENTS: SUCCESS | {"message":"Comentário removido com sucesso","data_type":"array"}
-[04-Jun-2025 15:19:00 America/Recife] [2025-06-04 15:19:00] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?action=delete&id=26"}
-[04-Jun-2025 15:19:00 America/Recife] [2025-06-04 15:19:00] COMMENTS: Database loaded from config file
-[04-Jun-2025 15:19:00 America/Recife] [2025-06-04 15:19:00] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 15:19:00 America/Recife] [2025-06-04 15:19:00] COMMENTS: Comment deleted | {"comment_id":26,"deleted_by":1}
-[04-Jun-2025 15:19:00 America/Recife] [2025-06-04 15:19:00] COMMENTS: SUCCESS | {"message":"Comentário removido com sucesso","data_type":"array"}
-[04-Jun-2025 15:19:04 America/Recife] [2025-06-04 15:19:04] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?action=delete&id=25"}
-[04-Jun-2025 15:19:04 America/Recife] [2025-06-04 15:19:04] COMMENTS: Database loaded from config file
-[04-Jun-2025 15:19:04 America/Recife] [2025-06-04 15:19:04] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 15:19:04 America/Recife] [2025-06-04 15:19:04] COMMENTS: Comment deleted | {"comment_id":25,"deleted_by":1}
-[04-Jun-2025 15:19:04 America/Recife] [2025-06-04 15:19:04] COMMENTS: SUCCESS | {"message":"Comentário removido com sucesso","data_type":"array"}
-[04-Jun-2025 15:19:13 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 15:19:13","message":"M\u00e9todo recebido","data":"POST"}
-[04-Jun-2025 15:19:13 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 15:19:13","message":"Input bruto recebido","data":"{\"action\":\"logout\"}"}
-[04-Jun-2025 15:19:13 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 15:19:13","message":"Input decodificado","data":{"action":"logout"}}
-[04-Jun-2025 15:19:13 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 15:19:13","message":"A\u00e7\u00e3o solicitada","data":"logout"}
-[04-Jun-2025 15:19:13 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 15:19:13","message":"Logout realizado","data":null}
-[04-Jun-2025 15:22:28 America/Recife] [2025-06-04 15:22:28] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=1&page=1&per_page=10&sort=recent"}
-[04-Jun-2025 15:22:28 America/Recife] [2025-06-04 15:22:28] COMMENTS: Database loaded from config file
-[04-Jun-2025 15:22:28 America/Recife] [2025-06-04 15:22:28] COMMENTS: Session info | {"user_logged":false,"user_id":null}
-[04-Jun-2025 15:22:28 America/Recife] [2025-06-04 15:22:28] COMMENTS: Getting comments
-[04-Jun-2025 15:22:28 America/Recife] [2025-06-04 15:22:28] COMMENTS: Get params | {"content_type":"news","content_id":1,"page":1,"per_page":10,"sort":"recent"}
-[04-Jun-2025 15:22:28 America/Recife] [2025-06-04 15:22:28] COMMENTS: Comments retrieved | {"count":7,"total":7}
-[04-Jun-2025 15:22:28 America/Recife] [2025-06-04 15:22:28] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
-[04-Jun-2025 15:24:32 America/Recife] [2025-06-04 15:24:32] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=1&page=1&per_page=10&sort=recent"}
-[04-Jun-2025 15:24:32 America/Recife] [2025-06-04 15:24:32] COMMENTS: Database loaded from config file
-[04-Jun-2025 15:24:32 America/Recife] [2025-06-04 15:24:32] COMMENTS: Session info | {"user_logged":false,"user_id":null}
-[04-Jun-2025 15:24:32 America/Recife] [2025-06-04 15:24:32] COMMENTS: Getting comments
-[04-Jun-2025 15:24:32 America/Recife] [2025-06-04 15:24:32] COMMENTS: Get params | {"content_type":"news","content_id":1,"page":1,"per_page":10,"sort":"recent"}
-[04-Jun-2025 15:24:32 America/Recife] [2025-06-04 15:24:32] COMMENTS: Comments retrieved | {"count":7,"total":7}
-[04-Jun-2025 15:24:32 America/Recife] [2025-06-04 15:24:32] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
-[04-Jun-2025 15:47:04 America/Recife] [2025-06-04 15:47:04] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=1&page=1&per_page=10&sort=recent"}
-[04-Jun-2025 15:47:04 America/Recife] [2025-06-04 15:47:04] COMMENTS: Database loaded from config file
-[04-Jun-2025 15:47:04 America/Recife] [2025-06-04 15:47:04] COMMENTS: Session info | {"user_logged":false,"user_id":null}
-[04-Jun-2025 15:47:04 America/Recife] [2025-06-04 15:47:04] COMMENTS: Getting comments
-[04-Jun-2025 15:47:04 America/Recife] [2025-06-04 15:47:04] COMMENTS: Get params | {"content_type":"news","content_id":1,"page":1,"per_page":10,"sort":"recent"}
-[04-Jun-2025 15:47:04 America/Recife] [2025-06-04 15:47:04] COMMENTS: Comments retrieved | {"count":7,"total":7}
-[04-Jun-2025 15:47:04 America/Recife] [2025-06-04 15:47:04] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
-[04-Jun-2025 15:48:41 America/Recife] [2025-06-04 15:48:41] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=4&page=1&per_page=10&sort=recent"}
-[04-Jun-2025 15:48:41 America/Recife] [2025-06-04 15:48:41] COMMENTS: Database loaded from config file
-[04-Jun-2025 15:48:41 America/Recife] [2025-06-04 15:48:41] COMMENTS: Session info | {"user_logged":false,"user_id":null}
-[04-Jun-2025 15:48:41 America/Recife] [2025-06-04 15:48:41] COMMENTS: Getting comments
-[04-Jun-2025 15:48:41 America/Recife] [2025-06-04 15:48:41] COMMENTS: Get params | {"content_type":"news","content_id":4,"page":1,"per_page":10,"sort":"recent"}
-[04-Jun-2025 15:48:41 America/Recife] [2025-06-04 15:48:41] COMMENTS: Comments retrieved | {"count":1,"total":1}
-[04-Jun-2025 15:48:41 America/Recife] [2025-06-04 15:48:41] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
-[04-Jun-2025 15:49:35 America/Recife] [2025-06-04 15:49:35] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=1&page=1&per_page=10&sort=recent"}
-[04-Jun-2025 15:49:35 America/Recife] [2025-06-04 15:49:35] COMMENTS: Database loaded from config file
-[04-Jun-2025 15:49:35 America/Recife] [2025-06-04 15:49:35] COMMENTS: Session info | {"user_logged":false,"user_id":null}
-[04-Jun-2025 15:49:35 America/Recife] [2025-06-04 15:49:35] COMMENTS: Getting comments
-[04-Jun-2025 15:49:35 America/Recife] [2025-06-04 15:49:35] COMMENTS: Get params | {"content_type":"news","content_id":1,"page":1,"per_page":10,"sort":"recent"}
-[04-Jun-2025 15:49:35 America/Recife] [2025-06-04 15:49:35] COMMENTS: Comments retrieved | {"count":7,"total":7}
-[04-Jun-2025 15:49:35 America/Recife] [2025-06-04 15:49:35] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
-[04-Jun-2025 15:49:50 America/Recife] [2025-06-04 15:49:50] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=1&page=1&per_page=10&sort=recent"}
-[04-Jun-2025 15:49:50 America/Recife] [2025-06-04 15:49:50] COMMENTS: Database loaded from config file
-[04-Jun-2025 15:49:50 America/Recife] [2025-06-04 15:49:50] COMMENTS: Session info | {"user_logged":false,"user_id":null}
-[04-Jun-2025 15:49:50 America/Recife] [2025-06-04 15:49:50] COMMENTS: Getting comments
-[04-Jun-2025 15:49:50 America/Recife] [2025-06-04 15:49:50] COMMENTS: Get params | {"content_type":"news","content_id":1,"page":1,"per_page":10,"sort":"recent"}
-[04-Jun-2025 15:49:50 America/Recife] [2025-06-04 15:49:50] COMMENTS: Comments retrieved | {"count":7,"total":7}
-[04-Jun-2025 15:49:50 America/Recife] [2025-06-04 15:49:50] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
-[04-Jun-2025 15:49:52 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 15:49:52","message":"M\u00e9todo recebido","data":"POST"}
-[04-Jun-2025 15:49:52 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 15:49:52","message":"Input bruto recebido","data":"{\"username\":\"admin\",\"password\":\"password\",\"remember\":false}"}
-[04-Jun-2025 15:49:52 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 15:49:52","message":"Input decodificado","data":{"username":"admin","password":"password","remember":false}}
-[04-Jun-2025 15:49:52 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 15:49:52","message":"A\u00e7\u00e3o solicitada","data":"login"}
-[04-Jun-2025 15:49:52 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 15:49:52","message":"Conectado ao banco com sucesso","data":null}
-[04-Jun-2025 15:49:52 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 15:49:52","message":"Query executada","data":{"sql":"SELECT id, username, email, password_hash, display_name, level, \n                       experience_points, status, email_verified\n                FROM users \n                WHERE (username = :username OR email = :email)","username":"admin","user_found":true}}
-[04-Jun-2025 15:49:52 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 15:49:52","message":"Verifica\u00e7\u00e3o de senha","data":{"password_provided":"password","hash_from_db":"$2y$10$92IXUNpkjO0rOQ5byMi.Ye4...","password_valid":true}}
-[04-Jun-2025 15:49:52 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 15:49:52","message":"Sess\u00e3o criada","data":{"user_id":"1","username":"admin","display_name":"Administrador","user_level":"5","email":"admin@leonidabrasil.com","login_time":1749062992}}
-[04-Jun-2025 15:49:52 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 15:49:52","message":"Login bem-sucedido","data":{"id":"1","username":"admin","display_name":"Administrador","email":"admin@leonidabrasil.com","level":"5","experience_points":"5125"}}
-[04-Jun-2025 15:57:50 America/Recife] [2025-06-04 15:57:50] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=1&page=1&per_page=10&sort=recent"}
-[04-Jun-2025 15:57:50 America/Recife] [2025-06-04 15:57:50] COMMENTS: Database loaded from config file
-[04-Jun-2025 15:57:50 America/Recife] [2025-06-04 15:57:50] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 15:57:50 America/Recife] [2025-06-04 15:57:50] COMMENTS: Getting comments
-[04-Jun-2025 15:57:50 America/Recife] [2025-06-04 15:57:50] COMMENTS: Get params | {"content_type":"news","content_id":1,"page":1,"per_page":10,"sort":"recent"}
-[04-Jun-2025 15:57:50 America/Recife] [2025-06-04 15:57:50] COMMENTS: Comments retrieved | {"count":7,"total":7}
-[04-Jun-2025 15:57:50 America/Recife] [2025-06-04 15:57:50] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
-[04-Jun-2025 15:58:04 America/Recife] [2025-06-04 15:58:04] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=1&page=1&per_page=10&sort=recent"}
-[04-Jun-2025 15:58:04 America/Recife] [2025-06-04 15:58:04] COMMENTS: Database loaded from config file
-[04-Jun-2025 15:58:04 America/Recife] [2025-06-04 15:58:04] COMMENTS: Session info | {"user_logged":false,"user_id":null}
-[04-Jun-2025 15:58:04 America/Recife] [2025-06-04 15:58:04] COMMENTS: Getting comments
-[04-Jun-2025 15:58:04 America/Recife] [2025-06-04 15:58:04] COMMENTS: Get params | {"content_type":"news","content_id":1,"page":1,"per_page":10,"sort":"recent"}
-[04-Jun-2025 15:58:04 America/Recife] [2025-06-04 15:58:04] COMMENTS: Comments retrieved | {"count":7,"total":7}
-[04-Jun-2025 15:58:04 America/Recife] [2025-06-04 15:58:04] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
-[04-Jun-2025 15:58:28 America/Recife] [2025-06-04 15:58:28] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=1&page=1&per_page=10&sort=recent"}
-[04-Jun-2025 15:58:28 America/Recife] [2025-06-04 15:58:28] COMMENTS: Database loaded from config file
-[04-Jun-2025 15:58:28 America/Recife] [2025-06-04 15:58:28] COMMENTS: Session info | {"user_logged":false,"user_id":null}
-[04-Jun-2025 15:58:28 America/Recife] [2025-06-04 15:58:28] COMMENTS: Getting comments
-[04-Jun-2025 15:58:28 America/Recife] [2025-06-04 15:58:28] COMMENTS: Get params | {"content_type":"news","content_id":1,"page":1,"per_page":10,"sort":"recent"}
-[04-Jun-2025 15:58:28 America/Recife] [2025-06-04 15:58:28] COMMENTS: Comments retrieved | {"count":7,"total":7}
-[04-Jun-2025 15:58:28 America/Recife] [2025-06-04 15:58:28] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
-[04-Jun-2025 15:58:29 America/Recife] [2025-06-04 15:58:29] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=1&page=1&per_page=10&sort=recent"}
-[04-Jun-2025 15:58:29 America/Recife] [2025-06-04 15:58:29] COMMENTS: Database loaded from config file
-[04-Jun-2025 15:58:29 America/Recife] [2025-06-04 15:58:29] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 15:58:29 America/Recife] [2025-06-04 15:58:29] COMMENTS: Getting comments
-[04-Jun-2025 15:58:29 America/Recife] [2025-06-04 15:58:29] COMMENTS: Get params | {"content_type":"news","content_id":1,"page":1,"per_page":10,"sort":"recent"}
-[04-Jun-2025 15:58:29 America/Recife] [2025-06-04 15:58:29] COMMENTS: Comments retrieved | {"count":7,"total":7}
-[04-Jun-2025 15:58:29 America/Recife] [2025-06-04 15:58:29] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
-[04-Jun-2025 16:03:43 America/Recife] [2025-06-04 16:03:43] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=1&page=1&per_page=10&sort=recent"}
-[04-Jun-2025 16:03:43 America/Recife] [2025-06-04 16:03:43] COMMENTS: Database loaded from config file
-[04-Jun-2025 16:03:43 America/Recife] [2025-06-04 16:03:43] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 16:03:43 America/Recife] [2025-06-04 16:03:43] COMMENTS: Getting comments
-[04-Jun-2025 16:03:43 America/Recife] [2025-06-04 16:03:43] COMMENTS: Get params | {"content_type":"news","content_id":1,"page":1,"per_page":10,"sort":"recent"}
-[04-Jun-2025 16:03:43 America/Recife] [2025-06-04 16:03:43] COMMENTS: Comments retrieved | {"count":7,"total":7}
-[04-Jun-2025 16:03:43 America/Recife] [2025-06-04 16:03:43] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
-[04-Jun-2025 16:04:27 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 16:04:27","message":"M\u00e9todo recebido","data":"POST"}
-[04-Jun-2025 16:04:27 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 16:04:27","message":"Input bruto recebido","data":"{\"action\":\"logout\"}"}
-[04-Jun-2025 16:04:27 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 16:04:27","message":"Input decodificado","data":{"action":"logout"}}
-[04-Jun-2025 16:04:27 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 16:04:27","message":"A\u00e7\u00e3o solicitada","data":"logout"}
-[04-Jun-2025 16:04:27 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 16:04:27","message":"Logout realizado","data":null}
-[04-Jun-2025 16:04:52 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 16:04:52","message":"M\u00e9todo recebido","data":"POST"}
-[04-Jun-2025 16:04:52 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 16:04:52","message":"Input bruto recebido","data":"{\"username\":\"admin\",\"password\":\"password\",\"remember\":false}"}
-[04-Jun-2025 16:04:52 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 16:04:52","message":"Input decodificado","data":{"username":"admin","password":"password","remember":false}}
-[04-Jun-2025 16:04:52 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 16:04:52","message":"A\u00e7\u00e3o solicitada","data":"login"}
-[04-Jun-2025 16:04:52 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 16:04:52","message":"Conectado ao banco com sucesso","data":null}
-[04-Jun-2025 16:04:52 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 16:04:52","message":"Query executada","data":{"sql":"SELECT id, username, email, password_hash, display_name, level, \n                       experience_points, status, email_verified\n                FROM users \n                WHERE (username = :username OR email = :email)","username":"admin","user_found":true}}
-[04-Jun-2025 16:04:52 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 16:04:52","message":"Verifica\u00e7\u00e3o de senha","data":{"password_provided":"password","hash_from_db":"$2y$10$92IXUNpkjO0rOQ5byMi.Ye4...","password_valid":true}}
-[04-Jun-2025 16:04:52 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 16:04:52","message":"Sess\u00e3o criada","data":{"user_id":"1","username":"admin","display_name":"Administrador","user_level":"5","email":"admin@leonidabrasil.com","login_time":1749063892}}
-[04-Jun-2025 16:04:52 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 16:04:52","message":"Login bem-sucedido","data":{"id":"1","username":"admin","display_name":"Administrador","email":"admin@leonidabrasil.com","level":"5","experience_points":"5125"}}
-[04-Jun-2025 16:10:09 America/Recife] [2025-06-04 16:10:09] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=1&page=1&per_page=10&sort=recent"}
-[04-Jun-2025 16:10:09 America/Recife] [2025-06-04 16:10:09] COMMENTS: Database loaded from config file
-[04-Jun-2025 16:10:09 America/Recife] [2025-06-04 16:10:09] COMMENTS: Session info | {"user_logged":false,"user_id":null}
-[04-Jun-2025 16:10:09 America/Recife] [2025-06-04 16:10:09] COMMENTS: Getting comments
-[04-Jun-2025 16:10:09 America/Recife] [2025-06-04 16:10:09] COMMENTS: Get params | {"content_type":"news","content_id":1,"page":1,"per_page":10,"sort":"recent"}
-[04-Jun-2025 16:10:09 America/Recife] [2025-06-04 16:10:09] COMMENTS: Comments retrieved | {"count":7,"total":7}
-[04-Jun-2025 16:10:09 America/Recife] [2025-06-04 16:10:09] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
-[04-Jun-2025 16:10:17 America/Recife] [2025-06-04 16:10:17] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=1&page=1&per_page=10&sort=recent"}
-[04-Jun-2025 16:10:17 America/Recife] [2025-06-04 16:10:17] COMMENTS: Database loaded from config file
-[04-Jun-2025 16:10:17 America/Recife] [2025-06-04 16:10:17] COMMENTS: Session info | {"user_logged":false,"user_id":null}
-[04-Jun-2025 16:10:17 America/Recife] [2025-06-04 16:10:17] COMMENTS: Getting comments
-[04-Jun-2025 16:10:17 America/Recife] [2025-06-04 16:10:17] COMMENTS: Get params | {"content_type":"news","content_id":1,"page":1,"per_page":10,"sort":"recent"}
-[04-Jun-2025 16:10:17 America/Recife] [2025-06-04 16:10:17] COMMENTS: Comments retrieved | {"count":7,"total":7}
-[04-Jun-2025 16:10:17 America/Recife] [2025-06-04 16:10:17] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
-[04-Jun-2025 16:10:20 America/Recife] [2025-06-04 16:10:20] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=1&page=1&per_page=10&sort=recent"}
-[04-Jun-2025 16:10:20 America/Recife] [2025-06-04 16:10:20] COMMENTS: Database loaded from config file
-[04-Jun-2025 16:10:20 America/Recife] [2025-06-04 16:10:20] COMMENTS: Session info | {"user_logged":false,"user_id":null}
-[04-Jun-2025 16:10:20 America/Recife] [2025-06-04 16:10:20] COMMENTS: Getting comments
-[04-Jun-2025 16:10:20 America/Recife] [2025-06-04 16:10:20] COMMENTS: Get params | {"content_type":"news","content_id":1,"page":1,"per_page":10,"sort":"recent"}
-[04-Jun-2025 16:10:20 America/Recife] [2025-06-04 16:10:20] COMMENTS: Comments retrieved | {"count":7,"total":7}
-[04-Jun-2025 16:10:20 America/Recife] [2025-06-04 16:10:20] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
-[04-Jun-2025 16:13:04 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 16:13:04","message":"M\u00e9todo recebido","data":"POST"}
-[04-Jun-2025 16:13:04 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 16:13:04","message":"Input bruto recebido","data":"{\"username\":\"admin\",\"password\":\"password\",\"remember\":false}"}
-[04-Jun-2025 16:13:04 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 16:13:04","message":"Input decodificado","data":{"username":"admin","password":"password","remember":false}}
-[04-Jun-2025 16:13:04 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 16:13:04","message":"A\u00e7\u00e3o solicitada","data":"login"}
-[04-Jun-2025 16:13:04 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 16:13:04","message":"Conectado ao banco com sucesso","data":null}
-[04-Jun-2025 16:13:04 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 16:13:04","message":"Query executada","data":{"sql":"SELECT id, username, email, password_hash, display_name, level, \n                       experience_points, status, email_verified\n                FROM users \n                WHERE (username = :username OR email = :email)","username":"admin","user_found":true}}
-[04-Jun-2025 16:13:04 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 16:13:04","message":"Verifica\u00e7\u00e3o de senha","data":{"password_provided":"password","hash_from_db":"$2y$10$92IXUNpkjO0rOQ5byMi.Ye4...","password_valid":true}}
-[04-Jun-2025 16:13:04 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 16:13:04","message":"Sess\u00e3o criada","data":{"user_id":"1","username":"admin","display_name":"Administrador","user_level":"5","email":"admin@leonidabrasil.com","login_time":1749064384}}
-[04-Jun-2025 16:13:04 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 16:13:04","message":"Login bem-sucedido","data":{"id":"1","username":"admin","display_name":"Administrador","email":"admin@leonidabrasil.com","level":"5","experience_points":"5125"}}
-[04-Jun-2025 16:50:19 America/Recife] [2025-06-04 16:50:19] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=6&page=1&per_page=10&sort=recent"}
-[04-Jun-2025 16:50:19 America/Recife] [2025-06-04 16:50:19] COMMENTS: Database loaded from config file
-[04-Jun-2025 16:50:19 America/Recife] [2025-06-04 16:50:19] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 16:50:19 America/Recife] [2025-06-04 16:50:19] COMMENTS: Getting comments
-[04-Jun-2025 16:50:19 America/Recife] [2025-06-04 16:50:19] COMMENTS: Get params | {"content_type":"news","content_id":6,"page":1,"per_page":10,"sort":"recent"}
-[04-Jun-2025 16:50:19 America/Recife] [2025-06-04 16:50:19] COMMENTS: Comments retrieved | {"count":8,"total":8}
-[04-Jun-2025 16:50:19 America/Recife] [2025-06-04 16:50:19] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
-[04-Jun-2025 17:02:42 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 17:02:42","message":"M\u00e9todo recebido","data":"POST"}
-[04-Jun-2025 17:02:42 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 17:02:42","message":"Input bruto recebido","data":"{\"action\":\"logout\"}"}
-[04-Jun-2025 17:02:42 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 17:02:42","message":"Input decodificado","data":{"action":"logout"}}
-[04-Jun-2025 17:02:42 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 17:02:42","message":"A\u00e7\u00e3o solicitada","data":"logout"}
-[04-Jun-2025 17:02:42 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 17:02:42","message":"Logout realizado","data":null}
-[04-Jun-2025 17:56:26 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 17:56:26","message":"M\u00e9todo recebido","data":"POST"}
-[04-Jun-2025 17:56:26 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 17:56:26","message":"Input bruto recebido","data":"{\"username\":\"admin\",\"password\":\"passworpd\",\"remember\":false}"}
-[04-Jun-2025 17:56:26 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 17:56:26","message":"Input decodificado","data":{"username":"admin","password":"passworpd","remember":false}}
-[04-Jun-2025 17:56:26 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 17:56:26","message":"A\u00e7\u00e3o solicitada","data":"login"}
-[04-Jun-2025 17:56:26 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 17:56:26","message":"Conectado ao banco com sucesso","data":null}
-[04-Jun-2025 17:56:26 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 17:56:26","message":"Query executada","data":{"sql":"SELECT id, username, email, password_hash, display_name, level, \n                       experience_points, status, email_verified\n                FROM users \n                WHERE (username = :username OR email = :email)","username":"admin","user_found":true}}
-[04-Jun-2025 17:56:26 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 17:56:26","message":"Verifica\u00e7\u00e3o de senha","data":{"password_provided":"passworpd","hash_from_db":"$2y$10$92IXUNpkjO0rOQ5byMi.Ye4...","password_valid":false}}
-[04-Jun-2025 17:56:27 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 17:56:27","message":"Erro no login","data":"Senha incorreta"}
-[04-Jun-2025 17:56:32 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 17:56:32","message":"M\u00e9todo recebido","data":"POST"}
-[04-Jun-2025 17:56:32 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 17:56:32","message":"Input bruto recebido","data":"{\"username\":\"admin\",\"password\":\"password\",\"remember\":false}"}
-[04-Jun-2025 17:56:32 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 17:56:32","message":"Input decodificado","data":{"username":"admin","password":"password","remember":false}}
-[04-Jun-2025 17:56:32 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 17:56:32","message":"A\u00e7\u00e3o solicitada","data":"login"}
-[04-Jun-2025 17:56:32 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 17:56:32","message":"Conectado ao banco com sucesso","data":null}
-[04-Jun-2025 17:56:32 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 17:56:32","message":"Query executada","data":{"sql":"SELECT id, username, email, password_hash, display_name, level, \n                       experience_points, status, email_verified\n                FROM users \n                WHERE (username = :username OR email = :email)","username":"admin","user_found":true}}
-[04-Jun-2025 17:56:32 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 17:56:32","message":"Verifica\u00e7\u00e3o de senha","data":{"password_provided":"password","hash_from_db":"$2y$10$92IXUNpkjO0rOQ5byMi.Ye4...","password_valid":true}}
-[04-Jun-2025 17:56:32 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 17:56:32","message":"Sess\u00e3o criada","data":{"user_id":"1","username":"admin","display_name":"Administrador","user_level":"5","email":"admin@leonidabrasil.com","login_time":1749070592}}
-[04-Jun-2025 17:56:32 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 17:56:32","message":"Login bem-sucedido","data":{"id":"1","username":"admin","display_name":"Administrador","email":"admin@leonidabrasil.com","level":"5","experience_points":"5125"}}
-[04-Jun-2025 18:04:11 America/Recife] [2025-06-04 18:04:11] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=4&page=1&per_page=10&sort=recent"}
-[04-Jun-2025 18:04:11 America/Recife] [2025-06-04 18:04:11] COMMENTS: Database loaded from config file
-[04-Jun-2025 18:04:11 America/Recife] [2025-06-04 18:04:11] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 18:04:11 America/Recife] [2025-06-04 18:04:11] COMMENTS: Getting comments
-[04-Jun-2025 18:04:11 America/Recife] [2025-06-04 18:04:11] COMMENTS: Get params | {"content_type":"news","content_id":4,"page":1,"per_page":10,"sort":"recent"}
-[04-Jun-2025 18:04:11 America/Recife] [2025-06-04 18:04:11] COMMENTS: Comments retrieved | {"count":1,"total":1}
-[04-Jun-2025 18:04:11 America/Recife] [2025-06-04 18:04:11] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
-[04-Jun-2025 18:04:18 America/Recife] [2025-06-04 18:04:18] COMMENTS: === API Comments Started === | {"method":"POST","uri":"\/api\/comments.php"}
-[04-Jun-2025 18:04:18 America/Recife] [2025-06-04 18:04:18] COMMENTS: Database loaded from config file
-[04-Jun-2025 18:04:18 America/Recife] [2025-06-04 18:04:18] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 18:04:18 America/Recife] [2025-06-04 18:04:18] COMMENTS: Creating comment
-[04-Jun-2025 18:04:18 America/Recife] [2025-06-04 18:04:18] COMMENTS: Input received | {"content_type":"news","content_id":4,"content":"@Administrador"}
-[04-Jun-2025 18:04:18 America/Recife] [2025-06-04 18:04:18] COMMENTS: Creating comment | {"user_id":1,"content_type":"news","content_id":4,"content_length":14}
-[04-Jun-2025 18:04:18 America/Recife] [2025-06-04 18:04:18] COMMENTS: Comment created successfully | {"comment_id":"32"}
-[04-Jun-2025 18:04:18 America/Recife] [2025-06-04 18:04:18] COMMENTS: SUCCESS | {"message":"Comentário adicionado com sucesso!","data_type":"array"}
-[04-Jun-2025 18:04:24 America/Recife] [2025-06-04 18:04:24] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=4&page=1&per_page=10&sort=recent"}
-[04-Jun-2025 18:04:24 America/Recife] [2025-06-04 18:04:24] COMMENTS: Database loaded from config file
-[04-Jun-2025 18:04:24 America/Recife] [2025-06-04 18:04:24] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 18:04:24 America/Recife] [2025-06-04 18:04:24] COMMENTS: Getting comments
-[04-Jun-2025 18:04:24 America/Recife] [2025-06-04 18:04:24] COMMENTS: Get params | {"content_type":"news","content_id":4,"page":1,"per_page":10,"sort":"recent"}
-[04-Jun-2025 18:04:24 America/Recife] [2025-06-04 18:04:24] COMMENTS: Comments retrieved | {"count":2,"total":2}
-[04-Jun-2025 18:04:24 America/Recife] [2025-06-04 18:04:24] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
-[04-Jun-2025 20:00:12 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 20:00:12","message":"M\u00e9todo recebido","data":"POST"}
-[04-Jun-2025 20:00:12 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 20:00:12","message":"Input bruto recebido","data":"{\"username\":\"admin\",\"password\":\"passworpd\",\"remember\":false}"}
-[04-Jun-2025 20:00:12 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 20:00:12","message":"Input decodificado","data":{"username":"admin","password":"passworpd","remember":false}}
-[04-Jun-2025 20:00:12 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 20:00:12","message":"A\u00e7\u00e3o solicitada","data":"login"}
-[04-Jun-2025 20:00:12 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 20:00:12","message":"Conectado ao banco com sucesso","data":null}
-[04-Jun-2025 20:00:12 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 20:00:12","message":"Query executada","data":{"sql":"SELECT id, username, email, password_hash, display_name, level, \n                       experience_points, status, email_verified\n                FROM users \n                WHERE (username = :username OR email = :email)","username":"admin","user_found":true}}
-[04-Jun-2025 20:00:12 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 20:00:12","message":"Verifica\u00e7\u00e3o de senha","data":{"password_provided":"passworpd","hash_from_db":"$2y$10$92IXUNpkjO0rOQ5byMi.Ye4...","password_valid":false}}
-[04-Jun-2025 20:00:13 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 20:00:13","message":"Erro no login","data":"Senha incorreta"}
-[04-Jun-2025 20:00:17 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 20:00:17","message":"M\u00e9todo recebido","data":"POST"}
-[04-Jun-2025 20:00:17 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 20:00:17","message":"Input bruto recebido","data":"{\"username\":\"admin\",\"password\":\"password\",\"remember\":false}"}
-[04-Jun-2025 20:00:17 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 20:00:17","message":"Input decodificado","data":{"username":"admin","password":"password","remember":false}}
-[04-Jun-2025 20:00:17 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 20:00:17","message":"A\u00e7\u00e3o solicitada","data":"login"}
-[04-Jun-2025 20:00:17 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 20:00:17","message":"Conectado ao banco com sucesso","data":null}
-[04-Jun-2025 20:00:17 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 20:00:17","message":"Query executada","data":{"sql":"SELECT id, username, email, password_hash, display_name, level, \n                       experience_points, status, email_verified\n                FROM users \n                WHERE (username = :username OR email = :email)","username":"admin","user_found":true}}
-[04-Jun-2025 20:00:17 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 20:00:17","message":"Verifica\u00e7\u00e3o de senha","data":{"password_provided":"password","hash_from_db":"$2y$10$92IXUNpkjO0rOQ5byMi.Ye4...","password_valid":true}}
-[04-Jun-2025 20:00:17 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 20:00:17","message":"Sess\u00e3o criada","data":{"user_id":"1","username":"admin","display_name":"Administrador","user_level":"5","email":"admin@leonidabrasil.com","login_time":1749078017}}
-[04-Jun-2025 20:00:17 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-04 20:00:17","message":"Login bem-sucedido","data":{"id":"1","username":"admin","display_name":"Administrador","email":"admin@leonidabrasil.com","level":"5","experience_points":"5130"}}
-[04-Jun-2025 20:08:29 America/Recife] [2025-06-04 20:08:29] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=1&page=1&per_page=10&sort=recent"}
-[04-Jun-2025 20:08:29 America/Recife] [2025-06-04 20:08:29] COMMENTS: Database loaded from config file
-[04-Jun-2025 20:08:29 America/Recife] [2025-06-04 20:08:29] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 20:08:29 America/Recife] [2025-06-04 20:08:29] COMMENTS: Getting comments
-[04-Jun-2025 20:08:29 America/Recife] [2025-06-04 20:08:29] COMMENTS: Get params | {"content_type":"news","content_id":1,"page":1,"per_page":10,"sort":"recent"}
-[04-Jun-2025 20:08:29 America/Recife] [2025-06-04 20:08:29] COMMENTS: Comments retrieved | {"count":7,"total":7}
-[04-Jun-2025 20:08:29 America/Recife] [2025-06-04 20:08:29] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
-[04-Jun-2025 20:59:00 America/Recife] [2025-06-04 20:59:00] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=5&page=1&per_page=10&sort=recent"}
-[04-Jun-2025 20:59:00 America/Recife] [2025-06-04 20:59:00] COMMENTS: Database loaded from config file
-[04-Jun-2025 20:59:00 America/Recife] [2025-06-04 20:59:00] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 20:59:00 America/Recife] [2025-06-04 20:59:00] COMMENTS: Getting comments
-[04-Jun-2025 20:59:00 America/Recife] [2025-06-04 20:59:00] COMMENTS: Get params | {"content_type":"news","content_id":5,"page":1,"per_page":10,"sort":"recent"}
-[04-Jun-2025 20:59:00 America/Recife] [2025-06-04 20:59:00] COMMENTS: Comments retrieved | {"count":0,"total":0}
-[04-Jun-2025 20:59:00 America/Recife] [2025-06-04 20:59:00] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
-[04-Jun-2025 20:59:06 America/Recife] [2025-06-04 20:59:06] COMMENTS: === API Comments Started === | {"method":"POST","uri":"\/api\/comments.php"}
-[04-Jun-2025 20:59:06 America/Recife] [2025-06-04 20:59:06] COMMENTS: Database loaded from config file
-[04-Jun-2025 20:59:06 America/Recife] [2025-06-04 20:59:06] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 20:59:06 America/Recife] [2025-06-04 20:59:06] COMMENTS: Creating comment
-[04-Jun-2025 20:59:06 America/Recife] [2025-06-04 20:59:06] COMMENTS: Input received | {"content_type":"news","content_id":5,"content":"funciona ianda ?"}
-[04-Jun-2025 20:59:06 America/Recife] [2025-06-04 20:59:06] COMMENTS: Creating comment | {"user_id":1,"content_type":"news","content_id":5,"content_length":16}
-[04-Jun-2025 20:59:06 America/Recife] [2025-06-04 20:59:06] COMMENTS: Comment created successfully | {"comment_id":"33"}
-[04-Jun-2025 20:59:06 America/Recife] [2025-06-04 20:59:06] COMMENTS: SUCCESS | {"message":"Comentário adicionado com sucesso!","data_type":"array"}
-[04-Jun-2025 20:59:13 America/Recife] [2025-06-04 20:59:13] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=5&page=1&per_page=10&sort=recent"}
-[04-Jun-2025 20:59:13 America/Recife] [2025-06-04 20:59:13] COMMENTS: Database loaded from config file
-[04-Jun-2025 20:59:13 America/Recife] [2025-06-04 20:59:13] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 20:59:13 America/Recife] [2025-06-04 20:59:13] COMMENTS: Getting comments
-[04-Jun-2025 20:59:13 America/Recife] [2025-06-04 20:59:13] COMMENTS: Get params | {"content_type":"news","content_id":5,"page":1,"per_page":10,"sort":"recent"}
-[04-Jun-2025 20:59:13 America/Recife] [2025-06-04 20:59:13] COMMENTS: Comments retrieved | {"count":1,"total":1}
-[04-Jun-2025 20:59:13 America/Recife] [2025-06-04 20:59:13] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
-[04-Jun-2025 20:59:16 America/Recife] [2025-06-04 20:59:16] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?action=like&id=33"}
-[04-Jun-2025 20:59:16 America/Recife] [2025-06-04 20:59:16] COMMENTS: Database loaded from config file
-[04-Jun-2025 20:59:16 America/Recife] [2025-06-04 20:59:16] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 20:59:16 America/Recife] [2025-06-04 20:59:16] COMMENTS: Liking comment
-[04-Jun-2025 20:59:16 America/Recife] [2025-06-04 20:59:16] COMMENTS: Comment like toggled | {"comment_id":33,"user_id":1,"liked":true,"new_count":1}
-[04-Jun-2025 20:59:16 America/Recife] [2025-06-04 20:59:16] COMMENTS: SUCCESS | {"message":"Comentário curtido!","data_type":"array"}
-[04-Jun-2025 20:59:17 America/Recife] [2025-06-04 20:59:17] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?action=like&id=33"}
-[04-Jun-2025 20:59:17 America/Recife] [2025-06-04 20:59:17] COMMENTS: Database loaded from config file
-[04-Jun-2025 20:59:17 America/Recife] [2025-06-04 20:59:17] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 20:59:17 America/Recife] [2025-06-04 20:59:17] COMMENTS: Liking comment
-[04-Jun-2025 20:59:17 America/Recife] [2025-06-04 20:59:17] COMMENTS: Comment like toggled | {"comment_id":33,"user_id":1,"liked":true,"new_count":2}
-[04-Jun-2025 20:59:17 America/Recife] [2025-06-04 20:59:17] COMMENTS: SUCCESS | {"message":"Comentário curtido!","data_type":"array"}
-[04-Jun-2025 20:59:17 America/Recife] [2025-06-04 20:59:17] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?action=like&id=33"}
-[04-Jun-2025 20:59:17 America/Recife] [2025-06-04 20:59:17] COMMENTS: Database loaded from config file
-[04-Jun-2025 20:59:17 America/Recife] [2025-06-04 20:59:17] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 20:59:17 America/Recife] [2025-06-04 20:59:17] COMMENTS: Liking comment
-[04-Jun-2025 20:59:17 America/Recife] [2025-06-04 20:59:17] COMMENTS: Comment like toggled | {"comment_id":33,"user_id":1,"liked":true,"new_count":3}
-[04-Jun-2025 20:59:17 America/Recife] [2025-06-04 20:59:17] COMMENTS: SUCCESS | {"message":"Comentário curtido!","data_type":"array"}
-[04-Jun-2025 20:59:18 America/Recife] [2025-06-04 20:59:18] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?action=like&id=33"}
-[04-Jun-2025 20:59:18 America/Recife] [2025-06-04 20:59:18] COMMENTS: Database loaded from config file
-[04-Jun-2025 20:59:18 America/Recife] [2025-06-04 20:59:18] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 20:59:18 America/Recife] [2025-06-04 20:59:18] COMMENTS: Liking comment
-[04-Jun-2025 20:59:18 America/Recife] [2025-06-04 20:59:18] COMMENTS: Comment like toggled | {"comment_id":33,"user_id":1,"liked":true,"new_count":4}
-[04-Jun-2025 20:59:18 America/Recife] [2025-06-04 20:59:18] COMMENTS: SUCCESS | {"message":"Comentário curtido!","data_type":"array"}
-[04-Jun-2025 20:59:18 America/Recife] [2025-06-04 20:59:18] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?action=like&id=33"}
-[04-Jun-2025 20:59:18 America/Recife] [2025-06-04 20:59:18] COMMENTS: Database loaded from config file
-[04-Jun-2025 20:59:18 America/Recife] [2025-06-04 20:59:18] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 20:59:18 America/Recife] [2025-06-04 20:59:18] COMMENTS: Liking comment
-[04-Jun-2025 20:59:18 America/Recife] [2025-06-04 20:59:18] COMMENTS: Comment like toggled | {"comment_id":33,"user_id":1,"liked":true,"new_count":5}
-[04-Jun-2025 20:59:18 America/Recife] [2025-06-04 20:59:18] COMMENTS: SUCCESS | {"message":"Comentário curtido!","data_type":"array"}
-[04-Jun-2025 20:59:18 America/Recife] [2025-06-04 20:59:18] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?action=like&id=33"}
-[04-Jun-2025 20:59:18 America/Recife] [2025-06-04 20:59:18] COMMENTS: Database loaded from config file
-[04-Jun-2025 20:59:18 America/Recife] [2025-06-04 20:59:18] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 20:59:18 America/Recife] [2025-06-04 20:59:18] COMMENTS: Liking comment
-[04-Jun-2025 20:59:18 America/Recife] [2025-06-04 20:59:18] COMMENTS: Comment like toggled | {"comment_id":33,"user_id":1,"liked":true,"new_count":6}
-[04-Jun-2025 20:59:18 America/Recife] [2025-06-04 20:59:18] COMMENTS: SUCCESS | {"message":"Comentário curtido!","data_type":"array"}
-[04-Jun-2025 20:59:19 America/Recife] [2025-06-04 20:59:19] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?action=like&id=33"}
-[04-Jun-2025 20:59:19 America/Recife] [2025-06-04 20:59:19] COMMENTS: Database loaded from config file
-[04-Jun-2025 20:59:19 America/Recife] [2025-06-04 20:59:19] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 20:59:19 America/Recife] [2025-06-04 20:59:19] COMMENTS: Liking comment
-[04-Jun-2025 20:59:19 America/Recife] [2025-06-04 20:59:19] COMMENTS: Comment like toggled | {"comment_id":33,"user_id":1,"liked":true,"new_count":7}
-[04-Jun-2025 20:59:19 America/Recife] [2025-06-04 20:59:19] COMMENTS: SUCCESS | {"message":"Comentário curtido!","data_type":"array"}
-[04-Jun-2025 20:59:19 America/Recife] [2025-06-04 20:59:19] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?action=like&id=33"}
-[04-Jun-2025 20:59:19 America/Recife] [2025-06-04 20:59:19] COMMENTS: Database loaded from config file
-[04-Jun-2025 20:59:19 America/Recife] [2025-06-04 20:59:19] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 20:59:19 America/Recife] [2025-06-04 20:59:19] COMMENTS: Liking comment
-[04-Jun-2025 20:59:19 America/Recife] [2025-06-04 20:59:19] COMMENTS: Comment like toggled | {"comment_id":33,"user_id":1,"liked":true,"new_count":8}
-[04-Jun-2025 20:59:19 America/Recife] [2025-06-04 20:59:19] COMMENTS: SUCCESS | {"message":"Comentário curtido!","data_type":"array"}
-[04-Jun-2025 20:59:21 America/Recife] [2025-06-04 20:59:21] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=5&page=1&per_page=10&sort=recent"}
-[04-Jun-2025 20:59:21 America/Recife] [2025-06-04 20:59:21] COMMENTS: Database loaded from config file
-[04-Jun-2025 20:59:21 America/Recife] [2025-06-04 20:59:21] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 20:59:21 America/Recife] [2025-06-04 20:59:21] COMMENTS: Getting comments
-[04-Jun-2025 20:59:21 America/Recife] [2025-06-04 20:59:21] COMMENTS: Get params | {"content_type":"news","content_id":5,"page":1,"per_page":10,"sort":"recent"}
-[04-Jun-2025 20:59:21 America/Recife] [2025-06-04 20:59:21] COMMENTS: Comments retrieved | {"count":1,"total":1}
-[04-Jun-2025 20:59:21 America/Recife] [2025-06-04 20:59:21] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
-[04-Jun-2025 21:13:01 America/Recife] [2025-06-04 21:13:01] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=3&page=1&per_page=10&sort=recent"}
-[04-Jun-2025 21:13:01 America/Recife] [2025-06-04 21:13:01] COMMENTS: Database loaded from config file
-[04-Jun-2025 21:13:01 America/Recife] [2025-06-04 21:13:01] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 21:13:01 America/Recife] [2025-06-04 21:13:01] COMMENTS: Getting comments
-[04-Jun-2025 21:13:01 America/Recife] [2025-06-04 21:13:01] COMMENTS: Get params | {"content_type":"news","content_id":3,"page":1,"per_page":10,"sort":"recent"}
-[04-Jun-2025 21:13:01 America/Recife] [2025-06-04 21:13:01] COMMENTS: Comments retrieved | {"count":3,"total":3}
-[04-Jun-2025 21:13:01 America/Recife] [2025-06-04 21:13:01] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
-[04-Jun-2025 21:13:04 America/Recife] [2025-06-04 21:13:04] COMMENTS: === API Comments Started === | {"method":"POST","uri":"\/api\/comments.php"}
-[04-Jun-2025 21:13:04 America/Recife] [2025-06-04 21:13:04] COMMENTS: Database loaded from config file
-[04-Jun-2025 21:13:04 America/Recife] [2025-06-04 21:13:04] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 21:13:04 America/Recife] [2025-06-04 21:13:04] COMMENTS: Creating comment
-[04-Jun-2025 21:13:04 America/Recife] [2025-06-04 21:13:04] COMMENTS: Input received | {"content_type":"news","content_id":3,"content":"oiii"}
-[04-Jun-2025 21:13:04 America/Recife] [2025-06-04 21:13:04] COMMENTS: Creating comment | {"user_id":1,"content_type":"news","content_id":3,"content_length":4}
-[04-Jun-2025 21:13:04 America/Recife] [2025-06-04 21:13:04] COMMENTS: Comment created successfully | {"comment_id":"34"}
-[04-Jun-2025 21:13:04 America/Recife] [2025-06-04 21:13:04] COMMENTS: SUCCESS | {"message":"Comentário adicionado com sucesso!","data_type":"array"}
-[04-Jun-2025 21:13:11 America/Recife] [2025-06-04 21:13:11] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?action=like&id=34"}
-[04-Jun-2025 21:13:11 America/Recife] [2025-06-04 21:13:11] COMMENTS: Database loaded from config file
-[04-Jun-2025 21:13:11 America/Recife] [2025-06-04 21:13:11] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 21:13:11 America/Recife] [2025-06-04 21:13:11] COMMENTS: Liking comment
-[04-Jun-2025 21:13:11 America/Recife] [2025-06-04 21:13:11] COMMENTS: Comment like toggled | {"comment_id":34,"user_id":1,"liked":true,"new_count":1}
-[04-Jun-2025 21:13:11 America/Recife] [2025-06-04 21:13:11] COMMENTS: SUCCESS | {"message":"Comentário curtido!","data_type":"array"}
-[04-Jun-2025 21:13:12 America/Recife] [2025-06-04 21:13:12] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?action=like&id=34"}
-[04-Jun-2025 21:13:12 America/Recife] [2025-06-04 21:13:12] COMMENTS: Database loaded from config file
-[04-Jun-2025 21:13:12 America/Recife] [2025-06-04 21:13:12] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 21:13:12 America/Recife] [2025-06-04 21:13:12] COMMENTS: Liking comment
-[04-Jun-2025 21:13:12 America/Recife] [2025-06-04 21:13:12] COMMENTS: Comment like toggled | {"comment_id":34,"user_id":1,"liked":true,"new_count":2}
-[04-Jun-2025 21:13:12 America/Recife] [2025-06-04 21:13:12] COMMENTS: SUCCESS | {"message":"Comentário curtido!","data_type":"array"}
-[04-Jun-2025 21:13:12 America/Recife] [2025-06-04 21:13:12] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?action=like&id=34"}
-[04-Jun-2025 21:13:12 America/Recife] [2025-06-04 21:13:12] COMMENTS: Database loaded from config file
-[04-Jun-2025 21:13:12 America/Recife] [2025-06-04 21:13:12] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 21:13:12 America/Recife] [2025-06-04 21:13:12] COMMENTS: Liking comment
-[04-Jun-2025 21:13:12 America/Recife] [2025-06-04 21:13:12] COMMENTS: Comment like toggled | {"comment_id":34,"user_id":1,"liked":true,"new_count":3}
-[04-Jun-2025 21:13:12 America/Recife] [2025-06-04 21:13:12] COMMENTS: SUCCESS | {"message":"Comentário curtido!","data_type":"array"}
-[04-Jun-2025 21:13:12 America/Recife] [2025-06-04 21:13:12] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?action=like&id=34"}
-[04-Jun-2025 21:13:12 America/Recife] [2025-06-04 21:13:12] COMMENTS: Database loaded from config file
-[04-Jun-2025 21:13:12 America/Recife] [2025-06-04 21:13:12] COMMENTS: Session info | {"user_logged":true,"user_id":"1"}
-[04-Jun-2025 21:13:12 America/Recife] [2025-06-04 21:13:12] COMMENTS: Liking comment
-[04-Jun-2025 21:13:12 America/Recife] [2025-06-04 21:13:12] COMMENTS: Comment like toggled | {"comment_id":34,"user_id":1,"liked":true,"new_count":4}
-[04-Jun-2025 21:13:12 America/Recife] [2025-06-04 21:13:12] COMMENTS: SUCCESS | {"message":"Comentário curtido!","data_type":"array"}
+#0 {main}
+  thrown in /home/leonidab/staging.leonidabrasil.com.br/api/wall-message.php on line 13
+[06-Jun-2025 10:59:36 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-06 10:59:36","message":"M\u00e9todo recebido","data":"POST"}
+[06-Jun-2025 10:59:36 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-06 10:59:36","message":"Input bruto recebido","data":"{\"action\":\"logout\"}"}
+[06-Jun-2025 10:59:36 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-06 10:59:36","message":"Input decodificado","data":{"action":"logout"}}
+[06-Jun-2025 10:59:36 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-06 10:59:36","message":"A\u00e7\u00e3o solicitada","data":"logout"}
+[06-Jun-2025 10:59:36 America/Recife] AUTH DEBUG: {"timestamp":"2025-06-06 10:59:36","message":"Logout realizado","data":null}
+[06-Jun-2025 21:24:45 America/Recife] [2025-06-06 21:24:45] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=5&page=1&per_page=10&sort=recent"}
+[06-Jun-2025 21:24:45 America/Recife] [2025-06-06 21:24:45] COMMENTS: Database loaded from config file
+[06-Jun-2025 21:24:45 America/Recife] [2025-06-06 21:24:45] COMMENTS: Session info | {"user_logged":false,"user_id":null}
+[06-Jun-2025 21:24:45 America/Recife] [2025-06-06 21:24:45] COMMENTS: Getting comments
+[06-Jun-2025 21:24:45 America/Recife] [2025-06-06 21:24:45] COMMENTS: Get params | {"content_type":"news","content_id":5,"page":1,"per_page":10,"sort":"recent"}
+[06-Jun-2025 21:24:45 America/Recife] [2025-06-06 21:24:45] COMMENTS: Comments retrieved | {"count":0,"total":0}
+[06-Jun-2025 21:24:45 America/Recife] [2025-06-06 21:24:45] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
+[06-Jun-2025 21:25:11 America/Recife] [2025-06-06 21:25:11] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=4&page=1&per_page=10&sort=recent"}
+[06-Jun-2025 21:25:11 America/Recife] [2025-06-06 21:25:11] COMMENTS: Database loaded from config file
+[06-Jun-2025 21:25:11 America/Recife] [2025-06-06 21:25:11] COMMENTS: Session info | {"user_logged":false,"user_id":null}
+[06-Jun-2025 21:25:11 America/Recife] [2025-06-06 21:25:11] COMMENTS: Getting comments
+[06-Jun-2025 21:25:11 America/Recife] [2025-06-06 21:25:11] COMMENTS: Get params | {"content_type":"news","content_id":4,"page":1,"per_page":10,"sort":"recent"}
+[06-Jun-2025 21:25:11 America/Recife] [2025-06-06 21:25:11] COMMENTS: Comments retrieved | {"count":0,"total":0}
+[06-Jun-2025 21:25:11 America/Recife] [2025-06-06 21:25:11] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
+[06-Jun-2025 21:26:26 America/Recife] [2025-06-06 21:26:26] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=4&page=1&per_page=10&sort=recent"}
+[06-Jun-2025 21:26:26 America/Recife] [2025-06-06 21:26:26] COMMENTS: Database loaded from config file
+[06-Jun-2025 21:26:26 America/Recife] [2025-06-06 21:26:26] COMMENTS: Session info | {"user_logged":false,"user_id":null}
+[06-Jun-2025 21:26:26 America/Recife] [2025-06-06 21:26:26] COMMENTS: Getting comments
+[06-Jun-2025 21:26:26 America/Recife] [2025-06-06 21:26:26] COMMENTS: Get params | {"content_type":"news","content_id":4,"page":1,"per_page":10,"sort":"recent"}
+[06-Jun-2025 21:26:26 America/Recife] [2025-06-06 21:26:26] COMMENTS: Comments retrieved | {"count":0,"total":0}
+[06-Jun-2025 21:26:26 America/Recife] [2025-06-06 21:26:26] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
+[06-Jun-2025 21:39:21 America/Recife] [2025-06-06 21:39:21] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=4&page=1&per_page=10&sort=recent"}
+[06-Jun-2025 21:39:21 America/Recife] [2025-06-06 21:39:21] COMMENTS: Database loaded from config file
+[06-Jun-2025 21:39:21 America/Recife] [2025-06-06 21:39:21] COMMENTS: Session info | {"user_logged":false,"user_id":null}
+[06-Jun-2025 21:39:21 America/Recife] [2025-06-06 21:39:21] COMMENTS: Getting comments
+[06-Jun-2025 21:39:21 America/Recife] [2025-06-06 21:39:21] COMMENTS: Get params | {"content_type":"news","content_id":4,"page":1,"per_page":10,"sort":"recent"}
+[06-Jun-2025 21:39:21 America/Recife] [2025-06-06 21:39:21] COMMENTS: Comments retrieved | {"count":0,"total":0}
+[06-Jun-2025 21:39:21 America/Recife] [2025-06-06 21:39:21] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
+[06-Jun-2025 21:39:32 America/Recife] [2025-06-06 21:39:32] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=4&page=1&per_page=10&sort=recent"}
+[06-Jun-2025 21:39:32 America/Recife] [2025-06-06 21:39:32] COMMENTS: Database loaded from config file
+[06-Jun-2025 21:39:32 America/Recife] [2025-06-06 21:39:32] COMMENTS: Session info | {"user_logged":false,"user_id":null}
+[06-Jun-2025 21:39:32 America/Recife] [2025-06-06 21:39:32] COMMENTS: Getting comments
+[06-Jun-2025 21:39:32 America/Recife] [2025-06-06 21:39:32] COMMENTS: Get params | {"content_type":"news","content_id":4,"page":1,"per_page":10,"sort":"recent"}
+[06-Jun-2025 21:39:32 America/Recife] [2025-06-06 21:39:32] COMMENTS: Comments retrieved | {"count":0,"total":0}
+[06-Jun-2025 21:39:32 America/Recife] [2025-06-06 21:39:32] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
+[06-Jun-2025 21:56:18 America/Recife] [2025-06-06 21:56:18] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=5&page=1&per_page=10&sort=recent"}
+[06-Jun-2025 21:56:18 America/Recife] [2025-06-06 21:56:18] COMMENTS: Database loaded from config file
+[06-Jun-2025 21:56:18 America/Recife] [2025-06-06 21:56:18] COMMENTS: Session info | {"user_logged":false,"user_id":null}
+[06-Jun-2025 21:56:18 America/Recife] [2025-06-06 21:56:18] COMMENTS: Getting comments
+[06-Jun-2025 21:56:18 America/Recife] [2025-06-06 21:56:18] COMMENTS: Get params | {"content_type":"news","content_id":5,"page":1,"per_page":10,"sort":"recent"}
+[06-Jun-2025 21:56:18 America/Recife] [2025-06-06 21:56:18] COMMENTS: Comments retrieved | {"count":0,"total":0}
+[06-Jun-2025 21:56:18 America/Recife] [2025-06-06 21:56:18] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
+[06-Jun-2025 23:24:45 America/Recife] [2025-06-06 23:24:45] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=4&page=1&per_page=10&sort=recent"}
+[06-Jun-2025 23:24:45 America/Recife] [2025-06-06 23:24:45] COMMENTS: Database loaded from config file
+[06-Jun-2025 23:24:45 America/Recife] [2025-06-06 23:24:45] COMMENTS: Session info | {"user_logged":false,"user_id":null}
+[06-Jun-2025 23:24:45 America/Recife] [2025-06-06 23:24:45] COMMENTS: Getting comments
+[06-Jun-2025 23:24:45 America/Recife] [2025-06-06 23:24:45] COMMENTS: Get params | {"content_type":"news","content_id":4,"page":1,"per_page":10,"sort":"recent"}
+[06-Jun-2025 23:24:45 America/Recife] [2025-06-06 23:24:45] COMMENTS: Comments retrieved | {"count":0,"total":0}
+[06-Jun-2025 23:24:45 America/Recife] [2025-06-06 23:24:45] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
+[06-Jun-2025 23:51:09 America/Recife] [2025-06-06 23:51:09] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=4&page=1&per_page=10&sort=recent"}
+[06-Jun-2025 23:51:09 America/Recife] [2025-06-06 23:51:09] COMMENTS: Database loaded from config file
+[06-Jun-2025 23:51:09 America/Recife] [2025-06-06 23:51:09] COMMENTS: Session info | {"user_logged":false,"user_id":null}
+[06-Jun-2025 23:51:09 America/Recife] [2025-06-06 23:51:09] COMMENTS: Getting comments
+[06-Jun-2025 23:51:09 America/Recife] [2025-06-06 23:51:09] COMMENTS: Get params | {"content_type":"news","content_id":4,"page":1,"per_page":10,"sort":"recent"}
+[06-Jun-2025 23:51:09 America/Recife] [2025-06-06 23:51:09] COMMENTS: Comments retrieved | {"count":0,"total":0}
+[06-Jun-2025 23:51:09 America/Recife] [2025-06-06 23:51:09] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
+[06-Jun-2025 23:51:17 America/Recife] [2025-06-06 23:51:17] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=4&page=1&per_page=10&sort=recent"}
+[06-Jun-2025 23:51:17 America/Recife] [2025-06-06 23:51:17] COMMENTS: Database loaded from config file
+[06-Jun-2025 23:51:17 America/Recife] [2025-06-06 23:51:17] COMMENTS: Session info | {"user_logged":false,"user_id":null}
+[06-Jun-2025 23:51:17 America/Recife] [2025-06-06 23:51:17] COMMENTS: Getting comments
+[06-Jun-2025 23:51:17 America/Recife] [2025-06-06 23:51:17] COMMENTS: Get params | {"content_type":"news","content_id":4,"page":1,"per_page":10,"sort":"recent"}
+[06-Jun-2025 23:51:17 America/Recife] [2025-06-06 23:51:17] COMMENTS: Comments retrieved | {"count":0,"total":0}
+[06-Jun-2025 23:51:17 America/Recife] [2025-06-06 23:51:17] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
+[06-Jun-2025 23:51:20 America/Recife] [2025-06-06 23:51:20] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=4&page=1&per_page=10&sort=recent"}
+[06-Jun-2025 23:51:20 America/Recife] [2025-06-06 23:51:20] COMMENTS: Database loaded from config file
+[06-Jun-2025 23:51:20 America/Recife] [2025-06-06 23:51:20] COMMENTS: Session info | {"user_logged":false,"user_id":null}
+[06-Jun-2025 23:51:20 America/Recife] [2025-06-06 23:51:20] COMMENTS: Getting comments
+[06-Jun-2025 23:51:20 America/Recife] [2025-06-06 23:51:20] COMMENTS: Get params | {"content_type":"news","content_id":4,"page":1,"per_page":10,"sort":"recent"}
+[06-Jun-2025 23:51:20 America/Recife] [2025-06-06 23:51:20] COMMENTS: Comments retrieved | {"count":0,"total":0}
+[06-Jun-2025 23:51:20 America/Recife] [2025-06-06 23:51:20] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
+[06-Jun-2025 23:51:22 America/Recife] [2025-06-06 23:51:22] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=2&page=1&per_page=10&sort=recent"}
+[06-Jun-2025 23:51:22 America/Recife] [2025-06-06 23:51:22] COMMENTS: Database loaded from config file
+[06-Jun-2025 23:51:22 America/Recife] [2025-06-06 23:51:22] COMMENTS: Session info | {"user_logged":false,"user_id":null}
+[06-Jun-2025 23:51:22 America/Recife] [2025-06-06 23:51:22] COMMENTS: Getting comments
+[06-Jun-2025 23:51:22 America/Recife] [2025-06-06 23:51:22] COMMENTS: Get params | {"content_type":"news","content_id":2,"page":1,"per_page":10,"sort":"recent"}
+[06-Jun-2025 23:51:22 America/Recife] [2025-06-06 23:51:22] COMMENTS: Comments retrieved | {"count":3,"total":3}
+[06-Jun-2025 23:51:22 America/Recife] [2025-06-06 23:51:22] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
+[07-Jun-2025 10:54:29 America/Recife] [2025-06-07 10:54:29] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=5&page=1&per_page=10&sort=recent"}
+[07-Jun-2025 10:54:29 America/Recife] [2025-06-07 10:54:29] COMMENTS: Database loaded from config file
+[07-Jun-2025 10:54:29 America/Recife] [2025-06-07 10:54:29] COMMENTS: Session info | {"user_logged":false,"user_id":null}
+[07-Jun-2025 10:54:29 America/Recife] [2025-06-07 10:54:29] COMMENTS: Getting comments
+[07-Jun-2025 10:54:29 America/Recife] [2025-06-07 10:54:29] COMMENTS: Get params | {"content_type":"news","content_id":5,"page":1,"per_page":10,"sort":"recent"}
+[07-Jun-2025 10:54:29 America/Recife] [2025-06-07 10:54:29] COMMENTS: Comments retrieved | {"count":0,"total":0}
+[07-Jun-2025 10:54:29 America/Recife] [2025-06-07 10:54:29] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
+[07-Jun-2025 10:54:36 America/Recife] [2025-06-07 10:54:36] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=5&page=1&per_page=10&sort=recent"}
+[07-Jun-2025 10:54:36 America/Recife] [2025-06-07 10:54:36] COMMENTS: Database loaded from config file
+[07-Jun-2025 10:54:36 America/Recife] [2025-06-07 10:54:36] COMMENTS: Session info | {"user_logged":false,"user_id":null}
+[07-Jun-2025 10:54:36 America/Recife] [2025-06-07 10:54:36] COMMENTS: Getting comments
+[07-Jun-2025 10:54:36 America/Recife] [2025-06-07 10:54:36] COMMENTS: Get params | {"content_type":"news","content_id":5,"page":1,"per_page":10,"sort":"recent"}
+[07-Jun-2025 10:54:36 America/Recife] [2025-06-07 10:54:36] COMMENTS: Comments retrieved | {"count":0,"total":0}
+[07-Jun-2025 10:54:36 America/Recife] [2025-06-07 10:54:36] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
+[07-Jun-2025 11:10:21 America/Recife] [2025-06-07 11:10:21] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=4&page=1&per_page=10&sort=recent"}
+[07-Jun-2025 11:10:21 America/Recife] [2025-06-07 11:10:21] COMMENTS: Database loaded from config file
+[07-Jun-2025 11:10:21 America/Recife] [2025-06-07 11:10:21] COMMENTS: Session info | {"user_logged":false,"user_id":null}
+[07-Jun-2025 11:10:21 America/Recife] [2025-06-07 11:10:21] COMMENTS: Getting comments
+[07-Jun-2025 11:10:21 America/Recife] [2025-06-07 11:10:21] COMMENTS: Get params | {"content_type":"news","content_id":4,"page":1,"per_page":10,"sort":"recent"}
+[07-Jun-2025 11:10:21 America/Recife] [2025-06-07 11:10:21] COMMENTS: Comments retrieved | {"count":0,"total":0}
+[07-Jun-2025 11:10:21 America/Recife] [2025-06-07 11:10:21] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
+[07-Jun-2025 11:33:34 America/Recife] [2025-06-07 11:33:34] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=5&page=1&per_page=10&sort=recent"}
+[07-Jun-2025 11:33:34 America/Recife] [2025-06-07 11:33:34] COMMENTS: Database loaded from config file
+[07-Jun-2025 11:33:34 America/Recife] [2025-06-07 11:33:34] COMMENTS: Session info | {"user_logged":false,"user_id":null}
+[07-Jun-2025 11:33:34 America/Recife] [2025-06-07 11:33:34] COMMENTS: Getting comments
+[07-Jun-2025 11:33:34 America/Recife] [2025-06-07 11:33:34] COMMENTS: Get params | {"content_type":"news","content_id":5,"page":1,"per_page":10,"sort":"recent"}
+[07-Jun-2025 11:33:34 America/Recife] [2025-06-07 11:33:34] COMMENTS: Comments retrieved | {"count":0,"total":0}
+[07-Jun-2025 11:33:34 America/Recife] [2025-06-07 11:33:34] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
+[07-Jun-2025 14:24:45 America/Recife] [2025-06-07 14:24:45] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=5&page=1&per_page=10&sort=recent"}
+[07-Jun-2025 14:24:45 America/Recife] [2025-06-07 14:24:45] COMMENTS: Database loaded from config file
+[07-Jun-2025 14:24:45 America/Recife] [2025-06-07 14:24:45] COMMENTS: Session info | {"user_logged":false,"user_id":null}
+[07-Jun-2025 14:24:45 America/Recife] [2025-06-07 14:24:45] COMMENTS: Getting comments
+[07-Jun-2025 14:24:45 America/Recife] [2025-06-07 14:24:45] COMMENTS: Get params | {"content_type":"news","content_id":5,"page":1,"per_page":10,"sort":"recent"}
+[07-Jun-2025 14:24:45 America/Recife] [2025-06-07 14:24:45] COMMENTS: Comments retrieved | {"count":0,"total":0}
+[07-Jun-2025 14:24:45 America/Recife] [2025-06-07 14:24:45] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
+[07-Jun-2025 14:29:56 America/Recife] [2025-06-07 14:29:56] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=5&page=1&per_page=10&sort=recent"}
+[07-Jun-2025 14:29:56 America/Recife] [2025-06-07 14:29:56] COMMENTS: Database loaded from config file
+[07-Jun-2025 14:29:56 America/Recife] [2025-06-07 14:29:56] COMMENTS: Session info | {"user_logged":false,"user_id":null}
+[07-Jun-2025 14:29:56 America/Recife] [2025-06-07 14:29:56] COMMENTS: Getting comments
+[07-Jun-2025 14:29:56 America/Recife] [2025-06-07 14:29:56] COMMENTS: Get params | {"content_type":"news","content_id":5,"page":1,"per_page":10,"sort":"recent"}
+[07-Jun-2025 14:29:56 America/Recife] [2025-06-07 14:29:56] COMMENTS: Comments retrieved | {"count":0,"total":0}
+[07-Jun-2025 14:29:56 America/Recife] [2025-06-07 14:29:56] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}
+[07-Jun-2025 14:32:18 America/Recife] [2025-06-07 14:32:18] COMMENTS: === API Comments Started === | {"method":"GET","uri":"\/api\/comments.php?type=news&id=5&page=1&per_page=10&sort=recent"}
+[07-Jun-2025 14:32:18 America/Recife] [2025-06-07 14:32:18] COMMENTS: Database loaded from config file
+[07-Jun-2025 14:32:18 America/Recife] [2025-06-07 14:32:18] COMMENTS: Session info | {"user_logged":false,"user_id":null}
+[07-Jun-2025 14:32:18 America/Recife] [2025-06-07 14:32:18] COMMENTS: Getting comments
+[07-Jun-2025 14:32:18 America/Recife] [2025-06-07 14:32:18] COMMENTS: Get params | {"content_type":"news","content_id":5,"page":1,"per_page":10,"sort":"recent"}
+[07-Jun-2025 14:32:18 America/Recife] [2025-06-07 14:32:18] COMMENTS: Comments retrieved | {"count":0,"total":0}
+[07-Jun-2025 14:32:18 America/Recife] [2025-06-07 14:32:18] COMMENTS: SUCCESS | {"message":null,"data_type":"array"}

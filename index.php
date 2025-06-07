@@ -1,6 +1,6 @@
 <?php
 // index.php
-// Router principal do Leonida Brasil
+// Router principal do Leonida Brasil - Versão atualizada
 
 // Configurações iniciais
 error_reporting(E_ALL);
@@ -89,15 +89,15 @@ try {
             }
             break;
             
-            case 'news':
-                case 'noticias':
-                    $controller = new NewsController();
-                    if ($slug) {
-                        $controller->single($slug);  // ← Página individual
-                    } else {
-                        $controller->index();        // ← Lista de notícias
-                    }
-                    break;
+        case 'news':
+        case 'noticias':
+            $controller = new NewsController();
+            if ($slug) {
+                $controller->single($slug);  // ← Página individual
+            } else {
+                $controller->index();        // ← Lista de notícias
+            }
+            break;
             
         case 'gallery':
         case 'galeria':
@@ -143,12 +143,29 @@ try {
             $controller->index();
             break;
             
+        // ========= ÁREA DO USUÁRIO =========
         case 'profile':
-        case 'perfil':
-            $controller = new UserController();
-            $controller->profile();
-            break;
+            case 'perfil':
+                $controller = new UserController();
+                $action = $_GET['action'] ?? 'index';
+                
+                switch ($action) {
+                    case 'upload-avatar':
+                        $controller->uploadAvatar();
+                        break;
+                    case 'configuracao':
+                    case 'configuracoes':
+                    case 'settings':
+                        $controller->settings();
+                        break;
+                    case 'index':
+                    default:
+                        $controller->profile($_GET['user'] ?? null);
+                        break;
+                }
+                break;
             
+        // ========= AUTENTICAÇÃO =========
         case 'login':
             $controller = new UserController();
             $controller->login();
@@ -160,10 +177,89 @@ try {
             $controller->register();
             break;
             
+        case 'logout':
+            $controller = new UserController();
+            $controller->logout();
+            break;
+            
+        case 'recover':
+        case 'recuperar':
+            $controller = new UserController();
+            $controller->recover();
+            break;
+            
+        // ========= PÁGINAS INSTITUCIONAIS =========
+        case 'sobre':
+        case 'about':
+            $controller = new PageController();
+            $controller->about();
+            break;
+            
+        case 'contato':
+        case 'contact':
+            $controller = new PageController();
+            $controller->contact();
+            break;
+            
+        case 'termos':
+        case 'terms':
+            $controller = new PageController();
+            $controller->terms();
+            break;
+            
+        case 'privacidade':
+        case 'privacy':
+            $controller = new PageController();
+            $controller->privacy();
+            break;
+            
+        // ========= BUSCA =========
+        case 'search':
+        case 'busca':
+            $controller = new SearchController();
+            $controller->index();
+            break;
+            
+        // ========= ADMINISTRAÇÃO =========
+        case 'admin':
+            if (!has_permission(4)) {
+                redirect(site_url('login'));
+                break;
+            }
+            
+            $controller = new AdminController();
+            $admin_action = $_GET['admin_action'] ?? 'dashboard';
+            
+            switch ($admin_action) {
+                case 'users':
+                    $controller->users();
+                    break;
+                case 'content':
+                    $controller->content();
+                    break;
+                case 'forum':
+                    $controller->forum();
+                    break;
+                case 'settings':
+                    $controller->settings();
+                    break;
+                case 'dashboard':
+                default:
+                    $controller->dashboard();
+                    break;
+            }
+            break;
+            
         default:
-            // Página 404
-            http_response_code(404);
-            include 'views/pages/404.php';
+            // Verificar se é uma página estática
+            if (file_exists("views/pages/{$page}.php")) {
+                $controller = new PageController();
+                $controller->staticPage($page);
+            } else {
+                // Página 404
+                http_response_code(404);
+                include 'views/pages/404.php';
+            }
             break;
     }
     

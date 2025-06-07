@@ -1,6 +1,4 @@
-<!-- views/pages/news-single.php -->
-<!-- Página individual de notícia integrada com backend -->
-
+<link rel="stylesheet" href="<?= site_url() ?>/assets/css/noticia.css">
 <div class="breadcrumb-container">
         <div class="breadcrumb-content">
             <nav class="breadcrumb">
@@ -728,4 +726,5 @@ window.newsData = {
     userId: <?= is_logged_in() ? $_SESSION['user_id'] : 'null' ?>
 };
 </script>
+<link rel="stylesheet" href="<?= site_url() ?>/assets/css/noticia.css">
 <script src="<?= site_url() ?>assets/js/noticia.js"></script>

@@ -129,6 +129,9 @@ RewriteRule ^forum/?$ index.php?page=forum [L,QSA]
 # Fórum - tópico por slug (SEO friendly)
 RewriteRule ^forum/topico/([a-zA-Z0-9\-]+)/?$ index.php?page=forum&action=topic&slug=$1 [L,QSA]
 
+# Regra para /forum/topico/slug/pagina
+RewriteRule ^forum/topico/([a-zA-Z0-9\-]+)/([0-9]+)/?$ index.php?page=forum&action=topic&slug=$1&page=$2 [L,QSA]
+
 # Fórum - categoria por slug
 RewriteRule ^forum/categoria/([a-zA-Z0-9\-]+)/?$ index.php?page=forum&action=category&slug=$1 [L,QSA]
 

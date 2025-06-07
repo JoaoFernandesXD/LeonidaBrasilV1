@@ -396,7 +396,7 @@
 </section>
 </div>
 </main>
-<!-- Adicionar dados do site para JavaScript -->
+
 <script>
 window.leonidaData = {
     siteStats: <?= json_encode($site_stats ?? []) ?>,

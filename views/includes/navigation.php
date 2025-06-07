@@ -4,36 +4,36 @@
                 <li class="nav-item">
                     <a href="/inicio"><i class="fa fa-home"></i>Início</a>
                     <div class="dropdown">
-                        <a href="/noticias"><i class="fa fa-newspaper"></i>Últimas Notícias</a>
-                        <a href="/noticias/populares"><i class="fa fa-fire"></i>Populares</a>
-                        <a href="/noticias/recentes"><i class="fa fa-clock"></i>Recentes</a>
+                        <a href="<?php echo site_url(''); ?>noticias"><i class="fa fa-newspaper"></i>Últimas Notícias</a>
+                        <a href="<?php echo site_url(''); ?>noticias/populares"><i class="fa fa-fire"></i>Populares</a>
+                        <a href="<?php echo site_url(''); ?>noticias/recentes"><i class="fa fa-clock"></i>Recentes</a>
                     </div>
                 </li>
                 <li class="nav-item">
                     <a href="/noticias"><i class="fa fa-newspaper"></i>Notícias</a>
                     <div class="dropdown">
-                        <a href="/noticias/trailers"><i class="fa fa-video"></i>Trailers</a>
-                        <a href="/noticias/teorias"><i class="fa fa-lightbulb"></i>Teorias</a>
-                        <a href="/noticias/analises"><i class="fa fa-chart-line"></i>Análises</a>
-                        <a href="/noticias/lancamentos"><i class="fa fa-calendar"></i>Lançamentos</a>
+                        <a href="<?php echo site_url(''); ?>noticias/trailers"><i class="fa fa-video"></i>Trailers</a>
+                        <a href="<?php echo site_url(''); ?>noticias/teorias"><i class="fa fa-lightbulb"></i>Teorias</a>
+                        <a href="<?php echo site_url(''); ?>/noticias/analises"><i class="fa fa-chart-line"></i>Análises</a>
+                        <a href="<?php echo site_url(''); ?>noticias/lancamentos"><i class="fa fa-calendar"></i>Lançamentos</a>
                     </div>
                 </li>
                 <li class="nav-item">
                     <a href="/forum"><i class="fa fa-comments"></i>Fórum</a>
                     <div class="dropdown">
-                        <a href="#"><i class="fa fa-comment"></i>Discussões Gerais</a>
-                        <a href="#"><i class="fa fa-question"></i>Teorias & Especulações</a>
-                        <a href="#"><i class="fa fa-map"></i>Mapas & Localizações</a>
-                        <a href="#"><i class="fa fa-gamepad"></i>Gameplay</a>
+                        <a href="<?php echo site_url(''); ?>forum/categoria/gerais"><i class="fa fa-comment"></i>Discussões Gerais</a>
+                        <a href="<?php echo site_url(''); ?>forum/categoria/teorias"><i class="fa fa-question"></i>Teorias & Especulações</a>
+                        <a href="<?php echo site_url(''); ?>forum/categoria/mapas"><i class="fa fa-map"></i>Mapas & Localizações</a>
+                        <a href="<?php echo site_url(''); ?>forum/categoria/gameplay"><i class="fa fa-gamepad"></i>Gameplay</a>
                     </div>
                 </li>
                 <li class="nav-item">
                     <a href="/hub"><i class="fa fa-database"></i>HUB Leonida</a>
                     <div class="dropdown">
-                        <a href="/hub/personagens"><i class="fa fa-users"></i>Personagens</a>
-                        <a href="/hub/localizacoes"><i class="fa fa-map-marker"></i>Localizações</a>
-                        <a href="/hub/veiculos"><i class="fa fa-car"></i>Veículos</a>
-                        <a href="/hub/missoes"><i class="fa fa-tasks"></i>Missões</a>
+                        <a href="<?php echo site_url(''); ?>hub/personagens"><i class="fa fa-users"></i>Personagens</a>
+                        <a href="<?php echo site_url(''); ?>hub/localizacoes"><i class="fa fa-map-marker"></i>Localizações</a>
+                        <a href="<?php echo site_url(''); ?>hub/veiculos"><i class="fa fa-car"></i>Veículos</a>
+                        <a href="<?php echo site_url(''); ?>hub/missoes"><i class="fa fa-tasks"></i>Missões</a>
                     </div>
                 </li>
                 <li class="nav-item">

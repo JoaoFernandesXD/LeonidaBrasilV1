@@ -565,6 +565,8 @@ function parseBBCodeBasic($text) {
     return $text;
 }
 
+
+
 /**
  * Contar total de mensagens do usuário no fórum
  */
@@ -593,6 +595,5 @@ function getUserMessageCount($user_id, $db = null) {
         return 0;
     }
 }
-
 
 ?>

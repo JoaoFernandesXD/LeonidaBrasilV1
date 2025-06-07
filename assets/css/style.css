@@ -2312,3 +2312,4 @@ a:hover, a:active, a:focus {
     text-decoration: none; /* Garante que o sublinhado não aparece no hover, active ou focus */
     color: inherit; /* Mantém a cor consistente */
 }
+
